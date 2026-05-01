@@ -190,6 +190,11 @@ const tr = {
   footer: {
     tagline: "Yazılım Geliştirici",
     copyright: "Tüm hakları saklıdır.",
+    visitorCounter: {
+      label: "Canlı Analitik",
+      total: "Toplam Görüntüleme",
+      today: "Bugün",
+    },
   },
   profile: {
     badge: "Geliştirici Profili",

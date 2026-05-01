@@ -190,6 +190,11 @@ const en = {
   footer: {
     tagline: "Software Developer",
     copyright: "All rights reserved.",
+    visitorCounter: {
+      label: "Live Analytics",
+      total: "Total Views",
+      today: "Today",
+    },
   },
   profile: {
     badge: "Developer Profile",

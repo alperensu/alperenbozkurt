@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import tr from "@/locales/tr";
 import en from "@/locales/en";
+import VisitorCounter from "./VisitorCounter";
 
 const socialLinks = [
   { icon: "simple-icons:github", href: "https://github.com/alperensu", label: "GitHub" },
@@ -70,10 +71,13 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Copyright */}
-            <p className="text-sm text-white/30">
-              © {new Date().getFullYear()} Alperen Bozkurt. {t.footer.copyright}
-            </p>
+            {/* Copyright + Visitor Counter */}
+            <div className="flex flex-col items-center md:items-end gap-3">
+              <VisitorCounter />
+              <p className="text-sm text-white/30">
+                © {new Date().getFullYear()} Alperen Bozkurt. {t.footer.copyright}
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>

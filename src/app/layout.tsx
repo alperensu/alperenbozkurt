@@ -43,6 +43,12 @@ export default function RootLayout({
           src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"
           strategy="afterInteractive"
         />
+        {/* GoatCounter analytics — ziyaretci takibi */}
+        <Script
+          data-goatcounter="https://alperenbozkurt.goatcounter.com/count"
+          src="//gc.zgo.at/count.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="min-h-screen bg-black text-slate-200 font-sans">
         <LanguageProvider>
