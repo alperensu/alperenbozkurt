@@ -8,6 +8,7 @@ import ScrollTextReveal from "./ScrollTextReveal";
 import { useLanguage } from "@/context/LanguageContext";
 import tr from "@/locales/tr";
 import en from "@/locales/en";
+import { getAssetPath } from "@/utils/paths";
 
 /* ──────────────────────────────────────────
    STATIC (non-translated) project data
@@ -24,8 +25,8 @@ const projectMeta = [
     link: null,
     icon: "mdi:chart-areaspline",
     images: {
-      main: "/projects/borsa/borsa_main_new.png",
-      side: "/projects/borsa/borsa_mobile.png",
+      main: getAssetPath("/projects/borsa/borsa_main_new.png"),
+      side: getAssetPath("/projects/borsa/borsa_mobile.png"),
       hasPhoneMockup: true,
     },
   },
@@ -39,8 +40,8 @@ const projectMeta = [
     link: null,
     icon: "mdi:school-outline",
     images: {
-      main: "/projects/vibekoc/vibekoc_desktop.png",
-      side: "/projects/vibekoc/vibekoc_mobile.png",
+      main: getAssetPath("/projects/vibekoc/vibekoc_desktop.png"),
+      side: getAssetPath("/projects/vibekoc/vibekoc_mobile.png"),
       hasPhoneMockup: true,
     },
   },
@@ -54,8 +55,8 @@ const projectMeta = [
     link: null,
     icon: "mdi:quadcopter",
     images: {
-      main: "/projects/umay/umay_main.png",
-      side: "/projects/umay/umay_side_v2.png",
+      main: getAssetPath("/projects/umay/umay_main.png"),
+      side: getAssetPath("/projects/umay/umay_side_v2.png"),
       hasPhoneMockup: false,
     },
   },
