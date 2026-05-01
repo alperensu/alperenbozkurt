@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Profile from "@/components/Profile";
 import Solutions from "@/components/Solutions";
 import Projects from "@/components/Projects";
 import Marquee from "@/components/Marquee";
@@ -33,6 +34,7 @@ export default function Home() {
       {/* Main content */}
       <main className="relative z-10">
         <Hero />
+        <Profile />
         <Solutions />
         <Projects />
         <Marquee />

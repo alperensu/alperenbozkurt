@@ -4,23 +4,25 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const codeLines = [
-  "import { XGBoost, LightGBM } from 'ml-ensemble';",
-  "import { Pipeline } from '@core/architecture';",
+  "// Vibe Coding Methodology: Enabled",
+  "// Tools: Cursor + Windsurf integration",
   "",
-  "// Initialize predictive core",
-  "const model = new Pipeline({",
-  "  estimator: new LightGBM({ objective: 'binary' }),",
-  "  scaler: 'RobustScaler',",
-  "  features: ['lag_1', 'volatility', 'rsi'],",
+  "import { AI_Agent } from '@vibe-coding/core';",
+  "import { EmbeddedSystem } from '@tech-studio/low-level';",
+  "",
+  "const developer = new AI_Agent({",
+  "  focus: 'optimization',",
+  "  stack: ['React', 'Node.js', 'C#', 'Python'],",
+  "  approach: 'solution-oriented',",
   "});",
   "",
-  "async function predictMarketStatus(data: Tensor) {",
-  "  console.log('[SYS] Processing data stream...');",
-  "  const signal = await model.predict(data);",
-  "  return signal > 0.85 ? 'STRONG_BUY' : 'HOLD';",
+  "async function solveComplexProblem(issue: Problem) {",
+  "  console.log('[AI] Analyzing system architecture...');",
+  "  const optimizedSolution = await developer.refactor(issue);",
+  "  return optimizedSolution.deploy();",
   "}",
   "",
-  "// Status: System Online. Awaiting input...",
+  "// Status: System Optimized. TechStudio Bridge Active.",
 ];
 
 export default function TerminalWidget() {
@@ -92,7 +94,7 @@ export default function TerminalWidget() {
               // Strings
               highlightedLine = highlightedLine.replace(/('.*?')/g, '<span style="color:#34d399">$1</span>');
               // Types/Classes
-              highlightedLine = highlightedLine.replace(/\b(XGBoost|LightGBM|Pipeline|Tensor)\b/g, '<span style="color:#fcd34d">$1</span>');
+              highlightedLine = highlightedLine.replace(/\b(AI_Agent|EmbeddedSystem|Problem)\b/g, '<span style="color:#fcd34d">$1</span>');
               // Numbers
               highlightedLine = highlightedLine.replace(/\b(\d+(\.\d+)?)\b/g, '<span style="color:#60a5fa">$1</span>');
 

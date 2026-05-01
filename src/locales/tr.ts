@@ -7,7 +7,7 @@ const tr = {
     cta: "Teklif Al",
   },
   clip: {
-    tagline: "Next-Gen Dijital Stratejist",
+    tagline: "Yazılım Geliştirici",
   },
   hero: {
     badge: "Dijital Dönüşüm Ortağınız",
@@ -16,7 +16,7 @@ const tr = {
     h1_3: "Çağına Hazırlayan ",
     h1_4: "Dijital Çözüm Ortağı",
     subtitle:
-      "Yapay zeka destekli stratejiler, modern web teknolojileri ve veri odaklı yaklaşımlarla işletmenizi geleceğe taşıyorum.",
+      "Yapay zeka destekli geliştirme (Vibe Coding) metodolojilerini modern yazılım mimarileriyle birleştiren, çözüm odaklı bir geliştiriciyim.",
     btnProjects: "Projeleri Keşfet",
     btnContact: "İletişime Geç",
     scroll: "Kaydır",
@@ -188,8 +188,36 @@ const tr = {
     ],
   },
   footer: {
-    tagline: "Next-Gen Dijital Stratejist",
+    tagline: "Yazılım Geliştirici",
     copyright: "Tüm hakları saklıdır.",
+  },
+  profile: {
+    badge: "Geliştirici Profili",
+    title: "Yazılım Geliştirme Yaklaşımı",
+    bio: "Yapay zeka destekli geliştirme (Vibe Coding) metodolojilerini modern yazılım mimarileriyle birleştiren, çözüm odaklı bir geliştiriciyim. Karmaşık problemleri optimize etmeye ve hem yüksek seviyeli web teknolojilerinde hem de düşük seviyeli sistemlerde verimli sonuçlar üretmeye odaklanıyorum.",
+    experienceTitle: "Deneyim",
+    educationTitle: "Eğitim",
+    skillsTitle: "Teknik Yetenekler",
+    techStudio: {
+      role: "Gömülü Sistemler Stajyeri",
+      duration: "9 Ay",
+      desc: "Donanım ve yazılım entegrasyonu üzerine yoğunlaşan çalışma süreci. Düşük seviyeli sistem mimarileri ve optimizasyon üzerine pratik deneyim.",
+    },
+    pamukkale: {
+      school: "Pamukkale Üniversitesi",
+      major: "Bilgisayar Programcılığı",
+      status: "Devam ediyor",
+    },
+    orhan: {
+      school: "Orhan Abalıoğlu MTAL",
+      major: "Yazılım Geliştirme Bölümü",
+      status: "Mezun",
+    },
+    skills: {
+      languages: "React, React Native, TypeScript, Node.js, C#, Python, SQL",
+      ai: "AI Geliştirme (Cursor, Windsurf)",
+      multimedia: "Grafik Tasarım \u0026 Video Prodüksiyon",
+    }
   },
 };
 

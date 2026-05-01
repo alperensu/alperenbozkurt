@@ -7,7 +7,7 @@ const en = {
     cta: "Get a Quote",
   },
   clip: {
-    tagline: "Next-Gen Digital Strategist",
+    tagline: "Software Developer",
   },
   hero: {
     badge: "Your Digital Transformation Partner",
@@ -16,7 +16,7 @@ const en = {
     h1_3: "Digital Partner ",
     h1_4: "for Modern Businesses",
     subtitle:
-      "I help businesses grow with AI-driven strategies, modern web technologies, and data-centric approaches.",
+      "I am a solution-oriented developer combining AI-powered development (Vibe Coding) with modern software architectures to solve complex problems.",
     btnProjects: "Explore Projects",
     btnContact: "Get in Touch",
     scroll: "Scroll",
@@ -188,8 +188,36 @@ const en = {
     ],
   },
   footer: {
-    tagline: "Next-Gen Digital Strategist",
+    tagline: "Software Developer",
     copyright: "All rights reserved.",
+  },
+  profile: {
+    badge: "Developer Profile",
+    title: "Software Development Approach",
+    bio: "I am a solution-oriented developer who combines AI-powered development (Vibe Coding) methodologies with modern software architectures. I focus on optimizing complex problems and producing efficient results in both high-level web technologies and low-level systems.",
+    experienceTitle: "Experience",
+    educationTitle: "Education",
+    skillsTitle: "Technical Skills",
+    techStudio: {
+      role: "Embedded Systems Intern",
+      duration: "9 Months",
+      desc: "Work process focused on hardware and software integration. Practical experience in low-level system architectures and optimization.",
+    },
+    pamukkale: {
+      school: "Pamukkale University",
+      major: "Computer Programming",
+      status: "Ongoing",
+    },
+    orhan: {
+      school: "Orhan Abalioglu MTAL",
+      major: "Software Development",
+      status: "Graduate",
+    },
+    skills: {
+      languages: "React, React Native, TypeScript, Node.js, C#, Python, SQL",
+      ai: "AI-Powered Development (Cursor, Windsurf)",
+      multimedia: "Graphic Design \u0026 Video Production",
+    }
   },
 };
 
