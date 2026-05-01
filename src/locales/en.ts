@@ -105,7 +105,7 @@ const en = {
         ],
       },
       {
-        title: "Vibe Coach",
+        title: "VibeKoc",
         category: "AI EDUCATION PLATFORM",
         description:
           "A SaaS EdTech platform offering a personalized AI Education Coach for every student. Gamifies learning with behavioral analytics, exam simulations, 1v1 duels, and a league system.",

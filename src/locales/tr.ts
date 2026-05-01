@@ -105,7 +105,7 @@ const tr = {
         ],
       },
       {
-        title: "Vibe Koç",
+        title: "VibeKoc",
         category: "AI EĞİTİM PLATFORMU",
         description:
           "Her öğrenciye özel bir Yapay Zeka Eğitim Koçu sunan SaaS EdTech platformu. Davranışsal analiz, sınav simülasyonu, 1v1 düellolar ve lig sistemiyle öğrenmeyi oyunlaştırır.",
