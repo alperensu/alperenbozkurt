@@ -1,5 +1,5 @@
 export const getAssetPath = (path: string) => {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '/alperenbozkurt';
   // Ensure path starts with /
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
   
