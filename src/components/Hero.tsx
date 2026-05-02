@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import AnimatedElement from "./AnimatedElement";
 import TechCore from "./TechCore";
@@ -53,6 +53,13 @@ export default function Hero() {
   const [isCVOpen, setIsCVOpen] = useState(false);
   const { locale } = useLanguage();
   const t = locale === "tr" ? tr : en;
+
+  const scrollTo = (id: string) => {
+    const el = document.querySelector(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section
