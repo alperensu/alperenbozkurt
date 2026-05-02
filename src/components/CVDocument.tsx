@@ -10,11 +10,11 @@ import en from "@/locales/en";
    ────────────────────────────────────────── */
 const cvStatic = {
   tr: {
-    title: "Full-Stack Developer | AI & Data-Driven Products",
-    location: "Denizli, Turkiye",
+    title: "Full-Stack Developer | Yapay Zeka & Veri Odaklı Ürünler",
+    location: "Denizli, Türkiye",
     email: "alperenbozkurt.iletisim@gmail.com",
     github: "github.com/alperensu",
-    summaryTitle: "Professional Summary",
+    summaryTitle: "Profesyonel Özet",
     summary:
       "AI destekli web uygulamalari, veri odakli dashboardlar ve gelistirici araclari ureten full-stack developer. React/Next.js, Node.js, Python, FastAPI ve modern AI entegrasyonlariyla urun fikirlerini kullanilabilir, olceklenebilir ve performansli sistemlere donusturur. Teknik mimari, kullanici deneyimi ve otomasyon arasinda guclu bag kurarak ucundan sonuna urun gelistirme sorumlulugu alir.",
     sections: {
@@ -35,16 +35,16 @@ const cvStatic = {
       ],
     },
     education: [
-      ["Pamukkale University", "Computer Programming", "Expected 2026"],
-      ["Orhan Abalioglu MTAL", "Software Development", "Graduate"],
+      ["Pamukkale Üniversitesi", "Bilgisayar Programcılığı", "Beklenen 2026"],
+      ["Orhan Abalıoğlu MTAL", "Yazılım Geliştirme", "Mezun"],
     ],
     skills: [
       ["Frontend", "React 19, Next.js, TypeScript, Tailwind CSS, Framer Motion"],
       ["Backend", "Node.js, Python, FastAPI, REST APIs, MySQL, PostgreSQL, Redis"],
-      ["AI & Data", "OpenAI, Gemini, LightGBM, Scikit-learn, Pandas, prompt engineering"],
-      ["Tools", "Git, GitHub, deployment workflows, API integration, performance optimization"],
+      ["AI & Veri", "OpenAI, Gemini, LightGBM, Scikit-learn, Pandas, prompt engineering"],
+      ["Araçlar", "Git, GitHub, CI/CD, API entegrasyonu, performans optimizasyonu"],
     ],
-    languages: "Turkish: Native | English: Advanced",
+    languages: "Türkçe: Anadil | İngilizce: İleri Seviye",
   },
   en: {
     title: "Full-Stack Developer | AI & Data-Driven Products",
@@ -122,7 +122,7 @@ export default function CVDocument() {
             <h1 className="text-[26px] font-black leading-none tracking-tight">
               Alperen Bozkurt
             </h1>
-            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-neutral-700" lang="en">
+            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-neutral-700">
               {cv.title}
             </p>
           </div>
