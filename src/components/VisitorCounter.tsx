@@ -122,7 +122,7 @@ export default function VisitorCounter() {
             {loading ? (
               <div className="w-16 h-6 bg-white/10 rounded animate-pulse" />
             ) : (
-              <span className="text-2xl font-bold tabular-nums bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold tabular-nums bg-linear-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
                 {totalCount.toLocaleString()}
               </span>
             )}

@@ -135,8 +135,8 @@ export default function Scene3D() {
   return (
     <div className="fixed inset-0 -z-10 bg-[#020617] pointer-events-none">
       {/* Background Gradient for depth and readability */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(2,6,23,0.8)_100%)] z-[1]" />
-      <div className="absolute inset-0 bg-linear-to-b from-[#020617] via-transparent to-[#020617] z-[1]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,6,23,0.8)_100%)] z-1" />
+      <div className="absolute inset-0 bg-linear-to-b from-[#020617] via-transparent to-[#020617] z-1" />
 
       <Canvas
         camera={{ position: [0, 0, 10], fov: 45 }}

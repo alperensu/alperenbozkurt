@@ -50,7 +50,7 @@ export default function Navbar() {
       initial={{ y: -42, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.72, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-0.5 md:gap-1 px-1.5 md:px-2 py-1.5 md:py-2 rounded-full transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] max-w-[95vw] whitespace-nowrap ${
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-0.5 md:gap-1 px-1.5 md:px-2 py-1.5 md:py-2 rounded-full transition-all duration-700 ease-in-out max-w-[95vw] whitespace-nowrap ${
         scrolled
           ? "bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl shadow-black/60"
           : "bg-white/5 backdrop-blur-xl border border-white/10"

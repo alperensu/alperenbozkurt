@@ -10,7 +10,7 @@ export default function Profile() {
   const t = locale === "tr" ? tr : en;
 
   return (
-    <section id="profile" className="relative py-32 px-6 md:px-16 lg:px-24 bg-white/[0.02]">
+    <section id="profile" className="relative py-32 px-6 md:px-16 lg:px-24 bg-white/2">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-16 items-start">
           {/* Left Side - Bio & Intro */}
@@ -52,7 +52,7 @@ export default function Profile() {
           <div className="w-full lg:w-[450px] space-y-6">
             {/* Experience Card */}
             <AnimatedElement direction="right" delay={0.3}>
-              <div className="p-8 rounded-3xl bg-linear-to-br from-white/10 to-white/[0.02] border border-white/10 backdrop-blur-md relative overflow-hidden group">
+              <div className="p-8 rounded-3xl bg-linear-to-br from-white/10 to-white/2 border border-white/10 backdrop-blur-md relative overflow-hidden group">
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                   <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                     <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
