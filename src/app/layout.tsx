@@ -11,24 +11,51 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Alperen Bozkurt | Next-Gen Dijital Stratejist",
+  title: "Alperen Bozkurt | Full-Stack Developer & GEO Strategist",
   description:
-    "İşletmeleri Yapay Zeka Çağına Hazırlayan Dijital Çözüm Ortağı. Kurumsal web geliştirme, AI destekli dijital strateji ve e-ticaret çözümleri.",
+    "Expert in AI-powered modern software development, GEO (Generative Engine Optimization), and high-end digital strategies. Transforming businesses for the AI era with technical excellence and creative vision.",
   keywords: [
-    "dijital strateji",
-    "yapay zeka",
-    "web geliştirme",
-    "e-ticaret",
-    "AI",
-    "Next.js",
+    "Alperen Bozkurt",
+    "GEO Strategist",
+    "Generative Engine Optimization",
+    "AI-powered development",
+    "Full-Stack Developer",
+    "Next.js Expert",
+    "Digital Strategy",
+    "Creative Web Design",
+    "Video Editing Expert",
+    "Yapay Zeka Stratejisti",
   ],
   authors: [{ name: "Alperen Bozkurt" }],
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
   openGraph: {
-    title: "Alperen Bozkurt | Next-Gen Dijital Stratejist",
-    description:
-      "İşletmeleri Yapay Zeka Çağına Hazırlayan Dijital Çözüm Ortağı",
+    title: "Alperen Bozkurt | Full-Stack Developer & GEO Strategist",
+    description: "Transforming businesses for the AI era with technical excellence and creative vision.",
+    url: "https://alperensu.github.io/alperenbozkurt/",
+    siteName: "Alperen Bozkurt Portfolio",
+    locale: "tr_TR",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alperen Bozkurt | Full-Stack Developer & GEO Strategist",
+    description: "Expert in AI-powered modern software development and GEO.",
+  }
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alperen Bozkurt",
+  "url": "https://alperensu.github.io/alperenbozkurt/",
+  "jobTitle": "Full-Stack Developer & GEO Strategist",
+  "description": "Specializing in AI-powered software development and Generative Engine Optimization.",
+  "sameAs": [
+    "https://github.com/alperensu",
+    "https://www.linkedin.com/in/alperen-bozkurt-b6135b403/",
+    "https://x.com/alperenbozkurtx"
+  ]
 };
 
 export default function RootLayout({
@@ -48,6 +75,11 @@ export default function RootLayout({
           data-goatcounter="https://alperenbozkurt.goatcounter.com/count"
           src="//gc.zgo.at/count.js"
           strategy="afterInteractive"
+        />
+        {/* JSON-LD Structured Data for GEO/SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="min-h-screen bg-black text-slate-200 font-sans">

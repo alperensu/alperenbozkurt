@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alperensu.github.io/alperenbozkurt/sitemap.xml

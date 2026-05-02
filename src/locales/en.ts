@@ -10,13 +10,13 @@ const en = {
     tagline: "Software Developer",
   },
   hero: {
-    badge: "Full-Stack Developer & Creative Designer",
+    badge: "Full-Stack Developer & GEO Strategist",
     h1_1: "Alperen ",
     h1_2: "Bozkurt",
     h1_3: "",
     h1_4: "",
     subtitle:
-      "I am a versatile developer who blends advanced software architectures with aesthetic design and video editing expertise. I harmonize technical excellence with creative vision using AI-powered tools.",
+      "I am a versatile developer blending modern software architectures with GEO (Generative Engine Optimization) and creative vision, preparing businesses for next-gen AI search engines.",
     btnProjects: "Explore Projects",
     btnContact: "Get in Touch",
     scroll: "Scroll",

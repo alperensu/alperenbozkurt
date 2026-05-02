@@ -10,13 +10,13 @@ const tr = {
     tagline: "Yazılım Geliştirici",
   },
   hero: {
-    badge: "Full-Stack Developer & Kreatif Tasarımcı",
+    badge: "Full-Stack Developer & GEO Stratejisti",
     h1_1: "Alperen ",
     h1_2: "Bozkurt",
     h1_3: "",
     h1_4: "",
     subtitle:
-      "İleri düzey yazılım mimarilerini estetik tasarım ve video kurgu yetkinliğiyle birleştiren, yapay zeka destekli çözümler üreten çok yönlü bir geliştiriciyim. Teknik mükemmeliyeti kreatif vizyonla harmanlıyorum.",
+      "Modern yazılım mimarilerini GEO (Generative Engine Optimization) ve kreatif vizyonla birleştiren, işletmeleri yapay zeka çağının yeni nesil arama motorlarına hazırlayan çok yönlü bir geliştiriciyim.",
     btnProjects: "Projeleri Keşfet",
     btnContact: "İletişime Geç",
     scroll: "Kaydır",
