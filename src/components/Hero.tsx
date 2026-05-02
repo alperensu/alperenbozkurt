@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import AnimatedElement from "./AnimatedElement";
 import TechCore from "./TechCore";
+import CVModal from "./CVModal";
 import { useLanguage } from "@/context/LanguageContext";
 import tr from "@/locales/tr";
 import en from "@/locales/en";
@@ -49,6 +50,7 @@ function WordReveal({
 }
 
 export default function Hero() {
+  const [isCVOpen, setIsCVOpen] = useState(false);
   const { locale } = useLanguage();
   const t = locale === "tr" ? tr : en;
 
@@ -96,23 +98,22 @@ export default function Hero() {
             </p>
           </AnimatedElement>
 
-          <AnimatedElement delay={2.6} direction="up">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a
-                href="#projects"
-                className="group px-8 py-4 text-lg font-semibold rounded-2xl bg-linear-to-r from-orange-500 to-amber-500 text-white hover:from-orange-400 hover:to-amber-400 transition-all duration-500 hover:shadow-xl hover:shadow-orange-500/25 hover:-translate-y-1"
+          {/* CTA Buttons */}
+          <AnimatedElement direction="up" delay={0.8}>
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+              <button
+                onClick={() => scrollTo("#projects")}
+                className="px-8 py-4 bg-linear-to-r from-orange-500 to-amber-500 rounded-2xl font-bold text-white shadow-lg shadow-orange-500/25 hover:scale-105 transition-all duration-300"
               >
                 {t.hero.btnProjects}
-                <span className="inline-block ml-2 group-hover:translate-x-1.5 transition-transform duration-500">
-                  →
-                </span>
-              </a>
-              <a
-                href="mailto:alperenbozkurt.iletisim@gmail.com"
-                className="px-8 py-4 text-lg font-semibold rounded-2xl bg-white/10 border border-white/10 text-white hover:bg-white/15 transition-all duration-500 backdrop-blur-sm hover:-translate-y-1"
+              </button>
+              <button
+                onClick={() => setIsCVOpen(true)}
+                className="px-8 py-4 bg-white/5 border border-white/10 rounded-2xl font-bold text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2 group"
               >
-                {t.hero.btnContact}
-              </a>
+                <iconify-icon icon="mdi:file-document-outline" className="text-xl group-hover:text-orange-400 transition-colors" />
+                {locale === "tr" ? "CV Görüntüle" : "View CV"}
+              </button>
             </div>
           </AnimatedElement>
         </div>
@@ -126,6 +127,8 @@ export default function Hero() {
           <TechCore />
         </AnimatedElement>
       </div>
+
+      <CVModal isOpen={isCVOpen} onClose={() => setIsCVOpen(false)} />
 
       {/* Scroll indicator */}
       <AnimatedElement
