@@ -137,7 +137,7 @@ const tr = {
         title: "UMAY Arama-Kurtarma İHA'sı",
         category: "OTONOM IHA SİSTEMİ",
         description:
-          "AFAD ve JAK gibi arama-kurtarma ekiplerine havadan stratejik destek sağlayan, çift sensörlü (Termal + RGB) ve yapay zeka destekli otonom hexacopter sistemi.",
+          "AFAD ve JAK gibi arama-kurtarma ekiplerine havadan stratejik destek sağlayan, çift sensörlü (Termal + RGB) ve yapay zeka destekli otonom hexacopter sistemi (Ekip Projesi).",
         techInfo:
           "YOLO ile görüntü işleme üzerinden canlı/hedef tespiti, Termal ve RGB kamera füzyonu, otonom rota planlama.",
         role: "Sistem Mühendisliği & Görüntü İşleme — otonom uçuş algoritmaları, sensör entegrasyonu ve hedef tespiti.",

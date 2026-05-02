@@ -30,12 +30,12 @@ const cvStatic = {
       period: "2023 - 2024",
       bullets: [
         "React, Next.js, Node.js ve Python tabanli kurumsal web uygulamalari ve yonetim panelleri gelistirdi.",
-        "REST API tasarimi, veritabani modelleme, frontend performans iyilestirmeleri ve deployment sureclerinde uctan uca sorumluluk aldi.",
+        "REST API tasarimi, veritabani modelleme, backend performans iyilestirmeleri (orn. API yanit surelerinde %30'a varan dusus) ve deployment sureclerinde uctan uca sorumluluk aldi.",
         "AI destekli otomasyon, veri analitigi ve raporlama is akislariyla manuel operasyonlari azaltan cozumer uretti.",
       ],
     },
     education: [
-      ["Pamukkale University", "Computer Programming", "Ongoing"],
+      ["Pamukkale University", "Computer Programming", "Expected 2026"],
       ["Orhan Abalioglu MTAL", "Software Development", "Graduate"],
     ],
     skills: [
@@ -67,12 +67,12 @@ const cvStatic = {
       period: "2023 - 2024",
       bullets: [
         "Built enterprise web applications and admin dashboards with React, Next.js, Node.js, and Python.",
-        "Owned REST API design, database modeling, frontend performance improvements, and deployment workflows end to end.",
+        "Owned REST API design, database modeling, backend performance improvements (e.g., up to 30% reduction in API response times), and deployment workflows end to end.",
         "Delivered AI-assisted automation, data analytics, and reporting workflows that reduce manual operations.",
       ],
     },
     education: [
-      ["Pamukkale University", "Computer Programming", "Ongoing"],
+      ["Pamukkale University", "Computer Programming", "Expected 2026"],
       ["Orhan Abalioglu MTAL", "Software Development", "Graduate"],
     ],
     skills: [
@@ -112,7 +112,10 @@ export default function CVDocument() {
   const projects = deriveProjects(localeData);
 
   return (
-    <div className="cv-document w-[210mm] min-h-[297mm] bg-white px-[13mm] py-[12mm] mx-auto shadow-2xl print:shadow-none print:m-0 font-sans text-neutral-950">
+    <div 
+      className="cv-document w-[210mm] min-h-[297mm] bg-white px-[13mm] py-[12mm] mx-auto shadow-2xl print:shadow-none print:m-0 font-sans text-neutral-950"
+      lang={locale === "tr" ? "tr" : "en"}
+    >
       <header className="mb-4 border-b-2 border-neutral-950 pb-3">
         <div className="flex items-end justify-between gap-5">
           <div className="min-w-0">

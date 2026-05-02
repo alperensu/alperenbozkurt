@@ -137,7 +137,7 @@ const en = {
         title: "UMAY Search & Rescue UAV",
         category: "AUTONOMOUS UAV SYSTEM",
         description:
-          "An autonomous hexacopter system with dual sensors (Thermal + RGB) and AI, providing aerial strategic support to search-and-rescue teams like AFAD and JAK.",
+          "An autonomous hexacopter system with dual sensors (Thermal + RGB) and AI, providing aerial strategic support to search-and-rescue teams like AFAD and JAK (Team Project).",
         techInfo:
           "Live target detection via YOLO-based image processing, Thermal and RGB camera fusion, autonomous route planning.",
         role: "Systems Engineering & Computer Vision — autonomous flight algorithms, sensor integration, and target detection.",
