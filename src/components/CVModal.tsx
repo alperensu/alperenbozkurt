@@ -16,15 +16,26 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
   useEffect(() => {
     setMounted(true);
     if (isOpen) {
-      document.body.style.overflow = "hidden";
-      document.body.style.paddingRight = "0px"; // Prevent layout shift
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflowY = "scroll"; // Keep scrollbar space
     } else {
-      document.body.style.overflow = "";
-      document.body.style.paddingRight = "";
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflowY = "";
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
     }
     return () => {
-      document.body.style.overflow = "";
-      document.body.style.paddingRight = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflowY = "";
     };
   }, [isOpen]);
 
