@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import AnimatedElement from "./AnimatedElement";
-import TerminalWidget from "./TerminalWidget";
+import TechCore from "./TechCore";
 import { useLanguage } from "@/context/LanguageContext";
 import tr from "@/locales/tr";
 import en from "@/locales/en";
@@ -121,9 +121,9 @@ export default function Hero() {
         <AnimatedElement
           delay={1.8}
           direction="right"
-          className="shrink-0"
+          className="w-full lg:w-1/2 flex justify-center"
         >
-          <TerminalWidget />
+          <TechCore />
         </AnimatedElement>
       </div>
 

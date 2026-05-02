@@ -16,7 +16,7 @@ const en = {
     h1_3: "",
     h1_4: "",
     subtitle:
-      "I am a solution-oriented developer combining AI-powered development (Vibe Coding) with modern software architectures to solve complex problems and deliver efficient results.",
+      "I am a solution-oriented developer combining AI-powered modern software development with advanced architectures to solve complex problems and deliver efficient results.",
     btnProjects: "Explore Projects",
     btnContact: "Get in Touch",
     scroll: "Scroll",
@@ -116,7 +116,7 @@ const en = {
           "Success projection (Linear Regression), burnout detector, ÖSYM-style question generation, and 99.9% AI service uptime.",
         expandedContent: [
           {
-            title: "Vibe Analytics",
+            title: "Advanced Analytics",
             desc: "30-day success projection via Linear Regression, burnout detection through speed-accuracy correlation, and time efficiency indexing.",
           },
           {
@@ -199,7 +199,7 @@ const en = {
   profile: {
     badge: "Developer Profile",
     title: "Software Development Approach",
-    bio: "I am a solution-oriented developer who combines AI-powered development (Vibe Coding) methodologies with modern software architectures. I focus on optimizing complex problems and producing efficient results in both high-level web technologies and low-level systems.",
+    bio: "I am a solution-oriented developer who combines AI-powered modern software development methodologies with current software architectures. I focus on optimizing complex problems and producing efficient results in both high-level web technologies and low-level systems.",
     experienceTitle: "Experience",
     educationTitle: "Education",
     skillsTitle: "Technical Skills",

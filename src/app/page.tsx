@@ -11,8 +11,8 @@ import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 
 // Dynamic imports for heavy client components (no SSR)
-const PremiumWebGLBackground = dynamic(
-  () => import("@/components/PremiumWebGLBackground"),
+const Scene3D = dynamic(
+  () => import("@/components/Scene3D"),
   { ssr: false }
 );
 const ClipIntro = dynamic(() => import("@/components/ClipIntro"), {
@@ -26,8 +26,8 @@ export default function Home() {
         {/* Clip-path intro overlay */}
         <ClipIntro />
 
-        {/* Premium WebGL background */}
-        <PremiumWebGLBackground />
+        {/* Premium 3D Background */}
+        <Scene3D />
 
         {/* Floating navbar */}
         <Navbar />

@@ -1,122 +1,93 @@
 "use client";
 
-export default function TechCore() {
+import React, { useRef, useEffect } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Float, MeshDistortMaterial, Sphere, MeshWobbleMaterial } from "@react-three/drei";
+import * as THREE from "three";
+import gsap from "gsap";
+
+function CoreGeometry() {
+  const meshRef = useRef<THREE.Mesh>(null!);
+
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
+    meshRef.current.rotation.x = time * 0.2;
+    meshRef.current.rotation.y = time * 0.3;
+  });
+
   return (
-    <div className="relative w-80 h-80 md:w-[420px] md:h-[420px] animate-float">
-      {/* Outer glow */}
-      <div className="absolute inset-0 rounded-full bg-linear-to-br from-orange-500/10 to-amber-500/10 blur-3xl" />
+    <group>
+      {/* Outer Glow Sphere */}
+      <Sphere args={[1.5, 64, 64]} scale={1.2}>
+        <MeshDistortMaterial
+          color="#0ea5e9"
+          speed={3}
+          distort={0.4}
+          transparent
+          opacity={0.1}
+          side={THREE.BackSide}
+        />
+      </Sphere>
 
-      {/* Ring 1 — Outer */}
-      <div className="absolute inset-4 rounded-full border border-white/10 animate-spin-slow">
-        {/* Orbital dots */}
-        <div
-          className="absolute w-2.5 h-2.5 rounded-full bg-orange-400 shadow-lg shadow-orange-400/50"
-          style={{ top: "0%", left: "50%", transform: "translate(-50%, -50%)" }}
+      {/* Main Core */}
+      <mesh ref={meshRef}>
+        <icosahedronGeometry args={[1, 15]} />
+        <MeshWobbleMaterial
+          color="#f97316" // Orange
+          speed={2}
+          factor={0.6}
+          roughness={0}
+          metalness={1}
         />
-        <div
-          className="absolute w-1.5 h-1.5 rounded-full bg-amber-400 shadow-lg shadow-amber-400/50"
-          style={{
-            bottom: "10%",
-            right: "5%",
-            transform: "translate(50%, 50%)",
-          }}
-        />
+      </mesh>
+
+      {/* Floating Rings */}
+      {[1.8, 2.2, 2.6].map((radius, i) => (
+        <mesh key={i} rotation={[Math.random(), Math.random(), 0]}>
+          <torusGeometry args={[radius, 0.01, 16, 100]} />
+          <meshBasicMaterial color="#38bdf8" transparent opacity={0.3} />
+        </mesh>
+      ))}
+    </group>
+  );
+}
+
+export default function TechCore() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      gsap.fromTo(
+        containerRef.current,
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 2, ease: "expo.out", delay: 1.5 }
+      );
+    }
+  }, []);
+
+  return (
+    <div ref={containerRef} className="relative w-full aspect-square max-w-[500px] mx-auto group opacity-0">
+      {/* Ambient background glow */}
+      <div className="absolute inset-0 bg-orange-500/10 blur-[100px] rounded-full group-hover:bg-orange-500/20 transition-colors duration-1000" />
+      
+      <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+        <ambientLight intensity={1} />
+        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+        <pointLight position={[-10, -10, -10]} intensity={2} color="#0ea5e9" />
+        <pointLight position={[10, 10, 10]} intensity={2} color="#f97316" />
+        
+        <Float speed={2} rotationIntensity={1.5} floatIntensity={2}>
+          <CoreGeometry />
+        </Float>
+      </Canvas>
+      
+      {/* Overlay labels/HUD-style elements for premium feel */}
+      <div className="absolute top-0 left-0 p-4 border-l border-t border-orange-500/30 rounded-tl-xl pointer-events-none">
+        <p className="text-[10px] text-orange-500/50 font-mono tracking-tighter uppercase">AI_CORE_ACTIVE</p>
       </div>
-
-      {/* Ring 2 — Middle */}
-      <div className="absolute inset-16 rounded-full border border-orange-500/ animate-spin-reverse">
-        <div
-          className="absolute w-2 h-2 rounded-full bg-orange-300 shadow-lg shadow-orange-300/60"
-          style={{
-            top: "50%",
-            right: "0%",
-            transform: "translate(50%, -50%)",
-          }}
-        />
-        <div
-          className="absolute w-1.5 h-1.5 rounded-full bg-purple-400 shadow-lg shadow-purple-400/50"
-          style={{
-            bottom: "0%",
-            left: "50%",
-            transform: "translate(-50%, 50%)",
-          }}
-        />
+      <div className="absolute bottom-0 right-0 p-4 border-r border-b border-cyan-500/30 rounded-br-xl pointer-events-none">
+        <p className="text-[10px] text-cyan-500/50 font-mono tracking-tighter uppercase">LLM_ENGINE_SYNCED</p>
       </div>
-
-      {/* Ring 3 — Inner */}
-      <div className="absolute inset-28 md:inset-32 rounded-full border border-amber-500/ animate-spin-slow" style={{ animationDuration: "12s" }}>
-        <div
-          className="absolute w-1.5 h-1.5 rounded-full bg-white shadow-lg shadow-white/50"
-          style={{
-            top: "0%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        />
-      </div>
-
-      {/* Center core */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-20 h-20 md:w-24 md:h-24">
-          {/* Core glow */}
-          <div className="absolute inset-0 rounded-full bg-linear-to-br from-orange-400 to-amber-600 animate-pulse-glow blur-xl" />
-          {/* Core shape */}
-          <div className="absolute inset-2 rounded-full bg-linear-to-br from-orange-400/80 to-amber-500/80 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-            <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-white/20 backdrop-blur-md" />
-          </div>
-        </div>
-      </div>
-
-      {/* Decorative arcs */}
-      <svg
-        className="absolute inset-0 w-full h-full animate-spin-slow"
-        style={{ animationDuration: "30s" }}
-        viewBox="0 0 400 400"
-        fill="none"
-      >
-        <path
-          d="M200 30 A170 170 0 0 1 370 200"
-          stroke="url(#arc-gradient)"
-          strokeWidth="1"
-          strokeLinecap="round"
-          opacity="0.3"
-        />
-        <defs>
-          <linearGradient id="arc-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#00d4ff" stopOpacity="0" />
-            <stop offset="50%" stopColor="#00d4ff" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#6366f1" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-
-      <svg
-        className="absolute inset-0 w-full h-full animate-spin-reverse"
-        style={{ animationDuration: "25s" }}
-        viewBox="0 0 400 400"
-        fill="none"
-      >
-        <path
-          d="M30 200 A170 170 0 0 1 200 370"
-          stroke="url(#arc-gradient-2)"
-          strokeWidth="1"
-          strokeLinecap="round"
-          opacity="0.2"
-        />
-        <defs>
-          <linearGradient
-            id="arc-gradient-2"
-            x1="0%"
-            y1="0%"
-            x2="100%"
-            y2="0%"
-          >
-            <stop offset="0%" stopColor="#6366f1" stopOpacity="0" />
-            <stop offset="50%" stopColor="#6366f1" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#00d4ff" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
     </div>
   );
 }

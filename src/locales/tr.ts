@@ -16,7 +16,7 @@ const tr = {
     h1_3: "",
     h1_4: "",
     subtitle:
-      "Yapay zeka destekli geliştirme (Vibe Coding) metodolojilerini modern yazılım mimarileriyle birleştiren, çözüm odaklı bir geliştiriciyim. Karmaşık problemleri optimize etmeye ve verimli sonuçlar üretmeye odaklanıyorum.",
+      "Yapay zeka destekli modern yazılım geliştirme metodolojilerini ileri düzey mimarilerle birleştiren, çözüm odaklı bir geliştiriciyim. Karmaşık problemleri optimize etmeye ve verimli sonuçlar üretmeye odaklanıyorum.",
     btnProjects: "Projeleri Keşfet",
     btnContact: "İletişime Geç",
     scroll: "Kaydır",
@@ -116,7 +116,7 @@ const tr = {
           "Başarı projeksiyonu (Linear Regression), tükenmişlik (burnout) detektörü, ÖSYM tarzı soru üretimi ve %99.9 AI servis devamlılığı.",
         expandedContent: [
           {
-            title: "Vibe Analytics",
+            title: "Advanced Analytics",
             desc: "Linear Regression ile 30 günlük başarı projeksiyonu, çözme hızı-doğruluk korelasyonuyla burnout tespiti ve zaman verimlilik indeksi.",
           },
           {
@@ -199,7 +199,7 @@ const tr = {
   profile: {
     badge: "Geliştirici Profili",
     title: "Yazılım Geliştirme Yaklaşımı",
-    bio: "Yapay zeka destekli geliştirme (Vibe Coding) metodolojilerini modern yazılım mimarileriyle birleştiren, çözüm odaklı bir geliştiriciyim. Karmaşık problemleri optimize etmeye ve hem yüksek seviyeli web teknolojilerinde hem de düşük seviyeli sistemlerde verimli sonuçlar üretmeye odaklanıyorum.",
+    bio: "Yapay zeka destekli modern yazılım geliştirme metodolojilerini güncel mimarilerle birleştiren, çözüm odaklı bir geliştiriciyim. Karmaşık problemleri optimize etmeye ve hem yüksek seviyeli web teknolojilerinde hem de düşük seviyeli sistemlerde verimli sonuçlar üretmeye odaklanıyorum.",
     experienceTitle: "Deneyim",
     educationTitle: "Eğitim",
     skillsTitle: "Teknik Yetenekler",
