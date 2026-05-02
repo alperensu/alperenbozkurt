@@ -16,7 +16,7 @@ const tr = {
     h1_3: "",
     h1_4: "",
     subtitle:
-      "Modern yazılım mimarilerini GEO (Generative Engine Optimization) ve kreatif vizyonla birleştiren, işletmeleri yapay zeka çağının yeni nesil arama motorlarına hazırlayan çok yönlü bir geliştiriciyim.",
+      "Yazılım dünyasına olan tutkumu, akademik bilgisayar programcılığı temellerim ve tam donanımlı bir full-stack geliştirici vizyonumla harmanlıyorum. Kod yazmanın ötesinde; grafik tasarım ve video kurgu gibi kreatif alanlarda projeler üretiyor, teknoloji dünyasındaki yenilikleri derinlemesine araştırıyorum. Disiplinimi ve enerjimi fitness ile koruyan, teknik mükemmeliyeti estetik bir bakış açısıyla birleştirerek her zaman daha yenilikçi ve optimize edilmiş çözümler üretmeyi hedefleyen çok yönlü bir geliştiriciyim.",
     btnProjects: "Projeleri Keşfet",
     btnContact: "İletişime Geç",
     scroll: "Kaydır",
@@ -199,7 +199,7 @@ const tr = {
   profile: {
     badge: "Geliştirici Profili",
     title: "Yazılım Geliştirme Yaklaşımı",
-    bio: "Yapay zeka destekli modern yazılım geliştirme metodolojilerini güncel mimarilerle birleştiren, çözüm odaklı bir geliştiriciyim. Karmaşık problemleri optimize etmeye ve hem yüksek seviyeli web teknolojilerinde hem de düşük seviyeli sistemlerde verimli sonuçlar üretmeye odaklanıyorum.",
+    bio: "Yazılım dünyasına olan tutkumu, bilgisayar programcılığı eğitimim ve full-stack geliştirici vizyonumla birleştiriyorum. Teknik yetkinliğimi grafik tasarım ve video kurgu gibi kreatif alanlarla harmanlıyor; fitness ve vücut geliştirme disipliniyle enerjimi her zaman yüksek tutuyorum. Hem teknik hem de estetik bakış açısına sahip bir geliştirici olarak, yenilikçi ve optimize edilmiş çözümler üretmeye odaklanıyorum.",
     experienceTitle: "Deneyim",
     educationTitle: "Eğitim",
     skillsTitle: "Teknik Yetenekler",

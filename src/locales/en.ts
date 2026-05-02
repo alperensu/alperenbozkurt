@@ -16,7 +16,7 @@ const en = {
     h1_3: "",
     h1_4: "",
     subtitle:
-      "I am a versatile developer blending modern software architectures with GEO (Generative Engine Optimization) and creative vision, preparing businesses for next-gen AI search engines.",
+      "I blend my passion for software with academic foundations in computer programming and a vision of becoming a comprehensive full-stack developer. Beyond code, I produce projects in creative fields like graphic design and video editing, while deeply researching technological innovations. Maintaining my discipline and energy through fitness, I aim to create innovative and optimized solutions by merging technical excellence with an aesthetic perspective.",
     btnProjects: "Explore Projects",
     btnContact: "Get in Touch",
     scroll: "Scroll",
@@ -199,7 +199,7 @@ const en = {
   profile: {
     badge: "Developer Profile",
     title: "Software Development Approach",
-    bio: "I am a solution-oriented developer who combines AI-powered modern software development methodologies with current software architectures. I focus on optimizing complex problems and producing efficient results in both high-level web technologies and low-level systems.",
+    bio: "I combine my passion for software with my computer programming education and a full-stack developer vision. I blend technical expertise with creative fields like graphic design and video editing, while maintaining high energy through fitness and bodybuilding discipline. As a developer with both technical and aesthetic perspectives, I focus on producing innovative and optimized solutions.",
     experienceTitle: "Experience",
     educationTitle: "Education",
     skillsTitle: "Technical Skills",
