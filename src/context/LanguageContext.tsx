@@ -20,7 +20,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const saved = localStorage.getItem("locale") as Locale | null;
     if (saved === "tr" || saved === "en") {
-      setLocale(saved);
+      const timeoutId = window.setTimeout(() => setLocale(saved), 0);
+      return () => window.clearTimeout(timeoutId);
     }
   }, []);
 

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import tr from "@/locales/tr";
 import en from "@/locales/en";
@@ -37,7 +36,7 @@ export default function Profile() {
             {/* Tech Stack Pills */}
             <AnimatedElement direction="up" delay={0.6}>
               <div className="flex flex-wrap gap-3">
-                {t.profile.skills.languages.split(', ').map((skill, i) => (
+                {t.profile.skills.languages.split(', ').map((skill) => (
                   <span 
                     key={skill} 
                     className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-sm font-medium text-white/70 hover:bg-white/10 hover:border-orange-500/30 transition-all duration-300"

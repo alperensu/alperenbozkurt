@@ -30,7 +30,7 @@ export default function VantaBackground() {
 
     let raf: number;
     let particles: Particle[] = [];
-    let mouse = { x: -9999, y: -9999 };
+    const mouse = { x: -9999, y: -9999 };
     let time = 0;
 
     // ── Sabitler ─────────────────────────────────────────────────────

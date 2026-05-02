@@ -33,24 +33,28 @@ export default function TerminalWidget() {
     let currentText = "";
     const fullText = codeLines.join("\n");
     let currentIndex = 0;
+    let timeoutId: ReturnType<typeof setTimeout>;
 
     const typeChar = () => {
       if (currentIndex < fullText.length) {
-        currentText += fullText[currentIndex];
+        const chunkSize = currentIndex % 9 === 0 ? 2 : 1;
+        currentText += fullText.slice(currentIndex, currentIndex + chunkSize);
         setDisplayedText(currentText);
-        currentIndex++;
+        currentIndex += chunkSize;
         
         // Randomize typing speed for realism
-        const delay = Math.random() * 30 + 10;
-        setTimeout(typeChar, delay);
+        const delay = Math.random() * 24 + 14;
+        timeoutId = setTimeout(typeChar, delay);
       } else {
         setIsTyping(false);
       }
     };
 
-    const timeout = setTimeout(typeChar, 1000);
-    return () => clearTimeout(timeout);
+    timeoutId = setTimeout(typeChar, 1000);
+    return () => clearTimeout(timeoutId);
   }, []);
+
+  const displayedLines = displayedText.split("\n");
 
   return (
     <div className="relative w-full max-w-lg mx-auto md:w-[450px]">
@@ -82,7 +86,7 @@ export default function TerminalWidget() {
         {/* Code Content */}
         <div className="p-5 font-mono text-sm leading-relaxed overflow-hidden h-[280px]">
           <div className="text-white/80 whitespace-pre">
-            {displayedText.split('\n').map((line, index) => {
+            {displayedLines.map((line, index) => {
               // Simple regex-based syntax highlighting for the typed text
               let highlightedLine = line;
               if (line.startsWith('//')) {
@@ -101,7 +105,7 @@ export default function TerminalWidget() {
               return (
                 <div key={index} className="min-h-[1.5em]">
                   <span dangerouslySetInnerHTML={{ __html: highlightedLine }} />
-                  {index === displayedText.split('\n').length - 1 && isTyping && (
+                  {index === displayedLines.length - 1 && isTyping && (
                     <motion.span 
                       animate={{ opacity: [1, 0] }} 
                       transition={{ repeat: Infinity, duration: 0.8 }}

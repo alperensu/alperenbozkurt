@@ -70,8 +70,6 @@ export default function Marquee() {
                   className="shrink-0 w-72 rounded-2xl p-6 transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1.5 group"
                   style={{
                     background: "rgba(255, 255, 255, 0.04)",
-                    backdropFilter: "blur(20px)",
-                    WebkitBackdropFilter: "blur(20px)",
                     border: "1px solid rgba(255, 255, 255, 0.08)",
                   }}
                 >

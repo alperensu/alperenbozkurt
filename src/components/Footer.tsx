@@ -24,9 +24,10 @@ export default function Footer() {
     <footer className="relative py-16 px-6 md:px-16 lg:px-24 border-t border-white/10">
       <div className="max-w-7xl mx-auto" ref={ref}>
         <motion.div
-          initial={{ y: 40, opacity: 0, filter: "blur(6px)" }}
-          animate={isInView ? { y: 0, opacity: 1, filter: "blur(0px)" } : {}}
-          transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
+          initial={{ y: 28, opacity: 0 }}
+          animate={isInView ? { y: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
+          className="motion-smooth"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             {/* Brand */}
@@ -61,7 +62,7 @@ export default function Footer() {
                   transition={{
                     duration: 0.6,
                     delay: 0.2 + index * 0.1,
-                    ease: [0.4, 0, 0.2, 1],
+                    ease: [0.16, 1, 0.3, 1],
                   }}
                   className="w-11 h-11 rounded-xl flex items-center justify-center bg-white/10 border border-white/10 text-white/40 hover:text-white hover:bg-white/15 hover:border-orange-500/30 hover:-translate-y-1 transition-all duration-500"
                   aria-label={link.label}

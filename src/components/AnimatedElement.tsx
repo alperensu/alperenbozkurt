@@ -15,7 +15,7 @@ interface AnimatedElementProps {
 export default function AnimatedElement({
   children,
   delay = 0,
-  duration = 0.9,
+  duration = 0.75,
   direction = "up",
   className = "",
   once = true,
@@ -24,10 +24,10 @@ export default function AnimatedElement({
   const isInView = useInView(ref, { once, margin: "-60px" });
 
   const directionMap: Record<string, { x?: number; y?: number }> = {
-    up: { y: 60 },
-    down: { y: -60 },
-    left: { x: 60 },
-    right: { x: -60 },
+    up: { y: 34 },
+    down: { y: -34 },
+    left: { x: 34 },
+    right: { x: -34 },
     none: {},
   };
 
@@ -36,14 +36,12 @@ export default function AnimatedElement({
   const hidden: Variant = {
     ...offset,
     opacity: 0,
-    filter: "blur(6px)",
   };
 
   const visible: Variant = {
     x: 0,
     y: 0,
     opacity: 1,
-    filter: "blur(0px)",
   };
 
   return (
@@ -54,9 +52,9 @@ export default function AnimatedElement({
       transition={{
         duration,
         delay,
-        ease: [0.4, 0, 0.2, 1] as const,
+        ease: [0.16, 1, 0.3, 1] as const,
       }}
-      className={className}
+      className={`motion-smooth ${className}`}
     >
       {children}
     </motion.div>

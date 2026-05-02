@@ -37,17 +37,15 @@ export default function ScrollTextReveal({
 
   const wordVariants = {
     hidden: {
-      y: 24,
+      y: 18,
       opacity: 0,
-      filter: "blur(4px)",
     },
     visible: {
       y: 0,
       opacity: 1,
-      filter: "blur(0px)",
       transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1] as const,
+        duration: 0.52,
+        ease: [0.16, 1, 0.3, 1] as const,
       },
     },
   };
@@ -65,7 +63,7 @@ export default function ScrollTextReveal({
           <motion.span
             key={`${word}-${index}`}
             variants={wordVariants}
-            className="inline-block mr-[0.3em]"
+            className="motion-smooth inline-block mr-[0.3em]"
           >
             {word}
           </motion.span>

@@ -26,7 +26,7 @@ export default function CyberBackground() {
     const numNodes = 70;
     const maxDistance = 150;
     let scrollY = 0;
-    let mouse = { x: -1000, y: -1000 };
+    const mouse = { x: -1000, y: -1000 };
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;

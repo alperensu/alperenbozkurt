@@ -19,9 +19,21 @@ export default function Navbar() {
   ];
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (ticking) return;
+
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        setScrolled((current) => {
+          const next = window.scrollY > 50;
+          return current === next ? current : next;
+        });
+      });
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -35,9 +47,9 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0, filter: "blur(8px)" }}
-      animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-      transition={{ duration: 0.9, delay: 1.2, ease: [0.4, 0, 0.2, 1] }}
+      initial={{ y: -42, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.72, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 px-2 py-2 rounded-full transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${
         scrolled
           ? "bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/40"
@@ -67,7 +79,7 @@ export default function Navbar() {
           transition={{
             duration: 0.5,
             delay: 1.4 + index * 0.08,
-            ease: [0.4, 0, 0.2, 1],
+            ease: [0.16, 1, 0.3, 1],
           }}
           onClick={() => scrollTo(link.href)}
           className="px-4 py-2 text-sm font-medium text-white/60 hover:text-white rounded-full hover:bg-white/10 transition-all duration-500"
@@ -80,7 +92,7 @@ export default function Navbar() {
       <motion.button
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 1.8, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.5, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
         onClick={toggleLocale}
         className="px-3 py-1.5 text-xs font-bold rounded-full border border-white/10 text-white/50 hover:text-white hover:border-orange-500/40 hover:bg-orange-500/10 transition-all duration-500 ml-1"
         aria-label="Toggle language"
@@ -92,7 +104,7 @@ export default function Navbar() {
       <motion.a
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 1.9, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.5, delay: 1.9, ease: [0.16, 1, 0.3, 1] }}
         href="mailto:alperenbozkurt.iletisim@gmail.com"
         className="ml-2 px-5 py-2 text-sm font-semibold rounded-full bg-linear-to-r from-orange-500 to-amber-500 text-white hover:from-orange-400 hover:to-amber-400 transition-all duration-500 hover:shadow-lg hover:shadow-orange-500/25"
       >

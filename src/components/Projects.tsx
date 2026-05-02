@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import AnimatedElement from "./AnimatedElement";
 import ScrollTextReveal from "./ScrollTextReveal";
@@ -355,7 +355,7 @@ function ProjectSection({
                     <span>{isOpen ? t.projects.hideDetails : t.projects.showDetails}</span>
                     <motion.div
                       animate={{ rotate: isOpen ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
                       className="w-5 h-5 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-white/30"
                     >
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -367,24 +367,26 @@ function ProjectSection({
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-                        className="overflow-hidden"
+                        initial={{ gridTemplateRows: "0fr", opacity: 0 }}
+                        animate={{ gridTemplateRows: "1fr", opacity: 1 }}
+                        exit={{ gridTemplateRows: "0fr", opacity: 0 }}
+                        transition={{ duration: 0.46, ease: [0.16, 1, 0.3, 1] }}
+                        className="grid overflow-hidden"
                       >
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 pt-6 border-t border-white/5">
-                          {text.expandedContent.map((item, idx) => (
-                            <div key={idx} className="p-4 rounded-xl bg-white/10 border border-white/10">
-                              <div className="flex items-center gap-2 mb-2">
-                                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: meta.accentColor }} />
-                                <h4 className="text-sm font-bold text-white/90">{item.title}</h4>
+                        <div className="min-h-0 overflow-hidden">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 pt-6 border-t border-white/5">
+                            {text.expandedContent.map((item, idx) => (
+                              <div key={idx} className="p-4 rounded-xl bg-white/10 border border-white/10">
+                                <div className="flex items-center gap-2 mb-2">
+                                  <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: meta.accentColor }} />
+                                  <h4 className="text-sm font-bold text-white/90">{item.title}</h4>
+                                </div>
+                                <p className="text-xs text-white/40 leading-relaxed pl-3.5">
+                                  {item.desc}
+                                </p>
                               </div>
-                              <p className="text-xs text-white/40 leading-relaxed pl-3.5">
-                                {item.desc}
-                              </p>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
                         </div>
                       </motion.div>
                     )}

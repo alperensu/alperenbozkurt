@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type MouseEvent, type ReactNode } from "react";
+import { useRef, type CSSProperties, type MouseEvent, type ReactNode } from "react";
 
 interface FlashlightCardProps {
   children: ReactNode;
@@ -12,61 +12,43 @@ export default function FlashlightCard({
   className = "",
 }: FlashlightCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
+  const frameRef = useRef<number | null>(null);
+  const pointerRef = useRef({ x: 0, y: 0 });
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
+
     const rect = cardRef.current.getBoundingClientRect();
-    setMousePos({
+    pointerRef.current = {
       x: e.clientX - rect.left,
       y: e.clientY - rect.top,
+    };
+
+    if (frameRef.current) return;
+
+    frameRef.current = requestAnimationFrame(() => {
+      frameRef.current = null;
+      if (!cardRef.current) return;
+
+      cardRef.current.style.setProperty("--spotlight-x", `${pointerRef.current.x}px`);
+      cardRef.current.style.setProperty("--spotlight-y", `${pointerRef.current.y}px`);
     });
   };
+
+  const style = {
+    "--spotlight-x": "50%",
+    "--spotlight-y": "50%",
+  } as CSSProperties;
 
   return (
     <div
       ref={cardRef}
-      className={`relative overflow-hidden rounded-2xl transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] ${className}`}
+      className={`flashlight-card relative overflow-hidden rounded-2xl ${className}`}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{
-        background: "rgba(255, 255, 255, 0.04)",
-        backdropFilter: "blur(24px)",
-        WebkitBackdropFilter: "blur(24px)",
-        border: "1px solid rgba(255, 255, 255, 0.08)",
-        transform: isHovered ? "translateY(-4px)" : "translateY(0px)",
-        boxShadow: isHovered
-          ? "0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(249, 115, 22, 0.06)"
-          : "0 0 0 rgba(0, 0, 0, 0)",
-      }}
+      style={style}
     >
-      {/* Flashlight glow on background */}
-      <div
-        className="absolute inset-0 pointer-events-none transition-opacity duration-600 rounded-2xl"
-        style={{
-          opacity: isHovered ? 1 : 0,
-          background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(249, 115, 22, 0.1), transparent 40%)`,
-        }}
-      />
-
-      {/* Flashlight glow on border */}
-      <div
-        className="absolute inset-0 pointer-events-none transition-opacity duration-600 rounded-2xl"
-        style={{
-          opacity: isHovered ? 1 : 0,
-          background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(249, 115, 22, 0.25), transparent 40%)`,
-          mask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-          maskComposite: "exclude",
-          WebkitMask:
-            "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-          WebkitMaskComposite: "xor",
-          padding: "1px",
-        }}
-      />
-
-      {/* Content */}
+      <div className="flashlight-card__glow absolute inset-0 pointer-events-none rounded-2xl" />
+      <div className="flashlight-card__border absolute inset-0 pointer-events-none rounded-2xl" />
       <div className="relative z-10">{children}</div>
     </div>
   );

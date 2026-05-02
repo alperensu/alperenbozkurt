@@ -19,8 +19,8 @@ function useCountUp(target: number, duration: number = 1800, active: boolean = t
 
   useEffect(() => {
     if (!active || target === 0) return;
-    let start = 0;
     const startTime = performance.now();
+    let frameId = 0;
 
     const tick = (now: number) => {
       const elapsed = now - startTime;
@@ -29,10 +29,12 @@ function useCountUp(target: number, duration: number = 1800, active: boolean = t
       const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       const current = Math.round(eased * target);
       setCount(current);
-      if (progress < 1) requestAnimationFrame(tick);
+      if (progress < 1) frameId = requestAnimationFrame(tick);
     };
 
-    requestAnimationFrame(tick);
+    frameId = requestAnimationFrame(tick);
+
+    return () => cancelAnimationFrame(frameId);
   }, [target, duration, active]);
 
   return count;

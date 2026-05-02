@@ -28,18 +28,18 @@ function WordReveal({
       {words.map((word, i) => (
         <motion.span
           key={`${word}-${i}`}
-          initial={{ y: 24, opacity: 0, filter: "blur(4px)" }}
+          initial={{ y: 18, opacity: 0 }}
           animate={
             isInView
-              ? { y: 0, opacity: 1, filter: "blur(0px)" }
-              : { y: 24, opacity: 0, filter: "blur(4px)" }
+              ? { y: 0, opacity: 1 }
+              : { y: 18, opacity: 0 }
           }
           transition={{
-            duration: 0.6,
+            duration: 0.52,
             delay: delay + i * 0.05,
-            ease: [0.4, 0, 0.2, 1],
+            ease: [0.16, 1, 0.3, 1],
           }}
-          className={`inline-block mr-[0.3em] ${gradient || ""}`}
+          className={`motion-smooth inline-block mr-[0.3em] ${gradient || ""}`}
         >
           {word}
         </motion.span>
@@ -68,7 +68,7 @@ export default function Hero() {
           </AnimatedElement>
 
           <div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.08] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.08] tracking-tight">
               <WordReveal delay={1.6} className="text-white">
                 {t.hero.h1_1}
               </WordReveal>

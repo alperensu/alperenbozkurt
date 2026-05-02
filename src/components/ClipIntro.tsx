@@ -37,14 +37,14 @@ export default function ClipIntro() {
         {/* Intro content */}
         <motion.div
           className="text-center"
-          initial={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
-          animate={{ scale: 0.9, filter: "blur(6px)", opacity: 0 }}
-          transition={{ duration: 1.0, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
+          initial={{ scale: 1, opacity: 1 }}
+          animate={{ scale: 0.94, opacity: 0 }}
+          transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.div
-            initial={{ y: 30, filter: "blur(8px)", opacity: 0 }}
-            animate={{ y: 0, filter: "blur(0px)", opacity: 1 }}
-            transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+            initial={{ y: 24, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.62, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-center gap-4"
           >
             <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-vibrant-orange to-sunset-amber flex items-center justify-center text-2xl font-bold text-white">

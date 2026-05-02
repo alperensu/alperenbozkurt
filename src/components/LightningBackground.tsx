@@ -26,7 +26,7 @@ export default function LightningBackground() {
     if (!ctx) return;
 
     let animationFrameId: number;
-    let strikes: Strike[] = [];
+    const strikes: Strike[] = [];
     let lastStrikeTime = 0;
 
     const resizeCanvas = () => {
