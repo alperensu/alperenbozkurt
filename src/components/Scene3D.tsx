@@ -2,9 +2,8 @@
 
 import React, { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Points, PointMaterial, Float, useAspect } from "@react-three/drei";
+import { Points, PointMaterial, Float } from "@react-three/drei";
 import * as THREE from "three";
-import gsap from "gsap";
 
 /**
  * High-performance Particle System Component
@@ -12,10 +11,10 @@ import gsap from "gsap";
  */
 function ParticleCloud({ count = 2500 }) {
   const pointsRef = useRef<THREE.Points>(null!);
-  const { mouse, viewport } = useThree();
+  const { mouse } = useThree();
   
-  // Create static buffer data
-  const positions = useMemo(() => {
+  // Create static buffer data - use state initializer to satisfy purity rules
+  const [positions] = useState(() => {
     const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       pos[i * 3] = (Math.random() - 0.5) * 15;
@@ -23,7 +22,7 @@ function ParticleCloud({ count = 2500 }) {
       pos[i * 3 + 2] = (Math.random() - 0.5) * 15;
     }
     return pos;
-  }, [count]);
+  });
 
   // Handle smooth mouse parallax
   const targetX = useRef(0);
@@ -76,7 +75,7 @@ function InterconnectedNodes({ nodeCount = 40 }) {
   const { mouse } = useThree();
   const dummy = useMemo(() => new THREE.Object3D(), []);
   
-  const nodes = useMemo(() => {
+  const [nodes] = useState(() => {
     const temp = [];
     for (let i = 0; i < nodeCount; i++) {
       temp.push({
@@ -90,7 +89,7 @@ function InterconnectedNodes({ nodeCount = 40 }) {
       });
     }
     return temp;
-  }, [nodeCount]);
+  });
 
   useFrame((state) => {
     const time = state.clock.getElapsedTime();
