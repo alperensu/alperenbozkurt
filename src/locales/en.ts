@@ -199,14 +199,14 @@ const en = {
   profile: {
     badge: "Developer Profile",
     title: "Software Development Approach",
-    bio: "I combine my passion for software with my computer programming education and a full-stack developer vision. I blend technical expertise with creative fields like graphic design and video editing, while maintaining high energy through fitness and bodybuilding discipline. As a developer with both technical and aesthetic perspectives, I focus on producing innovative and optimized solutions.",
-    experienceTitle: "Experience",
+    bio: "I combine my passion for the software world with my computer programming education and a vision of becoming a fully-equipped full-stack developer. I specialize in AI integration, financial data analytics, and the development of high-performance web applications. While I engage in visual storytelling with Premiere Pro and After Effects on the creative side, I create added value on the technical side with the modern JavaScript ecosystem and machine learning models. I always aim to produce more innovative, optimized, and aesthetic solutions.",
+    experienceTitle: "Work Experience",
     educationTitle: "Education",
-    skillsTitle: "Technical Skills",
+    skillsTitle: "Technical Expertise",
     techStudio: {
-      role: "Embedded Systems Intern",
-      duration: "9 Months",
-      desc: "Work process focused on hardware and software integration. Practical experience in low-level system architectures and optimization.",
+      role: "Full-Stack Developer",
+      duration: "2023 - Present",
+      desc: "Developing end-to-end enterprise solutions using modern web technologies (React 19, Next.js 15, Node.js). Optimizing data processing workflows with microservices architecture, RESTful API design, and database management. Prioritizing User Experience (UX) through interface performance optimizations and scalable architectural designs.",
     },
     pamukkale: {
       school: "Pamukkale University",
@@ -219,9 +219,9 @@ const en = {
       status: "Graduate",
     },
     skills: {
-      languages: "React, React Native, TypeScript, Node.js, C#, Python, SQL",
-      ai: "AI-Powered Development (Cursor, Windsurf)",
-      multimedia: "Adobe Premiere, After Effects, Photoshop, Illustrator",
+      languages: "TypeScript, JavaScript, Python, Node.js, React 19, Next.js 15, MySQL, PostgreSQL, Redis, Tailwind CSS v4",
+      ai: "Generative Engine Optimization (GEO), LLM Integration (OpenAI, Gemini), Machine Learning (Scikit-learn, LightGBM), Prompt Engineering",
+      multimedia: "Adobe Premiere Pro, After Effects, Photoshop, Illustrator, Visual Storytelling, Video Editing & Motion Graphics",
     }
   },
 };

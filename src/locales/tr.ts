@@ -199,14 +199,14 @@ const tr = {
   profile: {
     badge: "Geliştirici Profili",
     title: "Yazılım Geliştirme Yaklaşımı",
-    bio: "Yazılım dünyasına olan tutkumu, bilgisayar programcılığı eğitimim ve full-stack geliştirici vizyonumla birleştiriyorum. Teknik yetkinliğimi grafik tasarım ve video kurgu gibi kreatif alanlarla harmanlıyor; fitness ve vücut geliştirme disipliniyle enerjimi her zaman yüksek tutuyorum. Hem teknik hem de estetik bakış açısına sahip bir geliştirici olarak, yenilikçi ve optimize edilmiş çözümler üretmeye odaklanıyorum.",
-    experienceTitle: "Deneyim",
+    bio: "Yazılım dünyasına olan tutkumu, bilgisayar programcılığı eğitimim ve tam donanımlı bir full-stack geliştirici olma vizyonumla birleştiriyorum. Özellikle AI entegrasyonu, finansal veri analitiği ve yüksek performanslı web uygulamaları geliştirme konusunda uzmanlaşıyorum. Kreatif tarafta Premiere Pro ve After Effects ile görsel hikaye anlatıcılığı yaparken, teknik tarafta modern JavaScript ekosistemi ve makine öğrenimi modelleriyle katma değer üretiyorum. Her zaman daha yenilikçi, optimize edilmiş ve estetik çözümler üretmeyi hedefliyorum.",
+    experienceTitle: "İş Deneyimi",
     educationTitle: "Eğitim",
-    skillsTitle: "Teknik Yetenekler",
+    skillsTitle: "Teknik Yetkinlikler",
     techStudio: {
-      role: "Gömülü Sistemler Stajyeri",
-      duration: "9 Ay",
-      desc: "Donanım ve yazılım entegrasyonu üzerine yoğunlaşan çalışma süreci. Düşük seviyeli sistem mimarileri ve optimizasyon üzerine pratik deneyim.",
+      role: "Full-Stack Developer",
+      duration: "2023 - Günümüz",
+      desc: "Modern web teknolojileri (React 19, Next.js 15, Node.js) kullanarak uçtan uca kurumsal çözümler geliştirme. Mikroservis mimarisi ile veri işleme süreçlerini optimize etme, RESTful API tasarımı ve veritabanı yönetimi. Kullanıcı deneyimini (UX) önceliklendirerek arayüz performansını artıran optimizasyon çalışmaları ve ölçeklenebilir mimari tasarımları.",
     },
     pamukkale: {
       school: "Pamukkale Üniversitesi",
@@ -219,9 +219,9 @@ const tr = {
       status: "Mezun",
     },
     skills: {
-      languages: "React, React Native, TypeScript, Node.js, C#, Python, SQL",
-      ai: "AI Geliştirme (Cursor, Windsurf)",
-      multimedia: "Adobe Premiere, After Effects, Photoshop, Illustrator",
+      languages: "TypeScript, JavaScript, Python, Node.js, React 19, Next.js 15, MySQL, PostgreSQL, Redis, Tailwind CSS v4",
+      ai: "Generative Engine Optimization (GEO), LLM Integration (OpenAI, Gemini), Machine Learning (Scikit-learn, LightGBM), Prompt Engineering",
+      multimedia: "Adobe Premiere Pro, After Effects, Photoshop, Illustrator, Visual Storytelling, Video Editing & Motion Graphics",
     }
   },
 };
