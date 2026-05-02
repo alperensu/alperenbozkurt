@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import CVDocument from "./CVDocument";
 
@@ -10,94 +11,104 @@ interface CVModalProps {
 }
 
 export default function CVModal({ isOpen, onClose }: CVModalProps) {
-  // Prevent scrolling when modal is open
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     if (isOpen) {
-      document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = "0px"; // Prevent layout shift
     } else {
-      document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
     }
     return () => {
-      document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
     };
   }, [isOpen]);
+
+  if (!mounted) return null;
 
   const handlePrint = () => {
     window.print();
   };
 
-  return (
+  const modalContent = (
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Print-specific Styles */}
+          {/* Global Print & Scroll Styles */}
           <style jsx global>{`
             @media print {
-              /* Hide everything by default */
-              body * {
+              body, html {
                 visibility: hidden !important;
+                height: auto !important;
                 overflow: visible !important;
               }
-              /* Show only the CV area */
-              #cv-print-section, #cv-print-section * {
-                visibility: visible !important;
+              #cv-portal-root * {
+                visibility: hidden !important;
               }
-              #cv-print-section {
+              #cv-printable-area, #cv-printable-area * {
+                visibility: visible !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+              }
+              #cv-printable-area {
                 position: absolute !important;
                 left: 0 !important;
                 top: 0 !important;
                 width: 100% !important;
                 margin: 0 !important;
                 padding: 0 !important;
-                background: white !important;
               }
-              /* Remove extra pages/margins */
-              @page {
-                margin: 0;
-                size: auto;
-              }
-              /* Hide modal UI during print */
               .no-print {
                 display: none !important;
               }
             }
+            .cv-modal-overlay {
+              position: fixed !important;
+              inset: 0 !important;
+              z-index: 999999 !important;
+              background: rgba(0, 0, 0, 0.95) !important;
+              backdrop-filter: blur(16px) !important;
+              overflow-y: auto !important;
+              display: flex !important;
+              flex-direction: column !important;
+              align-items: center !important;
+              padding: 40px 20px !important;
+            }
           `}</style>
 
-          <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-start overflow-y-auto bg-black/95 backdrop-blur-xl py-8 md:py-16">
-            {/* Backdrop Close Handler */}
-            <div className="fixed inset-0 -z-10" onClick={onClose} />
-
-            {/* Toolbar - Floating or Sticky */}
-            <div className="w-full max-w-5xl px-4 mb-6 flex justify-end gap-3 no-print">
+          <div id="cv-portal-root" className="cv-modal-overlay no-print" onClick={onClose}>
+            {/* Toolbar */}
+            <div className="w-full max-w-5xl flex justify-end gap-4 mb-8 sticky top-0 z-[1000000]" onClick={(e) => e.stopPropagation()}>
               <button
                 onClick={handlePrint}
-                className="flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-400 text-white text-sm font-bold rounded-xl shadow-lg transition-all active:scale-95"
+                className="flex items-center gap-3 px-8 py-4 bg-orange-500 hover:bg-orange-400 text-white font-bold rounded-2xl shadow-2xl transition-all active:scale-95"
               >
-                <iconify-icon icon="mdi:printer" />
-                Print / Save PDF
+                <iconify-icon icon="mdi:printer" width="24" height="24" />
+                PRINT / SAVE AS PDF
               </button>
               <button
                 onClick={onClose}
-                className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 text-white transition-all active:scale-95 border border-white/10"
+                className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all"
               >
-                <iconify-icon icon="mdi:close" width="28" height="28" />
+                <iconify-icon icon="mdi:close" width="32" height="32" />
               </button>
             </div>
 
-            {/* CV Document Wrapper */}
+            {/* Document Container */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 30 }}
-              id="cv-print-section"
-              className="relative w-full max-w-5xl bg-white shadow-2xl rounded-sm md:rounded-lg overflow-hidden"
+              initial={{ opacity: 0, scale: 0.9, y: 40 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 40 }}
+              onClick={(e) => e.stopPropagation()}
+              id="cv-printable-area"
+              className="relative w-full max-w-[210mm] bg-white shadow-[0_0_100px_rgba(0,0,0,0.5)] rounded-lg overflow-hidden"
             >
-              {/* Internal horizontal scroll for mobile if document is min-w-800 */}
-              <div className="overflow-x-auto overflow-y-visible">
-                <div className="min-w-[800px] mx-auto">
+              <div className="overflow-x-auto">
+                <div className="min-w-[800px]">
                   <CVDocument />
                 </div>
               </div>
@@ -107,4 +118,6 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
       )}
     </AnimatePresence>
   );
+
+  return createPortal(modalContent, document.body);
 }
