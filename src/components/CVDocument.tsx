@@ -2,8 +2,13 @@
 
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import tr from "@/locales/tr";
+import en from "@/locales/en";
 
-const cvContent = {
+/* ──────────────────────────────────────────
+   Static CV data (non-project sections)
+   ────────────────────────────────────────── */
+const cvStatic = {
   tr: {
     title: "Full-Stack Developer | AI & Data-Driven Products",
     location: "Denizli, Turkiye",
@@ -30,36 +35,6 @@ const cvContent = {
         "AI destekli otomasyon, veri analitigi ve raporlama is akislariyla manuel operasyonlari azaltan cozumer uretti.",
       ],
     },
-    projects: [
-      {
-        name: "VibeFlow",
-        type: "Open Source Developer Tool",
-        impact:
-          "AI coding ajanlari icin local context optimization sidecar; repo izleme, semantik budama ve model-ready context uretimiyle token kullanimini azaltir.",
-        tech: "Python, FastAPI, tree-sitter, ChromaDB, Watchdog",
-      },
-      {
-        name: "VibeKoc",
-        type: "AI Education SaaS",
-        impact:
-          "Ogrenci performansini analiz eden, soru ureten, kocluk yapan ve gamification akislariyla calisma surecini kisisellestiren EdTech platformu.",
-        tech: "React 19, Node.js, TypeScript, MySQL, Redis, Socket.io, Gemini/OpenAI",
-      },
-      {
-        name: "Borsa Analiz Botu",
-        type: "AI-Powered Finance Platform",
-        impact:
-          "BIST hisseleri icin teknik indikatorler, ML pipeline ve sinyal uretimiyle karar destek dashboardu gelistirildi.",
-        tech: "Python, LightGBM, Pandas, Scikit-learn, React, FastAPI",
-      },
-      {
-        name: "UMAY Search & Rescue UAV",
-        type: "Autonomous UAV System",
-        impact:
-          "Arama-kurtarma senaryolari icin termal/RGB goruntu isleme, hedef tespiti ve otonom gorev akisi uzerine prototip calismasi.",
-        tech: "Python, OpenCV, YOLOv8, ROS, ArduPilot",
-      },
-    ],
     education: [
       ["Pamukkale University", "Computer Programming", "Ongoing"],
       ["Orhan Abalioglu MTAL", "Software Development", "Graduate"],
@@ -98,36 +73,6 @@ const cvContent = {
         "Delivered AI-assisted automation, data analytics, and reporting workflows that reduce manual operations.",
       ],
     },
-    projects: [
-      {
-        name: "VibeFlow",
-        type: "Open Source Developer Tool",
-        impact:
-          "Local context optimization sidecar for AI coding agents; watches repositories, prunes context semantically, and prepares model-ready prompts to reduce token usage.",
-        tech: "Python, FastAPI, tree-sitter, ChromaDB, Watchdog",
-      },
-      {
-        name: "VibeKoc",
-        type: "AI Education SaaS",
-        impact:
-          "EdTech platform that analyzes student performance, generates questions, provides AI coaching, and personalizes study flows through gamification.",
-        tech: "React 19, Node.js, TypeScript, MySQL, Redis, Socket.io, Gemini/OpenAI",
-      },
-      {
-        name: "Stock Analysis Bot",
-        type: "AI-Powered Finance Platform",
-        impact:
-          "Decision-support dashboard for BIST stocks using technical indicators, ML pipelines, and automated signal generation.",
-        tech: "Python, LightGBM, Pandas, Scikit-learn, React, FastAPI",
-      },
-      {
-        name: "UMAY Search & Rescue UAV",
-        type: "Autonomous UAV System",
-        impact:
-          "Prototype work on thermal/RGB computer vision, target detection, and autonomous mission flow for search-and-rescue scenarios.",
-        tech: "Python, OpenCV, YOLOv8, ROS, ArduPilot",
-      },
-    ],
     education: [
       ["Pamukkale University", "Computer Programming", "Ongoing"],
       ["Orhan Abalioglu MTAL", "Software Development", "Graduate"],
@@ -142,6 +87,18 @@ const cvContent = {
   },
 } as const;
 
+/* ──────────────────────────────────────────
+   Helper: derive CV projects from locale
+   ────────────────────────────────────────── */
+function deriveProjects(localeData: typeof tr | typeof en) {
+  return localeData.projects.items.map((item) => ({
+    name: item.title,
+    type: item.category,
+    impact: item.description,
+    tech: item.techInfo,
+  }));
+}
+
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <h2 className="mb-2 border-b border-neutral-900 pb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-neutral-900">
@@ -152,7 +109,9 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 
 export default function CVDocument() {
   const { locale } = useLanguage();
-  const cv = locale === "tr" ? cvContent.tr : cvContent.en;
+  const cv = locale === "tr" ? cvStatic.tr : cvStatic.en;
+  const localeData = locale === "tr" ? tr : en;
+  const projects = deriveProjects(localeData);
 
   return (
     <div className="cv-document w-[210mm] min-h-[297mm] bg-white px-[13mm] py-[12mm] mx-auto shadow-2xl print:shadow-none print:m-0 font-sans text-neutral-950">
@@ -204,7 +163,7 @@ export default function CVDocument() {
         <section>
           <SectionTitle>{cv.sections.projects}</SectionTitle>
           <div className="grid grid-cols-1 gap-2.5">
-            {cv.projects.map((project) => (
+            {projects.map((project) => (
               <div key={project.name} className="break-inside-avoid">
                 <div className="flex justify-between gap-4">
                   <h3 className="min-w-0 text-[12px] font-bold">{project.name}</h3>
