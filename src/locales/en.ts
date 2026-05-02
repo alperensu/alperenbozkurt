@@ -191,6 +191,35 @@ const en = {
           },
         ],
       },
+      {
+        title: "Flowy",
+        category: "MUSIC STREAMING APP",
+        description:
+          "A web and desktop-focused music streaming application that delivers a modern listening experience powered by YouTube. It combines a premium Spotify-like interface with Electron support to offer both browser and desktop usage from a single codebase.",
+        techInfo:
+          "Next.js, Electron, React 19, Tailwind CSS, Framer Motion, YouTube search/playback flow, and client-side player control architecture.",
+        role: "Product design and development - player experience, UI architecture, desktop wrapper integration, and music discovery flows.",
+        result:
+          "A dark-themed, performance-oriented music app that ships both web and desktop experiences from one codebase.",
+        expandedContent: [
+          {
+            title: "Cross-Platform Experience",
+            desc: "Combines a Next.js interface with Electron to unify browser and native desktop usage in one product experience.",
+          },
+          {
+            title: "Modern Player UI",
+            desc: "Provides a full-screen player, bottom playback bar, library structure, and fluid interfaces that feel like a premium music app.",
+          },
+          {
+            title: "YouTube-Powered Catalog Flow",
+            desc: "Integrates YouTube-based search and playback logic into the app flow to access a broad music catalog.",
+          },
+          {
+            title: "Discovery and Mixes",
+            desc: "Builds sticky user flows through daily mixes, recommendations, and library-first navigation patterns.",
+          },
+        ],
+      },
     ],
     labels: {
       techStack: "TECH STACK",

@@ -71,6 +71,21 @@ const projectMeta = [
     icon: "mdi:source-branch",
     images: null,
   },
+  {
+    id: 5,
+    status: "OPEN SOURCE",
+    statusColor: "#14b8a6",
+    dateRange: "2026 - Present",
+    techStack: ["Next.js", "Electron", "YouTube", "Tailwind CSS", "Framer Motion"],
+    accentColor: "#14b8a6",
+    link: "https://github.com/alperensu/flowy",
+    icon: "mdi:music-circle-outline",
+    images: {
+      main: getAssetPath("/projects/flowy/flowy_desktop.png"),
+      side: getAssetPath("/projects/flowy/flowy_mobile.png"),
+      hasPhoneMockup: true,
+    },
+  },
 ];
 
 const freelanceScripts = [

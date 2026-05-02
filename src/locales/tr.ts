@@ -191,6 +191,35 @@ const tr = {
           },
         ],
       },
+      {
+        title: "Flowy",
+        category: "MUSIC STREAMING APP",
+        description:
+          "YouTube tabanli, modern bir muzik dinleme deneyimi sunan web ve masaustu odakli streaming uygulamasi. Spotify benzeri premium bir arayuzu Electron destegiyle birlestirerek tarayici ve desktop deneyimini tek kod tabaninda sunar.",
+        techInfo:
+          "Next.js, Electron, React 19, Tailwind CSS, Framer Motion, YouTube arama/oynatma akisi ve istemci tarafli oynatici kontrol sistemi.",
+        role: "Urun tasarimi ve gelistirme - oynatici deneyimi, arayuz mimarisi, desktop wrapper entegrasyonu ve muzik kesif akislarinin olusturulmasi.",
+        result:
+          "Tek kod tabanindan hem web hem de masaustu deneyimi veren, karanlik temali ve performans odakli muzik uygulamasi.",
+        expandedContent: [
+          {
+            title: "Cross-Platform Deneyim",
+            desc: "Next.js arayuzu Electron ile birlestirerek web ve native desktop kullanimini ayni urun deneyiminde toplar.",
+          },
+          {
+            title: "Modern Player UI",
+            desc: "Tam ekran oynatici, alt player cubugu, kutuphane yapisi ve premium muzik uygulamasi hissi veren akici arayuzler sunar.",
+          },
+          {
+            title: "YouTube Tabanli Icerik Akisi",
+            desc: "Genis sarki havuzuna erisim icin YouTube arama ve oynatma mantigini uygulama akislarina entegre eder.",
+          },
+          {
+            title: "Kesif ve Karisimlar",
+            desc: "Gunun karisimlari, oneriler ve kutuphane odakli gezinme yapisiyla kullaniciyi uzun sure uygulama icinde tutacak akislar kurar.",
+          },
+        ],
+      },
     ],
     labels: {
       techStack: "TECH STACK",
