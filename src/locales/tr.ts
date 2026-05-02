@@ -162,12 +162,42 @@ const tr = {
           },
         ],
       },
+      {
+        title: "VibeFlow",
+        category: "AI KODLAMA OPTIMIZASYONU",
+        description:
+          "AI kodlama akislari icin gelistirilmis, yerel calisan ve editorden bagimsiz bir context optimization sidecar. Projeyi izleyerek AST farkindalikli kompakt bir hafiza olusturur, gereksiz dosyalari ayiklar ve modele yalnizca ilgili baglami gondererek token kullanimini optimize eder.",
+        techInfo:
+          "FastAPI tabanli lokal API, watchdog ile anlik dosya izleme, tree-sitter ile AST tabanli ayristirma, ChromaDB vektor cache ve CLI odakli terminal yonetimi.",
+        role: "Urun tasarimi ve gelistirme - context builder, dosya izleyici, CLI komutlari, optimizasyon profilleri ve agent entegrasyon akisi.",
+        result:
+          "Kodlama ajanlarinin tum repoyu okumadan, secilmis ve ozetlenmis baglamla calismasini saglayan yerel gelistirici araci.",
+        expandedContent: [
+          {
+            title: "Token Tasarrufu",
+            desc: "Semantik budama, skeletonization ve butce limitleriyle model baglamini kompakt hale getirir.",
+          },
+          {
+            title: "Yerel Sidecar API",
+            desc: "FastAPI uzerinden /context, /index ve /settings uclariyla editorden bagimsiz kullanim sunar.",
+          },
+          {
+            title: "Canli Proje Izleme",
+            desc: "watchdog ile dosya degisikliklerini yakalar ve index'i gelistirme sureci boyunca sicak tutar.",
+          },
+          {
+            title: "Agent Dostu Cikti",
+            desc: "Kodlama ajanlari icin model-ready context ve diff odakli cikti kontrati uretir.",
+          },
+        ],
+      },
     ],
     labels: {
       techStack: "TECH STACK",
       role: "ROL",
       result: "SONUÇ",
       demo: "DEMO",
+      github: "GITHUB",
     },
   },
   marquee: {

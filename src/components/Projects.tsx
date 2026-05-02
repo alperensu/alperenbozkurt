@@ -60,6 +60,17 @@ const projectMeta = [
       hasPhoneMockup: false,
     },
   },
+  {
+    id: 4,
+    status: "OPEN SOURCE",
+    statusColor: "#22c55e",
+    dateRange: "2026 - Present",
+    techStack: ["Python", "FastAPI", "Tree-sitter", "ChromaDB", "Watchdog"],
+    accentColor: "#22c55e",
+    link: "https://github.com/alperensu/VibeFlow",
+    icon: "mdi:source-branch",
+    images: null,
+  },
 ];
 
 const freelanceScripts = [
@@ -147,7 +158,7 @@ function ProjectSection({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const isUmay = meta.id === 3;
-  const hasPhoneMockup = meta.images.hasPhoneMockup;
+  const hasPhoneMockup = meta.images?.hasPhoneMockup ?? false;
 
   return (
     <AnimatedElement direction="up" delay={index * 0.18}>
@@ -195,7 +206,7 @@ function ProjectSection({
                     className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 mt-auto hover:opacity-80 transition-opacity"
                     style={{ color: meta.accentColor }}
                   >
-                    {t.projects.labels.demo}
+                    {t.projects.labels.github}
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M7 17L17 7" />
                       <path d="M7 7h10v10" />

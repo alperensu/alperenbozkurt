@@ -162,12 +162,42 @@ const en = {
           },
         ],
       },
+      {
+        title: "VibeFlow",
+        category: "AI CODING OPTIMIZATION",
+        description:
+          "A local, editor-agnostic context optimization sidecar for AI coding workflows. It watches a project, builds a compact AST-aware memory, prunes unrelated files, and sends only the relevant context to the model to optimize token usage.",
+        techInfo:
+          "Local FastAPI server, watchdog-based file watching, tree-sitter parsing, ChromaDB vector cache, and CLI-first terminal management.",
+        role: "Product design and development - context builder, watcher engine, CLI commands, optimization profiles, and agent integration workflow.",
+        result:
+          "A local developer tool that helps coding agents work with selected, summarized context instead of reading the entire repository.",
+        expandedContent: [
+          {
+            title: "Token Savings",
+            desc: "Uses semantic pruning, skeletonization, and budget caps to keep model context compact.",
+          },
+          {
+            title: "Local Sidecar API",
+            desc: "Provides editor-agnostic /context, /index, and /settings endpoints through FastAPI.",
+          },
+          {
+            title: "Live Project Watching",
+            desc: "Tracks file changes with watchdog and keeps the project index warm during development.",
+          },
+          {
+            title: "Agent-Friendly Output",
+            desc: "Produces model-ready context and a diff-focused output contract for coding agents.",
+          },
+        ],
+      },
     ],
     labels: {
       techStack: "TECH STACK",
       role: "ROLE",
       result: "RESULT",
       demo: "DEMO",
+      github: "GITHUB",
     },
   },
   marquee: {
