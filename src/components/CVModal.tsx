@@ -71,7 +71,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
             @media print {
               @page {
                 size: A4;
-                margin: 12mm;
+                margin: 0;
               }
               body, html {
                 position: static !important;
@@ -129,8 +129,8 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               }
               .cv-document {
                 width: 100% !important;
-                min-height: auto !important;
-                padding: 0 !important;
+                min-height: 297mm !important;
+                padding: 12mm !important;
                 box-shadow: none !important;
               }
               .no-print {
