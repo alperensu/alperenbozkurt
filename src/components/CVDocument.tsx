@@ -14,10 +14,9 @@ const cvStatic = {
     location: "Denizli, Turkiye",
     email: "alperenbozkurt.iletisim@gmail.com",
     github: "github.com/alperensu",
-    portfolio: "alperenbozkurt.com",
     summaryTitle: "Professional Summary",
     summary:
-      "AI destekli web uygulamalari, veri odakli dashboardlar ve gelistirici araclari ureten full-stack developer. React/Next.js, Node.js, Python, FastAPI ve modern AI entegrasyonlariyla urun fikirlerini kullanilabilir, olceklenebilir ve performansli sistemlere donusturur. Teknik mimari, kullanici deneyimi ve otomasyon arasinda guclu bag kurarak ucundan sonuna urun gelistirme sorumlulugu alir.",
+      "Yazılım dünyasına olan tutkumu, akademik bilgisayar programcılığı temellerim ve tam donanımlı bir full-stack geliştirici vizyonumla harmanlıyorum. Kod yazmanın ötesinde; grafik tasarım ve video kurgu gibi kreatif alanlarda projeler üretiyor, teknoloji dünyasındaki yenilikleri derinlemesine araştırıyorum. Disiplinimi ve enerjimi fitness ile koruyan, teknik mükemmeliyeti estetik bir bakış açısıyla birleştirerek her zaman daha yenilikçi ve optimize edilmiş çözümler üretmeyi hedefleyen çok yönlü bir geliştiriciyim.",
     sections: {
       experience: "Experience",
       projects: "Selected Projects",
@@ -27,8 +26,8 @@ const cvStatic = {
     },
     experience: {
       company: "TechStudio",
-      role: "Full-Stack Developer",
-      period: "2023 - Present",
+      role: "Stajyer",
+      period: "2023 - 2024",
       bullets: [
         "React, Next.js, Node.js ve Python tabanli kurumsal web uygulamalari ve yonetim panelleri gelistirdi.",
         "REST API tasarimi, veritabani modelleme, frontend performans iyilestirmeleri ve deployment sureclerinde uctan uca sorumluluk aldi.",
@@ -52,10 +51,9 @@ const cvStatic = {
     location: "Denizli, Turkey",
     email: "alperenbozkurt.iletisim@gmail.com",
     github: "github.com/alperensu",
-    portfolio: "alperenbozkurt.com",
     summaryTitle: "Professional Summary",
     summary:
-      "Full-stack developer building AI-powered web applications, data-driven dashboards, and developer tools. Turns product ideas into usable, scalable, and performant systems with React/Next.js, Node.js, Python, FastAPI, and modern AI integrations. Strong ownership across technical architecture, user experience, automation, and end-to-end delivery.",
+      "I blend my passion for the software world with my academic foundations in computer programming and my vision of becoming a fully-equipped full-stack developer. Beyond writing code; I produce projects in creative fields such as graphic design and video editing, and deeply research innovations in the technology world. I am a versatile developer who maintains my discipline and energy through fitness, aiming to always produce more innovative and optimized solutions by combining technical excellence with an aesthetic perspective.",
     sections: {
       experience: "Experience",
       projects: "Selected Projects",
@@ -65,8 +63,8 @@ const cvStatic = {
     },
     experience: {
       company: "TechStudio",
-      role: "Full-Stack Developer",
-      period: "2023 - Present",
+      role: "Intern",
+      period: "2023 - 2024",
       bullets: [
         "Built enterprise web applications and admin dashboards with React, Next.js, Node.js, and Python.",
         "Owned REST API design, database modeling, frontend performance improvements, and deployment workflows end to end.",
@@ -129,7 +127,6 @@ export default function CVDocument() {
             <p>{cv.location}</p>
             <p>{cv.email}</p>
             <p>{cv.github}</p>
-            <p>{cv.portfolio}</p>
           </div>
         </div>
       </header>
