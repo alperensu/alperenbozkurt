@@ -10,146 +10,102 @@ export default function CVDocument() {
   const t = locale === "tr" ? tr : en;
 
   return (
-    <div className="bg-white text-slate-900 p-12 max-w-[210mm] mx-auto min-h-[297mm] shadow-2xl print:shadow-none print:p-0 font-sans leading-normal">
-      {/* Header */}
-      <header className="border-b-4 border-slate-900 pb-6 mb-8 flex justify-between items-end">
-        <div>
-          <h1 className="text-5xl font-black uppercase tracking-tighter mb-1">
-            {t.hero.h1_1}{t.hero.h1_2}
-          </h1>
-          <p className="text-xl font-bold text-slate-800 uppercase tracking-widest">
-            {t.hero.badge}
-          </p>
-        </div>
-        <div className="text-right text-xs space-y-1 font-bold text-slate-600 uppercase tracking-wider">
-          <p>alperenbozkurt.iletisim@gmail.com</p>
-          <p>github.com/alperensu</p>
-          <p>Denizli, Türkiye</p>
+    <div className="bg-white text-black p-12 max-w-[210mm] mx-auto min-h-[297mm] shadow-2xl print:shadow-none print:p-0 font-serif leading-tight">
+      {/* Centered Header (Stanford Style) */}
+      <header className="text-center mb-8 border-b border-black pb-4">
+        <h1 className="text-3xl font-bold mb-1 tracking-tight">
+          {t.hero.h1_1}{t.hero.h1_2}
+        </h1>
+        <div className="text-[11px] space-x-2 font-medium">
+          <span>Denizli, Türkiye</span>
+          <span>•</span>
+          <span>alperenbozkurt.iletisim@gmail.com</span>
+          <span>•</span>
+          <span>github.com/alperensu</span>
         </div>
       </header>
 
-      <div className="space-y-10">
-        {/* Profile / Summary */}
+      <div className="space-y-6">
+        {/* EDUCATION */}
         <section>
-          <h2 className="text-lg font-black uppercase border-b-2 border-slate-900 mb-3 pb-1 tracking-widest">
-            {t.profile.title}
-          </h2>
-          <p className="text-[13px] leading-relaxed text-slate-800 font-medium">
-            {t.profile.bio}
-          </p>
+          <h2 className="text-xs font-bold border-b border-black mb-2 tracking-widest uppercase italic">Education</h2>
+          <div className="space-y-4">
+            <div className="relative">
+              <div className="flex justify-between font-bold text-[13px]">
+                <h3>{t.profile.pamukkale.school}</h3>
+                <span>{t.profile.pamukkale.status}</span>
+              </div>
+              <div className="flex justify-between text-[12px] italic">
+                <p>{t.profile.pamukkale.major}</p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="flex justify-between font-bold text-[13px]">
+                <h3>{t.profile.orhan.school}</h3>
+                <span>{t.profile.orhan.status}</span>
+              </div>
+              <div className="flex justify-between text-[12px] italic">
+                <p>{t.profile.orhan.major}</p>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <div className="grid grid-cols-3 gap-12">
-          {/* Main Column */}
-          <div className="col-span-2 space-y-10">
-            {/* Experience */}
-            <section>
-              <h2 className="text-lg font-black uppercase border-b-2 border-slate-900 mb-4 pb-1 tracking-widest">
-                {t.profile.experienceTitle}
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <div className="flex justify-between items-baseline mb-1">
-                    <h3 className="font-bold text-base">TechStudio</h3>
-                    <span className="text-[10px] text-slate-500 font-black uppercase">{t.profile.techStudio.duration}</span>
-                  </div>
-                  <p className="text-xs font-bold text-slate-600 mb-2 uppercase tracking-wide">{t.profile.techStudio.role}</p>
-                  <p className="text-[13px] text-slate-800 leading-relaxed">
-                    {t.profile.techStudio.desc}
-                  </p>
-                </div>
+        {/* EXPERIENCE */}
+        <section>
+          <h2 className="text-xs font-bold border-b border-black mb-2 tracking-widest uppercase italic">Experience</h2>
+          <div className="space-y-4">
+            <div>
+              <div className="flex justify-between font-bold text-[13px]">
+                <h3>TechStudio</h3>
+                <span>{t.profile.techStudio.duration}</span>
               </div>
-            </section>
-
-            {/* Projects */}
-            <section>
-              <h2 className="text-lg font-black uppercase border-b-2 border-slate-900 mb-4 pb-1 tracking-widest">
-                {t.projects.heading1} {t.projects.heading2}
-              </h2>
-              <div className="space-y-6">
-                {t.projects.items.map((project, idx) => (
-                  <div key={idx}>
-                    <div className="flex justify-between items-baseline mb-1">
-                      <h3 className="font-bold text-base">{project.title}</h3>
-                      <span className="text-[10px] text-slate-600 uppercase font-black tracking-tighter bg-slate-100 px-2 py-0.5 rounded">{project.category}</span>
-                    </div>
-                    <p className="text-[13px] text-slate-800 leading-relaxed italic mb-2">
-                      {project.description}
-                    </p>
-                    <p className="text-[11px] text-slate-600">
-                      <span className="font-bold uppercase tracking-tighter mr-2">{t.projects.labels.techStack}:</span>
-                      {project.techInfo}
-                    </p>
-                  </div>
+              <div className="flex justify-between text-[12px] italic mb-1">
+                <p>{t.profile.techStudio.role}</p>
+              </div>
+              <ul className="list-disc list-outside ml-4 text-[12px] space-y-1">
+                {t.profile.techStudio.desc.split(". ").map((bullet, i) => (
+                  <li key={i}>{bullet}{bullet.endsWith('.') ? '' : '.'}</li>
                 ))}
-              </div>
-            </section>
+              </ul>
+            </div>
           </div>
+        </section>
 
-          {/* Sidebar */}
-          <div className="col-span-1 space-y-10">
-            {/* Skills */}
-            <section>
-              <h2 className="text-lg font-black uppercase border-b-2 border-slate-900 mb-4 pb-1 tracking-widest">
-                {t.profile.skillsTitle}
-              </h2>
-              <div className="space-y-5">
-                <div>
-                  <h4 className="text-[10px] font-black text-slate-900 uppercase mb-2 tracking-widest">Core Technologies</h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {t.profile.skills.languages.split(", ").map(s => (
-                      <span key={s} className="text-[10px] px-2 py-1 bg-slate-900 text-white font-bold uppercase tracking-tighter">{s}</span>
-                    ))}
-                  </div>
+        {/* PROJECTS */}
+        <section>
+          <h2 className="text-xs font-bold border-b border-black mb-2 tracking-widest uppercase italic">Selected Projects</h2>
+          <div className="space-y-4">
+            {t.projects.items.map((project, idx) => (
+              <div key={idx}>
+                <div className="flex justify-between font-bold text-[13px]">
+                  <h3>{project.title}</h3>
+                  <span className="font-normal italic text-[11px]">{project.category}</span>
                 </div>
-                <div>
-                  <h4 className="text-[10px] font-black text-slate-900 uppercase mb-2 tracking-widest">Specializations</h4>
-                  <p className="text-[11px] text-slate-800 font-medium leading-tight">{t.profile.skills.ai}</p>
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-black text-slate-900 uppercase mb-2 tracking-widest">Creative Tools</h4>
-                  <p className="text-[11px] text-slate-800 font-medium leading-tight">{t.profile.skills.multimedia}</p>
-                </div>
+                <p className="text-[12px] italic mb-1">{project.description}</p>
+                <p className="text-[11px]">
+                  <span className="font-bold">Technologies:</span> {project.techInfo}
+                </p>
               </div>
-            </section>
-
-            {/* Education */}
-            <section>
-              <h2 className="text-lg font-black uppercase border-b-2 border-slate-900 mb-4 pb-1 tracking-widest">
-                {t.profile.educationTitle}
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-sm leading-tight">{t.profile.pamukkale.school}</h3>
-                  <p className="text-[11px] text-slate-700 font-medium">{t.profile.pamukkale.major}</p>
-                  <p className="text-[10px] text-slate-500 font-black mt-1 uppercase tracking-tighter">{t.profile.pamukkale.status}</p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-sm leading-tight">{t.profile.orhan.school}</h3>
-                  <p className="text-[11px] text-slate-700 font-medium">{t.profile.orhan.major}</p>
-                  <p className="text-[10px] text-slate-500 font-black mt-1 uppercase tracking-tighter">{t.profile.orhan.status}</p>
-                </div>
-              </div>
-            </section>
-
-            {/* Languages */}
-            <section>
-              <h2 className="text-lg font-black uppercase border-b-2 border-slate-900 mb-4 pb-1 tracking-widest">
-                {locale === "tr" ? "Diller" : "Languages"}
-              </h2>
-              <div className="space-y-2">
-                <div className="flex justify-between text-[11px] font-bold uppercase tracking-tight">
-                  <span>Türkçe</span>
-                  <span className="text-slate-500">{locale === "tr" ? "Anadil" : "Native"}</span>
-                </div>
-                <div className="flex justify-between text-[11px] font-bold uppercase tracking-tight">
-                  <span>English</span>
-                  <span className="text-slate-500">{locale === "tr" ? "İleri Seviye" : "Advanced"}</span>
-                </div>
-              </div>
-            </section>
+            ))}
           </div>
-        </div>
+        </section>
+
+        {/* SKILLS & INTERESTS */}
+        <section>
+          <h2 className="text-xs font-bold border-b border-black mb-2 tracking-widest uppercase italic">Skills & Interests</h2>
+          <div className="space-y-1 text-[12px]">
+            <p><span className="font-bold">Technical Skills:</span> {t.profile.skills.languages}</p>
+            <p><span className="font-bold">Specializations:</span> {t.profile.skills.ai}</p>
+            <p><span className="font-bold">Design & Media:</span> {t.profile.skills.multimedia}</p>
+            <p>
+              <span className="font-bold">Languages:</span> {locale === "tr" ? "Türkçe (Anadil), İngilizce (İleri Seviye)" : "Turkish (Native), English (Advanced)"}
+            </p>
+            <p>
+              <span className="font-bold">Interests:</span> {locale === "tr" ? "Fitness ve Vücut Geliştirme, Dijital İçerik Üretimi, Oyun Teknolojileri" : "Fitness & Bodybuilding, Digital Content Creation, Gaming Technologies"}
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );
