@@ -79,9 +79,9 @@ const tr = {
         title: "Borsa Analiz Botu",
         category: "AI-POWERED FİNANS",
         description:
-          "LightGBM makine öğrenmesi, Triple-Barrier etiketleme ve Purged K-Fold CV ile BIST hisselerini analiz eden gelişmiş bir yapay zeka platformu.",
+          "Borsa İstanbul (BIST) verilerini kullanarak hisse senedi trendlerini tahmin eden, gelişmiş makine öğrenimi modellerine dayalı bir finansal analiz platformu. LightGBM algoritmaları, Triple-Barrier etiketleme ve Purged K-Fold Cross-Validation gibi ileri düzey finansal veri bilimi teknikleriyle piyasa sinyalleri üretir.",
         techInfo:
-          "LightGBM ile binary sınıflandırma, 150+ teknik indikatör, otomatik formasyon tespiti ve sektörel ısı haritası.",
+          "Python (LightGBM, Pandas, Scikit-learn) ML Pipeline, 150+ teknik indikatör entegrasyonu, TA-Lib, Kysely query builder ve React tabanlı gerçek zamanlı veri dashboard'u.",
         role: "Tam yığın geliştirme — backend API, ML pipeline, frontend dashboard ve gerçek zamanlı veri akışı.",
         result:
           "417+ BIST hissesi için anlık teknik analiz, AI sinyal üretimi ve otomatik formasyon tanıma.",
@@ -108,9 +108,9 @@ const tr = {
         title: "VibeKoc",
         category: "AI EĞİTİM PLATFORMU",
         description:
-          "Her öğrenciye özel bir Yapay Zeka Eğitim Koçu sunan SaaS EdTech platformu. Davranışsal analiz, sınav simülasyonu, 1v1 düellolar ve lig sistemiyle öğrenmeyi oyunlaştırır.",
+          "Öğrencilerin sınav hazırlık süreçlerini oyunlaştıran ve kişiselleştiren, her kullanıcıya özel bir AI Eğitim Koçu sunan SaaS EdTech platformu. Davranışsal analiz algoritmalarıyla çalışma verimliliğini ölçer, eksik konuları tespit eder ve Llama 3/Gemini tabanlı hibrit AI motoruyla anlık rehberlik sağlar.",
         techInfo:
-          "React 19 + Vite frontend, Node.js + TypeScript backend, MySQL + Kysely query builder, Redis caching, Socket.io real-time ve Google Gemini (2.0 Flash + 1.5 Pro) hibrit AI motoru.",
+          "React 19 + Vite, Node.js & TypeScript, MySQL + Kysely, Redis caching, Socket.io real-time düello motoru, Google Gemini (2.0 Flash) ve OpenAI GPT-4o hibrit entegrasyonu.",
         role: "Tam yığın geliştirme — AI koçluk motoru, Vibe Analytics davranışsal analiz algoritmaları, sınav simülatörü ve gamification sistemleri.",
         result:
           "Başarı projeksiyonu (Linear Regression), tükenmişlik (burnout) detektörü, ÖSYM tarzı soru üretimi ve %99.9 AI servis devamlılığı.",

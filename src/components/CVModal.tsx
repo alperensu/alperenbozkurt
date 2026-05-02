@@ -68,8 +68,8 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               </div>
 
               {/* CV Content Area */}
-              <div className="p-4 md:p-12 bg-[#f8f9fa] overflow-x-auto">
-                <div className="min-w-[800px]">
+              <div className="bg-[#f8f9fa] overflow-auto max-h-[80vh] md:max-h-[85vh] p-4 md:p-12 scrollbar-thin scrollbar-thumb-zinc-400">
+                <div className="min-w-[800px] mx-auto">
                    <CVDocument />
                 </div>
               </div>

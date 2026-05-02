@@ -79,9 +79,9 @@ const en = {
         title: "Stock Analysis Bot",
         category: "AI-POWERED FINANCE",
         description:
-          "An advanced AI platform that analyzes BIST stocks using LightGBM machine learning, Triple-Barrier labeling, and Purged K-Fold CV.",
+          "A sophisticated financial analysis platform predicting stock trends using advanced machine learning models. Employs LightGBM algorithms, Triple-Barrier labeling, and Purged K-Fold Cross-Validation to generate high-precision market signals from Borsa Istanbul (BIST) data.",
         techInfo:
-          "Binary classification with LightGBM, 150+ technical indicators, automatic pattern detection, and sector heat maps.",
+          "Python (LightGBM, Pandas, Scikit-learn) ML Pipeline, TA-Lib for 150+ technical indicators, Kysely query builder, and React-based real-time data visualization dashboard.",
         role: "Full-stack development — backend API, ML pipeline, frontend dashboard, and real-time data streaming.",
         result:
           "Real-time technical analysis for 417+ BIST stocks, AI signal generation, and automatic pattern recognition.",
@@ -108,9 +108,9 @@ const en = {
         title: "VibeKoc",
         category: "AI EDUCATION PLATFORM",
         description:
-          "A SaaS EdTech platform offering a personalized AI Education Coach for every student. Gamifies learning with behavioral analytics, exam simulations, 1v1 duels, and a league system.",
+          "A SaaS EdTech platform that gamifies and personalizes the exam preparation process, featuring a dedicated AI Education Coach for every student. Utilizes behavioral analytics to measure efficiency, identifies knowledge gaps, and provides real-time guidance via a Llama 3/Gemini hybrid AI engine.",
         techInfo:
-          "React 19 + Vite frontend, Node.js + TypeScript backend, MySQL + Kysely query builder, Redis caching, Socket.io real-time, and Google Gemini (2.0 Flash + 1.5 Pro) hybrid AI engine.",
+          "React 19 + Vite, Node.js & TypeScript, MySQL + Kysely, Redis caching, Socket.io real-time duel engine, Google Gemini (2.0 Flash) and OpenAI GPT-4o hybrid integration.",
         role: "Full-stack development — AI coaching engine, Vibe Analytics behavioral analysis algorithms, exam simulator, and gamification systems.",
         result:
           "Success projection (Linear Regression), burnout detector, ÖSYM-style question generation, and 99.9% AI service uptime.",
