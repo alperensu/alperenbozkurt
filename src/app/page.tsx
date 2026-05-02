@@ -11,8 +11,8 @@ import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 
 // Dynamic imports for heavy client components (no SSR)
-const VantaBackground = dynamic(
-  () => import("@/components/VantaBackground"),
+const PremiumWebGLBackground = dynamic(
+  () => import("@/components/PremiumWebGLBackground"),
   { ssr: false }
 );
 const ClipIntro = dynamic(() => import("@/components/ClipIntro"), {
@@ -22,25 +22,27 @@ const ClipIntro = dynamic(() => import("@/components/ClipIntro"), {
 export default function Home() {
   return (
     <SmoothScroll>
-      {/* Clip-path intro overlay */}
-      <ClipIntro />
+      <div className="relative isolate min-h-screen">
+        {/* Clip-path intro overlay */}
+        <ClipIntro />
 
-      {/* Vanta NET animated background */}
-      <VantaBackground />
+        {/* Premium WebGL background */}
+        <PremiumWebGLBackground />
 
-      {/* Floating navbar */}
-      <Navbar />
+        {/* Floating navbar */}
+        <Navbar />
 
-      {/* Main content */}
-      <main className="relative z-10">
-        <Hero />
-        <Profile />
-        <Solutions />
-        <Projects />
-        <Marquee />
-      </main>
+        {/* Main content */}
+        <main className="relative z-10">
+          <Hero />
+          <Profile />
+          <Solutions />
+          <Projects />
+          <Marquee />
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </SmoothScroll>
   );
 }
