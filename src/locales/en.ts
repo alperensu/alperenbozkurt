@@ -10,13 +10,13 @@ const en = {
     tagline: "Software Developer",
   },
   hero: {
-    badge: "Software Developer & AI Strategist",
+    badge: "Full-Stack Developer & Creative Designer",
     h1_1: "Alperen ",
     h1_2: "Bozkurt",
     h1_3: "",
     h1_4: "",
     subtitle:
-      "I am a solution-oriented developer combining AI-powered modern software development with advanced architectures to solve complex problems and deliver efficient results.",
+      "I am a versatile developer who blends advanced software architectures with aesthetic design and video editing expertise. I harmonize technical excellence with creative vision using AI-powered tools.",
     btnProjects: "Explore Projects",
     btnContact: "Get in Touch",
     scroll: "Scroll",
@@ -221,7 +221,7 @@ const en = {
     skills: {
       languages: "React, React Native, TypeScript, Node.js, C#, Python, SQL",
       ai: "AI-Powered Development (Cursor, Windsurf)",
-      multimedia: "Graphic Design \u0026 Video Production",
+      multimedia: "Adobe Premiere, After Effects, Photoshop, Illustrator",
     }
   },
 };

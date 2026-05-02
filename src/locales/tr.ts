@@ -10,13 +10,13 @@ const tr = {
     tagline: "Yazılım Geliştirici",
   },
   hero: {
-    badge: "Yazılım Geliştirici & AI Stratejisti",
+    badge: "Full-Stack Developer & Kreatif Tasarımcı",
     h1_1: "Alperen ",
     h1_2: "Bozkurt",
     h1_3: "",
     h1_4: "",
     subtitle:
-      "Yapay zeka destekli modern yazılım geliştirme metodolojilerini ileri düzey mimarilerle birleştiren, çözüm odaklı bir geliştiriciyim. Karmaşık problemleri optimize etmeye ve verimli sonuçlar üretmeye odaklanıyorum.",
+      "İleri düzey yazılım mimarilerini estetik tasarım ve video kurgu yetkinliğiyle birleştiren, yapay zeka destekli çözümler üreten çok yönlü bir geliştiriciyim. Teknik mükemmeliyeti kreatif vizyonla harmanlıyorum.",
     btnProjects: "Projeleri Keşfet",
     btnContact: "İletişime Geç",
     scroll: "Kaydır",
@@ -221,7 +221,7 @@ const tr = {
     skills: {
       languages: "React, React Native, TypeScript, Node.js, C#, Python, SQL",
       ai: "AI Geliştirme (Cursor, Windsurf)",
-      multimedia: "Grafik Tasarım \u0026 Video Prodüksiyon",
+      multimedia: "Adobe Premiere, After Effects, Photoshop, Illustrator",
     }
   },
 };

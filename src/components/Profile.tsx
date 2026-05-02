@@ -107,16 +107,23 @@ export default function Profile() {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center shrink-0">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                        <circle cx="8.5" cy="8.5" r="1.5" />
-                        <polyline points="21 15 16 10 5 21" />
+                        <path d="M15 10l5 5-5 5" />
+                        <path d="M4 4v7a4 4 0 0 0 4 4h12" />
                       </svg>
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-white/30 uppercase tracking-tighter">Media</p>
+                      <p className="text-[10px] font-bold text-white/30 uppercase tracking-tighter">Creative Suite</p>
                       <p className="text-sm text-white/80">{t.profile.skills.multimedia}</p>
+                    </div>
+                  </div>
+                  <div className="pt-4 mt-2 border-t border-white/5">
+                    <div className="flex gap-4 opacity-40">
+                      <iconify-icon icon="simple-icons:adobepremierepro" width="18" height="18" />
+                      <iconify-icon icon="simple-icons:adobeaftereffects" width="18" height="18" />
+                      <iconify-icon icon="simple-icons:adobephotoshop" width="18" height="18" />
+                      <iconify-icon icon="simple-icons:adobeillustrator" width="18" height="18" />
                     </div>
                   </div>
                 </div>
