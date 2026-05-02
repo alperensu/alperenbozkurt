@@ -52,6 +52,10 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
           {/* Global Print & Scroll Styles */}
           <style jsx global>{`
             @media print {
+              @page {
+                size: A4;
+                margin: 0;
+              }
               body, html {
                 visibility: hidden !important;
                 height: auto !important;
@@ -69,9 +73,13 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
                 position: absolute !important;
                 left: 0 !important;
                 top: 0 !important;
-                width: 100% !important;
+                width: 210mm !important;
+                min-height: 297mm !important;
                 margin: 0 !important;
                 padding: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                overflow: visible !important;
               }
               .no-print {
                 display: none !important;
@@ -116,12 +124,10 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               exit={{ opacity: 0, scale: 0.9, y: 40 }}
               onClick={(e) => e.stopPropagation()}
               id="cv-printable-area"
-              className="relative w-full max-w-[210mm] bg-white shadow-[0_0_100px_rgba(0,0,0,0.5)] rounded-lg overflow-hidden"
+              className="relative w-[210mm] max-w-[calc(100vw-40px)] bg-white shadow-[0_0_100px_rgba(0,0,0,0.5)] rounded-lg overflow-hidden"
             >
               <div className="overflow-x-auto">
-                <div className="min-w-[800px]">
-                  <CVDocument />
-                </div>
+                <CVDocument />
               </div>
             </motion.div>
           </div>

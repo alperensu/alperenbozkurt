@@ -10,7 +10,7 @@ export default function CVDocument() {
   const t = locale === "tr" ? tr : en;
 
   return (
-    <div className="bg-white text-black p-8 md:p-12 max-w-[210mm] mx-auto shadow-2xl print:shadow-none print:p-0 print:m-0 font-serif leading-tight">
+    <div className="w-[210mm] min-h-[297mm] bg-white text-black p-8 md:p-12 mx-auto shadow-2xl print:shadow-none print:m-0 font-serif leading-tight">
       {/* Centered Header (Stanford Style) */}
       <header className="text-center mb-8 border-b border-black pb-4">
         <h1 className="text-3xl font-bold mb-1 tracking-tight">
