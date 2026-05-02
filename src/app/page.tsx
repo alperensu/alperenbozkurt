@@ -22,7 +22,7 @@ const ClipIntro = dynamic(() => import("@/components/ClipIntro"), {
 export default function Home() {
   return (
     <SmoothScroll>
-      <div className="relative isolate min-h-screen">
+      <div className="portfolio-shell relative isolate min-h-screen">
         {/* Clip-path intro overlay */}
         <ClipIntro />
 
@@ -33,7 +33,7 @@ export default function Home() {
         <Navbar />
 
         {/* Main content */}
-        <main className="relative z-10">
+        <main className="site-content relative z-20">
           <Hero />
           <Profile />
           <Solutions />
@@ -41,7 +41,9 @@ export default function Home() {
           <Marquee />
         </main>
 
-        <Footer />
+        <div className="site-content relative z-20">
+          <Footer />
+        </div>
       </div>
     </SmoothScroll>
   );

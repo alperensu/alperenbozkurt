@@ -43,14 +43,14 @@ const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 
 function getQualityProfile(width: number): QualityProfile {
   if (width < 640) {
-    return { nodes: 150, radius: 4.6, dpr: [1, 1.15], lineOpacity: 0.2 };
+    return { nodes: 150, radius: 4.6, dpr: [1, 1.15], lineOpacity: 0.16 };
   }
 
   if (width < 1024) {
-    return { nodes: 260, radius: 5.8, dpr: [1, 1.35], lineOpacity: 0.24 };
+    return { nodes: 260, radius: 5.8, dpr: [1, 1.35], lineOpacity: 0.19 };
   }
 
-  return { nodes: 480, radius: 7.2, dpr: [1, 1.65], lineOpacity: 0.28 };
+  return { nodes: 480, radius: 7.2, dpr: [1, 1.65], lineOpacity: 0.22 };
 }
 
 function seededRandom(seed: number) {
@@ -372,10 +372,11 @@ export default function PremiumWebGLBackground() {
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 pointer-events-none overflow-hidden"
-      style={{ zIndex: -1, background: "#02030a" }}
+      className="portfolio-background fixed inset-0 z-0 pointer-events-none overflow-hidden"
+      style={{ background: "#02030a" }}
     >
       <Canvas
+        className="opacity-80"
         camera={{ position: [0, 0, 9.5], fov: 48, near: 0.1, far: 40 }}
         dpr={quality.dpr}
         gl={{
@@ -395,7 +396,7 @@ export default function PremiumWebGLBackground() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle at 50% 42%, rgba(2, 6, 23, 0.05) 0%, rgba(2, 6, 23, 0.38) 48%, rgba(2, 6, 23, 0.88) 100%), linear-gradient(90deg, rgba(2, 6, 23, 0.82), rgba(2, 6, 23, 0.34) 42%, rgba(2, 6, 23, 0.76))",
+            "radial-gradient(circle at 50% 42%, rgba(2, 6, 23, 0.18) 0%, rgba(2, 6, 23, 0.52) 48%, rgba(2, 6, 23, 0.92) 100%), linear-gradient(90deg, rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.48) 42%, rgba(2, 6, 23, 0.84))",
         }}
       />
       <div

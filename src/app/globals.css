@@ -41,6 +41,30 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.portfolio-shell {
+  isolation: isolate;
+}
+
+.portfolio-background {
+  contain: layout paint style;
+  transform: translateZ(0);
+}
+
+.portfolio-background,
+.portfolio-background canvas,
+.portfolio-background > div {
+  pointer-events: none !important;
+}
+
+.site-content {
+  isolation: isolate;
+}
+
+.content-surface {
+  position: relative;
+  z-index: 1;
+}
+
 /* --- Selection --- */
 ::selection {
   background: rgba(var(--vibrant-orange-rgb), 0.3);
@@ -93,7 +117,7 @@ body {
 }
 
 .flashlight-card {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(8, 13, 28, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -113,7 +137,7 @@ body {
 }
 
 .flashlight-card:hover {
-  background: rgba(255, 255, 255, 0.055);
+  background: rgba(10, 16, 34, 0.88);
   border-color: rgba(249, 115, 22, 0.16);
   box-shadow:
     0 18px 48px rgba(0, 0, 0, 0.28),

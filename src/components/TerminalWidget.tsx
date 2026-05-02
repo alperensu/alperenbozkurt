@@ -63,7 +63,7 @@ export default function TerminalWidget() {
       
       {/* Terminal Window */}
       <motion.div 
-        className="relative rounded-xl border border-white/10 bg-[#0a0a0a]/90 backdrop-blur-xl shadow-2xl overflow-hidden"
+        className="content-surface relative rounded-xl border border-white/10 bg-[#05070c]/95 backdrop-blur-xl shadow-2xl overflow-hidden"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -131,7 +131,7 @@ export default function TerminalWidget() {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.5 }}
-        className="absolute -left-6 bottom-12 px-4 py-2 rounded-lg bg-black/80 backdrop-blur-md border border-white/10 flex items-center gap-2 shadow-xl"
+        className="content-surface absolute -left-6 bottom-12 px-4 py-2 rounded-lg bg-black/90 backdrop-blur-md border border-white/10 flex items-center gap-2 shadow-xl"
       >
         <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
         <span className="text-xs font-bold text-white/70">SYS.ONLINE</span>
@@ -141,7 +141,7 @@ export default function TerminalWidget() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2 }}
-        className="absolute -right-8 top-16 px-4 py-2 rounded-lg bg-black/80 backdrop-blur-md border border-orange-500/20 flex items-center gap-2 shadow-xl"
+        className="content-surface absolute -right-8 top-16 px-4 py-2 rounded-lg bg-black/90 backdrop-blur-md border border-orange-500/20 flex items-center gap-2 shadow-xl"
       >
         <span className="text-xs font-bold text-orange-400">0ms LATENCY</span>
       </motion.div>
