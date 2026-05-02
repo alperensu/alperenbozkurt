@@ -11,8 +11,8 @@ import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 
 // Dynamic imports for heavy client components (no SSR)
-const CyberBackground = dynamic(
-  () => import("@/components/CyberBackground"),
+const VantaBackground = dynamic(
+  () => import("@/components/VantaBackground"),
   { ssr: false }
 );
 const ClipIntro = dynamic(() => import("@/components/ClipIntro"), {
@@ -25,8 +25,8 @@ export default function Home() {
       {/* Clip-path intro overlay */}
       <ClipIntro />
 
-      {/* Cyber Node Network background */}
-      <CyberBackground />
+      {/* Vanta NET animated background */}
+      <VantaBackground />
 
       {/* Floating navbar */}
       <Navbar />
