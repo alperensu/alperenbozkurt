@@ -54,7 +54,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
             @media print {
               @page {
                 size: A4;
-                margin: 0;
+                margin: 12mm;
               }
               body, html {
                 visibility: hidden !important;
@@ -73,13 +73,27 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
                 position: absolute !important;
                 left: 0 !important;
                 top: 0 !important;
-                width: 210mm !important;
-                min-height: 297mm !important;
+                width: 100% !important;
+                min-height: auto !important;
                 margin: 0 !important;
                 padding: 0 !important;
                 box-shadow: none !important;
                 border-radius: 0 !important;
                 overflow: visible !important;
+              }
+              #cv-portal-root {
+                position: static !important;
+                display: block !important;
+                padding: 0 !important;
+                background: transparent !important;
+                backdrop-filter: none !important;
+                overflow: visible !important;
+              }
+              .cv-document {
+                width: 100% !important;
+                min-height: auto !important;
+                padding: 0 !important;
+                box-shadow: none !important;
               }
               .no-print {
                 display: none !important;
@@ -99,9 +113,9 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
             }
           `}</style>
 
-          <div id="cv-portal-root" className="cv-modal-overlay no-print" onClick={onClose}>
+          <div id="cv-portal-root" className="cv-modal-overlay" onClick={onClose}>
             {/* Toolbar */}
-            <div className="w-full max-w-5xl flex justify-end gap-4 mb-8 sticky top-0 z-[1000000]" onClick={(e) => e.stopPropagation()}>
+            <div className="no-print w-full max-w-5xl flex justify-end gap-4 mb-8 sticky top-0 z-[1000000]" onClick={(e) => e.stopPropagation()}>
               <button
                 onClick={handlePrint}
                 className="flex items-center gap-3 px-8 py-4 bg-orange-500 hover:bg-orange-400 text-white font-bold rounded-2xl shadow-2xl transition-all active:scale-95"
