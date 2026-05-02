@@ -122,7 +122,7 @@ export default function CVDocument() {
             <h1 className="text-[26px] font-black leading-none tracking-tight">
               Alperen Bozkurt
             </h1>
-            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-neutral-700">
+            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-neutral-700" lang="en">
               {cv.title}
             </p>
           </div>
