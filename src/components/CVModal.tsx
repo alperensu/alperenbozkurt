@@ -74,20 +74,30 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
                 margin: 12mm;
               }
               body, html {
-                visibility: hidden !important;
+                position: static !important;
+                top: auto !important;
+                left: auto !important;
+                width: auto !important;
+                min-height: auto !important;
+                visibility: visible !important;
                 height: auto !important;
                 overflow: visible !important;
+                background: white !important;
               }
-              #cv-portal-root * {
+              body > :not(#cv-portal-root) {
                 visibility: hidden !important;
+                display: none !important;
               }
-              #cv-printable-area, #cv-printable-area * {
+              #cv-portal-root,
+              #cv-portal-root *,
+              #cv-printable-area,
+              #cv-printable-area * {
                 visibility: visible !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
               }
               #cv-printable-area {
-                position: absolute !important;
+                position: static !important;
                 left: 0 !important;
                 top: 0 !important;
                 transform: none !important;
@@ -102,6 +112,16 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               #cv-portal-root {
                 position: static !important;
                 display: block !important;
+                padding: 0 !important;
+                background: transparent !important;
+                backdrop-filter: none !important;
+                overflow: visible !important;
+              }
+              .cv-modal-overlay {
+                position: static !important;
+                display: block !important;
+                width: auto !important;
+                height: auto !important;
                 padding: 0 !important;
                 background: transparent !important;
                 backdrop-filter: none !important;
