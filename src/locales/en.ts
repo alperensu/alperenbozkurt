@@ -197,7 +197,7 @@ const en = {
         description:
           "A web and desktop-focused music streaming application that delivers a modern listening experience powered by YouTube. It combines a premium Spotify-like interface with Electron support to offer both browser and desktop usage from a single codebase.",
         techInfo:
-          "Next.js, Electron, React 19, Tailwind CSS, Framer Motion, YouTube search/playback flow, and client-side player control architecture.",
+          "Next.js, Electron, React 19, Tailwind CSS, Framer Motion, YouTube Data API v3, and client-side player control architecture.",
         role: "Product design and development - player experience, UI architecture, desktop wrapper integration, and music discovery flows.",
         result:
           "A dark-themed, performance-oriented music app that ships both web and desktop experiences from one codebase.",

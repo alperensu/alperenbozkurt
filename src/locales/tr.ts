@@ -197,7 +197,7 @@ const tr = {
         description:
           "YouTube tabanli, modern bir muzik dinleme deneyimi sunan web ve masaustu odakli streaming uygulamasi. Spotify benzeri premium bir arayuzu Electron destegiyle birlestirerek tarayici ve desktop deneyimini tek kod tabaninda sunar.",
         techInfo:
-          "Next.js, Electron, React 19, Tailwind CSS, Framer Motion, YouTube arama/oynatma akisi ve istemci tarafli oynatici kontrol sistemi.",
+          "Next.js, Electron, React 19, Tailwind CSS, Framer Motion, YouTube Data API v3 ve istemci tarafli oynatici kontrol sistemi.",
         role: "Urun tasarimi ve gelistirme - oynatici deneyimi, arayuz mimarisi, desktop wrapper entegrasyonu ve muzik kesif akislarinin olusturulmasi.",
         result:
           "Tek kod tabanindan hem web hem de masaustu deneyimi veren, karanlik temali ve performans odakli muzik uygulamasi.",
