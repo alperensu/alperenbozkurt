@@ -263,9 +263,9 @@ const tr = {
     educationTitle: "Eğitim",
     skillsTitle: "Teknik Yetkinlikler",
     techStudio: {
-      role: "Full-Stack Developer",
-      duration: "2023 - Günümüz",
-      desc: "Modern web teknolojileri (React 19, Next.js 15, Node.js) kullanarak uçtan uca kurumsal çözümler geliştirdim. Mikroservis mimarisi ile veri işleme süreçlerini optimize ettim, RESTful API tasarımı ve veritabanı yönetimini üstlendim. Kullanıcı deneyimini (UX) önceliklendirerek arayüz performansını artıran optimizasyon çalışmaları ve ölçeklenebilir mimari tasarımları yaptım.",
+      role: "Stajyer (Gömülü Sistemler)",
+      duration: "Eyl 2023 - May 2024",
+      desc: "MicroPython ile gömülü sistemler üzerine projeler geliştirdim. Kurumun web sitesinin iyileştirme süreçlerinde yer aldım ve LinkedIn sosyal medya yönetimini üstlendim.",
     },
     pamukkale: {
       school: "Pamukkale Üniversitesi",

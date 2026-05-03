@@ -26,12 +26,12 @@ const cvStatic = {
     },
     experience: {
       company: "TechStudio",
-      role: "Stajyer",
+      role: "Stajyer (Gömülü Sistemler)",
       period: "Eyl 2023 - May 2024",
       bullets: [
-        "React, Next.js, Node.js ve Python tabanli kurumsal web uygulamalari ve yonetim panelleri gelistirdim.",
-        "REST API tasarimi, veritabani modelleme, backend performans iyilestirmeleri (orn. API yanit surelerinde %30'a varan dusus) ve deployment sureclerinde uctan uca sorumluluk aldim.",
-        "AI destekli otomasyon, veri analitigi ve raporlama is akislariyla manuel operasyonlari azaltan cozumler urettim.",
+        "MicroPython kullanarak gömülü sistemler üzerine çalışmalar ve prototipleme süreçleri yürüttüm.",
+        "Kurumsal web sitesinin geliştirilmesi ve içerik yönetimi süreçlerinde aktif görev aldım.",
+        "LinkedIn ve diğer sosyal medya kanalları için kurumsal içerik üretimi ve hesap yönetimi süreçlerini üstlendim.",
       ],
     },
     education: [
@@ -63,12 +63,12 @@ const cvStatic = {
     },
     experience: {
       company: "TechStudio",
-      role: "Intern",
+      role: "Embedded Systems Intern",
       period: "Sept 2023 - May 2024",
       bullets: [
-        "Built enterprise web applications and admin dashboards with React, Next.js, Node.js, and Python.",
-        "Owned REST API design, database modeling, backend performance improvements (e.g., up to 30% reduction in API response times), and deployment workflows end to end.",
-        "Delivered AI-assisted automation, data analytics, and reporting workflows that reduce manual operations.",
+        "Conducted studies and prototyping on embedded systems using MicroPython.",
+        "Played an active role in the development and maintenance of the corporate website.",
+        "Managed corporate LinkedIn and social media accounts, producing digital content.",
       ],
     },
     education: [

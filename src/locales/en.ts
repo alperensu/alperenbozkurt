@@ -263,9 +263,9 @@ const en = {
     educationTitle: "Education",
     skillsTitle: "Technical Expertise",
     techStudio: {
-      role: "Full-Stack Developer",
-      duration: "2023 - Present",
-      desc: "I developed end-to-end enterprise solutions using modern web technologies (React 19, Next.js 15, Node.js). I optimized data processing workflows with microservices architecture, RESTful API design, and database management. I prioritized User Experience (UX) through interface performance optimizations and scalable architectural designs.",
+      role: "Embedded Systems Intern",
+      duration: "Sept 2023 - May 2024",
+      desc: "I developed projects on embedded systems using MicroPython. I contributed to the improvement of the corporate website and managed LinkedIn/social media channels.",
     },
     pamukkale: {
       school: "Pamukkale University",
