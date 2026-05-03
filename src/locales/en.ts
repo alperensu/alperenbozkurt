@@ -265,7 +265,7 @@ const en = {
     techStudio: {
       role: "Full-Stack Developer",
       duration: "2023 - Present",
-      desc: "Developing end-to-end enterprise solutions using modern web technologies (React 19, Next.js 15, Node.js). Optimizing data processing workflows with microservices architecture, RESTful API design, and database management. Prioritizing User Experience (UX) through interface performance optimizations and scalable architectural designs.",
+      desc: "I developed end-to-end enterprise solutions using modern web technologies (React 19, Next.js 15, Node.js). I optimized data processing workflows with microservices architecture, RESTful API design, and database management. I prioritized User Experience (UX) through interface performance optimizations and scalable architectural designs.",
     },
     pamukkale: {
       school: "Pamukkale University",

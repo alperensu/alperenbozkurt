@@ -16,7 +16,7 @@ const cvStatic = {
     github: "github.com/alperensu",
     summaryTitle: "Profesyonel Özet",
     summary:
-      "AI destekli web uygulamalari, veri odakli dashboardlar ve gelistirici araclari ureten full-stack developer. React/Next.js, Node.js, Python, FastAPI ve modern AI entegrasyonlariyla urun fikirlerini kullanilabilir, olceklenebilir ve performansli sistemlere donusturur. Teknik mimari, kullanici deneyimi ve otomasyon arasinda guclu bag kurarak ucundan sonuna urun gelistirme sorumlulugu alir.",
+      "AI destekli web uygulamalari, veri odakli dashboardlar ve gelistirici araclari ureten full-stack developer'ım. React/Next.js, Node.js, Python, FastAPI ve modern AI entegrasyonlariyla urun fikirlerini kullanilabilir, olceklenebilir ve performansli sistemlere donustururum. Teknik mimari, kullanici deneyimi ve otomasyon arasinda guclu bag kurarak ucundan sonuna urun gelistirme sorumlulugu alirim.",
     sections: {
       experience: "Experience",
       projects: "Selected Projects",
@@ -29,9 +29,9 @@ const cvStatic = {
       role: "Stajyer",
       period: "Eyl 2023 - May 2024",
       bullets: [
-        "React, Next.js, Node.js ve Python tabanli kurumsal web uygulamalari ve yonetim panelleri gelistirdi.",
-        "REST API tasarimi, veritabani modelleme, backend performans iyilestirmeleri (orn. API yanit surelerinde %30'a varan dusus) ve deployment sureclerinde uctan uca sorumluluk aldi.",
-        "AI destekli otomasyon, veri analitigi ve raporlama is akislariyla manuel operasyonlari azaltan cozumer uretti.",
+        "React, Next.js, Node.js ve Python tabanli kurumsal web uygulamalari ve yonetim panelleri gelistirdim.",
+        "REST API tasarimi, veritabani modelleme, backend performans iyilestirmeleri (orn. API yanit surelerinde %30'a varan dusus) ve deployment sureclerinde uctan uca sorumluluk aldim.",
+        "AI destekli otomasyon, veri analitigi ve raporlama is akislariyla manuel operasyonlari azaltan cozumler urettim.",
       ],
     },
     education: [
@@ -53,7 +53,7 @@ const cvStatic = {
     github: "github.com/alperensu",
     summaryTitle: "Professional Summary",
     summary:
-      "Full-stack developer building AI-powered web applications, data-driven dashboards, and developer tools. Turns product ideas into usable, scalable, and performant systems with React/Next.js, Node.js, Python, FastAPI, and modern AI integrations. Strong ownership across technical architecture, user experience, automation, and end-to-end delivery.",
+      "I am a full-stack developer building AI-powered web applications, data-driven dashboards, and developer tools. I turn product ideas into usable, scalable, and performant systems with React/Next.js, Node.js, Python, FastAPI, and modern AI integrations. I take strong ownership across technical architecture, user experience, automation, and end-to-end delivery.",
     sections: {
       experience: "Experience",
       projects: "Selected Projects",

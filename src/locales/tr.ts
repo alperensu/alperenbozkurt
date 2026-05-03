@@ -82,9 +82,9 @@ const tr = {
           "Borsa İstanbul (BIST) verilerini kullanarak hisse senedi trendlerini tahmin eden, gelişmiş makine öğrenimi modellerine dayalı bir finansal analiz platformu. LightGBM algoritmaları, Triple-Barrier etiketleme ve Purged K-Fold Cross-Validation gibi ileri düzey finansal veri bilimi teknikleriyle piyasa sinyalleri üretir.",
         techInfo:
           "Python (LightGBM, Pandas, Scikit-learn) ML Pipeline, 150+ teknik indikatör entegrasyonu, TA-Lib, Kysely query builder ve React tabanlı gerçek zamanlı veri dashboard'u.",
-        role: "Tam yığın geliştirme — backend API, ML pipeline, frontend dashboard ve gerçek zamanlı veri akışı.",
+        role: "Tam yığın geliştirme yaptım — backend API, ML pipeline, frontend dashboard ve gerçek zamanlı veri akışını yönettim.",
         result:
-          "417+ BIST hissesi için anlık teknik analiz, AI sinyal üretimi ve otomatik formasyon tanıma.",
+          "417+ BIST hissesi için anlık teknik analiz, AI sinyal üretimi ve otomatik formasyon tanıma sistemlerini hayata geçirdim.",
         expandedContent: [
           {
             title: "Otomatik Formasyon Tespiti",
@@ -111,9 +111,9 @@ const tr = {
           "Öğrencilerin sınav hazırlık süreçlerini oyunlaştıran ve kişiselleştiren, her kullanıcıya özel bir AI Eğitim Koçu sunan SaaS EdTech platformu. Davranışsal analiz algoritmalarıyla çalışma verimliliğini ölçer, eksik konuları tespit eder ve Llama 3/Gemini tabanlı hibrit AI motoruyla anlık rehberlik sağlar.",
         techInfo:
           "React 19 + Vite, Node.js & TypeScript, MySQL + Kysely, Redis caching, Socket.io real-time düello motoru, Google Gemini (2.0 Flash) ve OpenAI GPT-4o hibrit entegrasyonu.",
-        role: "Tam yığın geliştirme — AI koçluk motoru, Vibe Analytics davranışsal analiz algoritmaları, sınav simülatörü ve gamification sistemleri.",
+        role: "Tam yığın geliştirme süreçlerini yönettim — AI koçluk motoru, Vibe Analytics davranışsal analiz algoritmaları, sınav simülatörü ve gamification sistemlerini inşa ettim.",
         result:
-          "Başarı projeksiyonu (Linear Regression), tükenmişlik (burnout) detektörü, ÖSYM tarzı soru üretimi ve %99.9 AI servis devamlılığı.",
+          "Başarı projeksiyonu (Linear Regression), tükenmişlik (burnout) detektörü, ÖSYM tarzı soru üretimi ve %99.9 AI servis devamlılığı sağladım.",
         expandedContent: [
           {
             title: "Advanced Analytics",
@@ -140,9 +140,9 @@ const tr = {
           "AFAD ve JAK gibi arama-kurtarma ekiplerine havadan stratejik destek sağlayan, çift sensörlü (Termal + RGB) ve yapay zeka destekli otonom hexacopter sistemi (Ekip Projesi).",
         techInfo:
           "YOLO ile görüntü işleme üzerinden canlı/hedef tespiti, Termal ve RGB kamera füzyonu, otonom rota planlama.",
-        role: "Sistem Mühendisliği & Görüntü İşleme — otonom uçuş algoritmaları, sensör entegrasyonu ve hedef tespiti.",
+        role: "Sistem Mühendisliği & Görüntü İşleme süreçlerini üstlendim (Ekip Projesi) — otonom uçuş algoritmaları, sensör entegrasyonu ve hedef tespiti üzerine çalıştım.",
         result:
-          "Otonom intikal, hedefe hassas faydalı yük bırakma ve gece karanlığında bile canlı tespiti yapabilen prototip.",
+          "Otonom intikal, hedefe hassas faydalı yük bırakma ve gece karanlığında bile canlı tespiti yapabilen prototipi geliştirdim.",
         expandedContent: [
           {
             title: "Otonom İntikal ve Keşif",
@@ -169,9 +169,9 @@ const tr = {
           "AI kodlama akislari icin gelistirilmis, yerel calisan ve editorden bagimsiz bir context optimization sidecar. Projeyi izleyerek AST farkindalikli kompakt bir hafiza olusturur, gereksiz dosyalari ayiklar ve modele yalnizca ilgili baglami gondererek token kullanimini optimize eder.",
         techInfo:
           "FastAPI tabanli lokal API, watchdog ile anlik dosya izleme, tree-sitter ile AST tabanli ayristirma, ChromaDB vektor cache ve CLI odakli terminal yonetimi.",
-        role: "Urun tasarimi ve gelistirme - context builder, dosya izleyici, CLI komutlari, optimizasyon profilleri ve agent entegrasyon akisi.",
+        role: "Ürün tasarımı ve geliştirmesini yaptım - context builder, dosya izleyici, CLI komutları, optimizasyon profilleri ve agent entegrasyon akışını kurguladım.",
         result:
-          "Kodlama ajanlarinin tum repoyu okumadan, secilmis ve ozetlenmis baglamla calismasini saglayan yerel gelistirici araci.",
+          "Kodlama ajanlarının tüm repoyu okumadan, seçilmiş ve özetlenmiş bağlamla çalışmasını sağlayan yerel geliştirici aracını ürettim.",
         expandedContent: [
           {
             title: "Token Tasarrufu",
@@ -198,9 +198,9 @@ const tr = {
           "YouTube tabanli, modern bir muzik dinleme deneyimi sunan web ve masaustu odakli streaming uygulamasi. Spotify benzeri premium bir arayuzu Electron destegiyle birlestirerek tarayici ve desktop deneyimini tek kod tabaninda sunar.",
         techInfo:
           "Next.js, Electron, React 19, Tailwind CSS, Framer Motion, YouTube Data API v3 ve istemci tarafli oynatici kontrol sistemi.",
-        role: "Urun tasarimi ve gelistirme - oynatici deneyimi, arayuz mimarisi, desktop wrapper entegrasyonu ve muzik kesif akislarinin olusturulmasi.",
+        role: "Ürün tasarımı ve geliştirmesini üstlendim - oynatıcı deneyimi, arayüz mimarisi, desktop wrapper entegrasyonu ve müzik keşif akışlarını oluşturdum.",
         result:
-          "Tek kod tabanindan hem web hem de masaustu deneyimi veren, karanlik temali ve performans odakli muzik uygulamasi.",
+          "Tek kod tabanından hem web hem de masaüstü deneyimi veren, karanlık temalı ve performans odaklı müzik uygulamasını yayınladım.",
         expandedContent: [
           {
             title: "Cross-Platform Deneyim",
@@ -265,7 +265,7 @@ const tr = {
     techStudio: {
       role: "Full-Stack Developer",
       duration: "2023 - Günümüz",
-      desc: "Modern web teknolojileri (React 19, Next.js 15, Node.js) kullanarak uçtan uca kurumsal çözümler geliştirme. Mikroservis mimarisi ile veri işleme süreçlerini optimize etme, RESTful API tasarımı ve veritabanı yönetimi. Kullanıcı deneyimini (UX) önceliklendirerek arayüz performansını artıran optimizasyon çalışmaları ve ölçeklenebilir mimari tasarımları.",
+      desc: "Modern web teknolojileri (React 19, Next.js 15, Node.js) kullanarak uçtan uca kurumsal çözümler geliştirdim. Mikroservis mimarisi ile veri işleme süreçlerini optimize ettim, RESTful API tasarımı ve veritabanı yönetimini üstlendim. Kullanıcı deneyimini (UX) önceliklendirerek arayüz performansını artıran optimizasyon çalışmaları ve ölçeklenebilir mimari tasarımları yaptım.",
     },
     pamukkale: {
       school: "Pamukkale Üniversitesi",
