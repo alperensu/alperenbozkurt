@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import AnimatedElement from "./AnimatedElement";
@@ -448,6 +448,18 @@ export default function Projects() {
   const { locale } = useLanguage();
   const t = locale === "tr" ? tr : en;
 
+  // ── Prevent background scroll when lightbox is open ──
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedImage]);
+
   return (
     <>
       <section id="projects" className="relative py-32 px-6 md:px-16 lg:px-24">
@@ -535,31 +547,37 @@ export default function Projects() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-100 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 md:p-12 cursor-zoom-out"
+            className="fixed inset-0 z-100 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 md:p-12 cursor-zoom-out"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className={`relative w-full max-h-[90vh] cursor-default ${selectedImage.isPhoneMockup ? "flex h-full items-center justify-center" : "h-full max-w-7xl"}`}
+              className={`relative max-w-7xl max-h-full flex items-center justify-center cursor-default`}
               onClick={(e) => e.stopPropagation()}
             >
-              <Image
-                src={selectedImage.src}
-                alt="Enlarged Project Visual"
-                fill
-                quality={100}
-                unoptimized
-                className={selectedImage.isPhoneMockup ? "hidden" : "object-contain"}
-                sizes="100vw"
-                priority
-              />
-              {selectedImage.isPhoneMockup && (
-                <PhoneMockup
-                  src={selectedImage.src}
-                  alt="Enlarged mobile project mockup"
-                />
+              {selectedImage.isPhoneMockup ? (
+                <div className="relative h-full flex items-center justify-center p-4">
+                  <PhoneMockup
+                    src={selectedImage.src}
+                    alt="Enlarged mobile project mockup"
+                  />
+                </div>
+              ) : (
+                <div className="relative w-[90vw] h-[85vh]">
+                  <Image
+                    src={selectedImage.src}
+                    alt="Enlarged Project Visual"
+                    fill
+                    quality={100}
+                    unoptimized
+                    className="object-contain"
+                    sizes="90vw"
+                    priority
+                  />
+                </div>
               )}
+
               {selectedImage.src.includes("umay") && (
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-5 py-2.5 rounded-xl bg-black/80 backdrop-blur-md border border-orange-500/30 text-center max-w-[90vw] shadow-2xl">
                   <p className="text-xs md:text-sm text-orange-200/90">
@@ -568,9 +586,10 @@ export default function Projects() {
                   </p>
                 </div>
               )}
+              
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-black/50 hover:bg-black/80 border border-white/20 flex items-center justify-center text-white transition-colors backdrop-blur-md cursor-pointer"
+                className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-black/50 hover:bg-black/80 border border-white/20 flex items-center justify-center text-white transition-colors backdrop-blur-md cursor-pointer z-20"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M18 6L6 18M6 6l12 12" />
