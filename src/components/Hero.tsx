@@ -89,7 +89,7 @@ export default function Hero() {
           </AnimatedElement>
 
           <AnimatedElement direction="up" delay={1.05}>
-            <div className="mt-7 grid max-w-[20rem] gap-3 sm:flex sm:max-w-none sm:flex-wrap sm:justify-center lg:justify-start">
+            <div className="mx-auto mt-7 grid w-full max-w-[20rem] gap-3 sm:flex sm:max-w-none sm:flex-wrap sm:justify-center lg:mx-0 lg:justify-start">
               <button
                 onClick={() => scrollTo("#projects")}
                 className="group inline-flex min-h-13 w-full items-center justify-center gap-3 rounded-lg bg-white px-5 py-4 text-sm font-black text-slate-950 shadow-[0_22px_70px_rgba(88,215,255,0.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-100 sm:w-auto"
@@ -113,7 +113,7 @@ export default function Hero() {
           </AnimatedElement>
 
           <AnimatedElement direction="up" delay={1.15}>
-            <div className="mt-4 grid max-w-[20rem] grid-cols-3 overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] backdrop-blur-md sm:mt-6 sm:max-w-none">
+            <div className="mx-auto mt-4 grid w-full max-w-[20rem] grid-cols-3 overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] backdrop-blur-md sm:mt-6 sm:max-w-none lg:mx-0">
               {metrics.map((metric) => (
                 <div key={metric.label} className="border-r border-white/10 px-2.5 py-3 text-center last:border-r-0 sm:px-4 sm:py-4">
                   <p className="text-2xl font-black text-white md:text-3xl">{metric.value}</p>
@@ -126,7 +126,7 @@ export default function Hero() {
           </AnimatedElement>
         </div>
 
-        <AnimatedElement delay={0.9} direction="right" className="relative w-full max-w-[20rem] min-w-0 justify-self-start sm:mx-auto sm:max-w-xl sm:justify-self-center lg:mx-0 lg:max-w-[36rem] lg:justify-self-auto">
+        <AnimatedElement delay={0.9} direction="right" className="relative mx-auto w-full max-w-[20rem] min-w-0 justify-self-center sm:max-w-xl lg:mx-0 lg:max-w-[36rem] lg:justify-self-auto">
           <div className="premium-panel relative overflow-hidden rounded-lg p-3 sm:p-4 md:p-5">
             <div className="absolute inset-0 hairline-grid opacity-35" />
             <div className="relative flex items-center justify-between border-b border-white/10 pb-4">
