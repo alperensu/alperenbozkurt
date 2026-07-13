@@ -1,49 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import AnimatedElement from "./AnimatedElement";
-import TechCore from "./TechCore";
 import CVModal from "./CVModal";
 import { useLanguage } from "@/context/LanguageContext";
 import tr from "@/locales/tr";
 import en from "@/locales/en";
-
-function WordReveal({
-  children,
-  delay = 0,
-  className = "",
-  gradient,
-}: {
-  children: string;
-  delay?: number;
-  className?: string;
-  gradient?: string;
-}) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
-  const words = children.split(" ").filter(Boolean);
-
-  return (
-    <span ref={ref} className={className}>
-      {words.map((word, i) => (
-        <motion.span
-          key={`${word}-${i}`}
-          initial={{ y: 18, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : { y: 18, opacity: 0 }}
-          transition={{
-            duration: 0.52,
-            delay: delay + i * 0.05,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-          className={`motion-smooth inline-block mr-[0.3em] ${gradient || ""}`}
-        >
-          {word}
-        </motion.span>
-      ))}
-    </span>
-  );
-}
 
 export default function Hero() {
   const [isCVOpen, setIsCVOpen] = useState(false);
@@ -53,17 +16,17 @@ export default function Hero() {
   const metrics =
     locale === "tr"
       ? [
-          { value: "5+", label: "ürün projesi" },
-          { value: "AI", label: "entegrasyon odağı" },
-          { value: "Full", label: "stack üretim" },
+          { value: "5+", label: "projeler" },
+          { value: "AI", label: "AI odaklı" },
+          { value: "Full", label: "full-stack" },
         ]
       : [
-          { value: "5+", label: "product builds" },
-          { value: "AI", label: "integration focus" },
-          { value: "Full", label: "stack delivery" },
+          { value: "5+", label: "projects" },
+          { value: "AI", label: "AI focused" },
+          { value: "Full", label: "full-stack" },
         ];
 
-  const commandLines = ["init portfolio.v2", "sync AI systems", "deploy premium interface"];
+  const commandLines = ["init portfolio.v2", "sync AI systems", "deploy interface"];
 
   const scrollTo = (id: string) => {
     const el = document.querySelector(id);
@@ -75,86 +38,68 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen overflow-hidden px-4 pb-16 pt-24 sm:px-6 md:px-16 md:pb-20 md:pt-28 lg:px-24"
+      className="relative isolate min-h-screen overflow-hidden px-4 pb-14 pt-24 sm:px-6 md:px-16 md:pb-20 md:pt-28 lg:px-24"
     >
       <div className="absolute inset-x-4 top-24 h-px bg-linear-to-r from-transparent via-white/20 to-transparent sm:inset-x-6 md:inset-x-16 md:top-28 lg:inset-x-24" />
 
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-10 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[1.02fr_0.98fr]">
-        <div className="flex w-full max-w-[20rem] flex-col gap-6 text-left sm:mx-auto sm:max-w-[36rem] sm:text-center md:gap-8 lg:mx-0 lg:max-w-none lg:text-left">
-          <AnimatedElement delay={0.7} direction="up">
+      <div className="relative mx-auto grid w-full max-w-7xl gap-8 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+        <div className="w-full max-w-[22rem] justify-self-start text-left sm:mx-auto sm:max-w-2xl sm:justify-self-center sm:text-center lg:mx-0 lg:justify-self-auto lg:text-left">
+          <AnimatedElement delay={0.55} direction="up">
             <span className="eyebrow mr-auto sm:mx-auto lg:mx-0">
               <span className="hidden sm:inline">{t.hero.badge}</span>
               <span className="sm:hidden">Full-Stack & GEO</span>
             </span>
           </AnimatedElement>
 
-          <h1 className="max-w-[20rem] text-balance text-[2.55rem] font-black leading-[0.98] text-white sm:mx-auto sm:max-w-none sm:text-6xl sm:leading-[0.96] md:text-7xl lg:mx-0 lg:text-8xl">
+          <motion.h1
+            initial={{ y: 24, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.72, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-6 max-w-[20rem] text-[2.85rem] font-black leading-[0.94] text-white sm:mx-auto sm:max-w-none sm:text-6xl md:text-7xl lg:mx-0 lg:text-8xl"
+          >
             {locale === "tr" ? (
               <>
-                <span className="block">
-                  <WordReveal delay={0.9} className="text-white">
-                    Yapay zeka
-                  </WordReveal>
+                <span className="block">Yapay zeka</span>
+                <span className="block">çağında</span>
+                <span className="block bg-linear-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent sm:hidden">
+                  çalışan
                 </span>
-                <span className="block">
-                  <WordReveal delay={1.0} className="text-white">
-                    çağında
-                  </WordReveal>
-                </span>
-                <span className="block">
-                  <span className="sm:hidden bg-linear-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent">
-                    çalışan
-                  </span>
-                  <span className="hidden sm:block">
-                    <WordReveal
-                      delay={1.1}
-                      gradient="bg-linear-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent"
-                    >
-                      çalışan yazılım
-                    </WordReveal>
-                  </span>
-                </span>
-                <span className="block sm:hidden bg-linear-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent">
+                <span className="block bg-linear-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent sm:hidden">
                   yazılım
+                </span>
+                <span className="hidden bg-linear-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent sm:block">
+                  çalışan yazılım
                 </span>
               </>
             ) : (
               <>
-                <span className="block">
-                  <WordReveal delay={0.9} className="text-white">
-                    Building software
-                  </WordReveal>
-                </span>
-                <span className="block">
-                  <WordReveal
-                    delay={1.1}
-                    gradient="bg-linear-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent"
-                  >
-                    for the AI era
-                  </WordReveal>
+                <span className="block">Building</span>
+                <span className="block">software</span>
+                <span className="block bg-linear-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent">
+                  for AI
                 </span>
               </>
             )}
-          </h1>
+          </motion.h1>
 
-          <AnimatedElement delay={1.25} direction="up">
-            <p className="text-pretty max-w-[32rem] text-[0.95rem] leading-7 text-white/[0.62] sm:mx-auto sm:text-base md:text-lg md:leading-8 lg:mx-0">
+          <AnimatedElement delay={0.95} direction="up">
+            <p className="mt-6 max-w-[21rem] text-pretty text-[0.96rem] leading-7 text-white/[0.64] sm:mx-auto sm:max-w-xl sm:text-base md:text-lg md:leading-8 lg:mx-0">
               {t.hero.subtitle}
             </p>
           </AnimatedElement>
 
-          <AnimatedElement direction="up" delay={1.35}>
-            <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+          <AnimatedElement direction="up" delay={1.05}>
+            <div className="mt-7 grid max-w-[20rem] gap-3 sm:flex sm:max-w-none sm:flex-wrap sm:justify-center lg:justify-start">
               <button
                 onClick={() => scrollTo("#projects")}
-                className="group inline-flex w-full items-center justify-center gap-3 rounded-lg bg-white px-6 py-4 text-sm font-black text-slate-950 shadow-[0_22px_70px_rgba(88,215,255,0.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-100 sm:w-auto"
+                className="group inline-flex min-h-13 w-full items-center justify-center gap-3 rounded-lg bg-white px-5 py-4 text-sm font-black text-slate-950 shadow-[0_22px_70px_rgba(88,215,255,0.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-100 sm:w-auto"
               >
                 <iconify-icon icon="mdi:rocket-launch-outline" width="20" height="20" />
                 {t.hero.btnProjects}
               </button>
               <button
                 onClick={() => setIsCVOpen(true)}
-                className="group inline-flex w-full items-center justify-center gap-3 rounded-lg border border-white/[0.12] bg-white/[0.06] px-6 py-4 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/[0.35] hover:bg-white/10 sm:w-auto"
+                className="group inline-flex min-h-13 w-full items-center justify-center gap-3 rounded-lg border border-white/[0.12] bg-white/[0.06] px-5 py-4 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/[0.35] hover:bg-white/10 sm:w-auto"
               >
                 <iconify-icon
                   icon="mdi:file-document-outline"
@@ -167,12 +112,12 @@ export default function Hero() {
             </div>
           </AnimatedElement>
 
-          <AnimatedElement direction="up" delay={1.5}>
-            <div className="grid grid-cols-1 overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] backdrop-blur-md sm:grid-cols-3">
+          <AnimatedElement direction="up" delay={1.15}>
+            <div className="mt-4 grid max-w-[20rem] grid-cols-3 overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] backdrop-blur-md sm:mt-6 sm:max-w-none">
               {metrics.map((metric) => (
-                <div key={metric.label} className="border-b border-white/10 px-4 py-3 text-center last:border-b-0 sm:border-b-0 sm:border-r sm:px-4 sm:py-4 sm:text-left sm:last:border-r-0">
+                <div key={metric.label} className="border-r border-white/10 px-2.5 py-3 text-center last:border-r-0 sm:px-4 sm:py-4">
                   <p className="text-2xl font-black text-white md:text-3xl">{metric.value}</p>
-                  <p className="mt-1 text-[10px] font-semibold uppercase leading-4 tracking-[0.1em] text-white/[0.42] sm:text-xs sm:tracking-[0.12em]">
+                  <p className="mt-1 text-[10px] font-bold uppercase leading-4 tracking-[0.08em] text-white/[0.44] sm:text-xs">
                     {metric.label}
                   </p>
                 </div>
@@ -181,7 +126,7 @@ export default function Hero() {
           </AnimatedElement>
         </div>
 
-        <AnimatedElement delay={1.15} direction="right" className="relative w-full max-w-[20rem] min-w-0 sm:mx-auto sm:max-w-[36rem] lg:mx-0 lg:max-w-none">
+        <AnimatedElement delay={0.9} direction="right" className="relative w-full max-w-[20rem] min-w-0 justify-self-start sm:mx-auto sm:max-w-xl sm:justify-self-center lg:mx-0 lg:max-w-[36rem] lg:justify-self-auto">
           <div className="premium-panel relative overflow-hidden rounded-lg p-3 sm:p-4 md:p-5">
             <div className="absolute inset-0 hairline-grid opacity-35" />
             <div className="relative flex items-center justify-between border-b border-white/10 pb-4">
@@ -190,12 +135,12 @@ export default function Hero() {
                 <span className="h-3 w-3 rounded-full bg-amber-300/80" />
                 <span className="h-3 w-3 rounded-full bg-emerald-300/80" />
               </div>
-              <span className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-cyan-200/60">
+              <span className="font-mono text-[10px] font-black uppercase tracking-[0.16em] text-cyan-200/60 sm:text-[11px]">
                 alperen.core
               </span>
             </div>
 
-            <div className="relative grid min-w-0 gap-4 py-4 sm:py-5 md:grid-cols-[minmax(0,1fr)_0.82fr] md:items-center">
+            <div className="relative grid min-w-0 gap-4 py-4">
               <div className="min-w-0 rounded-lg border border-white/10 bg-black/28 p-3 font-mono sm:p-4">
                 {commandLines.map((line, index) => (
                   <div key={line} className="flex items-start gap-3 border-b border-white/[0.07] py-3 last:border-b-0">
@@ -209,21 +154,19 @@ export default function Hero() {
                   <motion.div
                     initial={{ width: "12%" }}
                     animate={{ width: "86%" }}
-                    transition={{ duration: 1.8, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
                     className="h-full rounded-full bg-linear-to-r from-cyan-300 via-white to-orange-300"
                   />
                 </div>
-              </div>
-
-              <div className="hidden md:block">
-                <TechCore />
               </div>
             </div>
 
             <div className="relative grid grid-cols-3 gap-2 border-t border-white/10 pt-4">
               {["Next.js", "AI", "Data"].map((item) => (
-                <div key={item} className="rounded-md border border-white/10 bg-white/[0.035] px-3 py-2 text-center">
-                  <span className="text-xs font-black uppercase tracking-[0.12em] text-white/[0.58]">{item}</span>
+                <div key={item} className="rounded-md border border-white/10 bg-white/[0.035] px-2 py-2 text-center sm:px-3">
+                  <span className="text-[10px] font-black uppercase tracking-[0.1em] text-white/[0.58] sm:text-xs">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
@@ -232,19 +175,6 @@ export default function Hero() {
       </div>
 
       <CVModal isOpen={isCVOpen} onClose={() => setIsCVOpen(false)} />
-
-      <AnimatedElement
-        delay={1.8}
-        direction="up"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center gap-2 text-white/30">
-          <span className="text-xs uppercase tracking-widest">{t.hero.scroll}</span>
-          <div className="flex h-8 w-5 items-start justify-center rounded-full border border-white/20 p-1">
-            <div className="h-2 w-1 rounded-full bg-white/40 animate-scroll-pulse" />
-          </div>
-        </div>
-      </AnimatedElement>
     </section>
   );
 }
