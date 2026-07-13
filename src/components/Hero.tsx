@@ -75,20 +75,20 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen overflow-hidden px-6 pb-20 pt-28 md:px-16 lg:px-24"
+      className="relative min-h-screen overflow-hidden px-4 pb-16 pt-24 sm:px-6 md:px-16 md:pb-20 md:pt-28 lg:px-24"
     >
-      <div className="absolute inset-x-6 top-28 h-px bg-linear-to-r from-transparent via-white/20 to-transparent md:inset-x-16 lg:inset-x-24" />
+      <div className="absolute inset-x-4 top-24 h-px bg-linear-to-r from-transparent via-white/20 to-transparent sm:inset-x-6 md:inset-x-16 md:top-28 lg:inset-x-24" />
 
-      <div className="section-inner relative grid min-h-[calc(100vh-7rem)] items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
-        <div className="flex w-72 max-w-[calc(100vw-3rem)] -translate-x-14 justify-self-center flex-col gap-8 text-center sm:w-[calc(100vw-3rem)] sm:translate-x-0 lg:w-auto lg:justify-self-auto lg:text-left">
+      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-10 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[1.02fr_0.98fr]">
+        <div className="flex w-full max-w-[20rem] flex-col gap-6 text-left sm:mx-auto sm:max-w-[36rem] sm:text-center md:gap-8 lg:mx-0 lg:max-w-none lg:text-left">
           <AnimatedElement delay={0.7} direction="up">
-            <span className="eyebrow mx-auto lg:mx-0">
+            <span className="eyebrow mr-auto sm:mx-auto lg:mx-0">
               <span className="hidden sm:inline">{t.hero.badge}</span>
               <span className="sm:hidden">Full-Stack & GEO</span>
             </span>
           </AnimatedElement>
 
-          <h1 className="text-balance text-4xl font-black leading-[0.98] text-white sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="max-w-[20rem] text-balance text-[2.55rem] font-black leading-[0.98] text-white sm:mx-auto sm:max-w-none sm:text-6xl sm:leading-[0.96] md:text-7xl lg:mx-0 lg:text-8xl">
             {locale === "tr" ? (
               <>
                 <span className="block">
@@ -102,12 +102,20 @@ export default function Hero() {
                   </WordReveal>
                 </span>
                 <span className="block">
-                  <WordReveal
-                    delay={1.1}
-                    gradient="bg-linear-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent"
-                  >
-                    çalışan yazılım
-                  </WordReveal>
+                  <span className="sm:hidden bg-linear-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent">
+                    çalışan
+                  </span>
+                  <span className="hidden sm:block">
+                    <WordReveal
+                      delay={1.1}
+                      gradient="bg-linear-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent"
+                    >
+                      çalışan yazılım
+                    </WordReveal>
+                  </span>
+                </span>
+                <span className="block sm:hidden bg-linear-to-r from-cyan-300 via-white to-orange-300 bg-clip-text text-transparent">
+                  yazılım
                 </span>
               </>
             ) : (
@@ -130,7 +138,7 @@ export default function Hero() {
           </h1>
 
           <AnimatedElement delay={1.25} direction="up">
-            <p className="text-pretty mx-auto max-w-2xl text-base leading-8 text-white/[0.58] md:text-lg lg:mx-0">
+            <p className="text-pretty max-w-[32rem] text-[0.95rem] leading-7 text-white/[0.62] sm:mx-auto sm:text-base md:text-lg md:leading-8 lg:mx-0">
               {t.hero.subtitle}
             </p>
           </AnimatedElement>
@@ -162,9 +170,9 @@ export default function Hero() {
           <AnimatedElement direction="up" delay={1.5}>
             <div className="grid grid-cols-1 overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] backdrop-blur-md sm:grid-cols-3">
               {metrics.map((metric) => (
-                <div key={metric.label} className="border-b border-white/10 px-4 py-4 text-left last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0">
+                <div key={metric.label} className="border-b border-white/10 px-4 py-3 text-center last:border-b-0 sm:border-b-0 sm:border-r sm:px-4 sm:py-4 sm:text-left sm:last:border-r-0">
                   <p className="text-2xl font-black text-white md:text-3xl">{metric.value}</p>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-white/[0.38]">
+                  <p className="mt-1 text-[10px] font-semibold uppercase leading-4 tracking-[0.1em] text-white/[0.42] sm:text-xs sm:tracking-[0.12em]">
                     {metric.label}
                   </p>
                 </div>
@@ -173,8 +181,8 @@ export default function Hero() {
           </AnimatedElement>
         </div>
 
-        <AnimatedElement delay={1.15} direction="right" className="relative w-72 max-w-[calc(100vw-3rem)] -translate-x-14 min-w-0 justify-self-center sm:w-[calc(100vw-3rem)] sm:translate-x-0 lg:w-full lg:justify-self-auto">
-          <div className="premium-panel relative overflow-hidden rounded-lg p-4 md:p-5">
+        <AnimatedElement delay={1.15} direction="right" className="relative w-full max-w-[20rem] min-w-0 sm:mx-auto sm:max-w-[36rem] lg:mx-0 lg:max-w-none">
+          <div className="premium-panel relative overflow-hidden rounded-lg p-3 sm:p-4 md:p-5">
             <div className="absolute inset-0 hairline-grid opacity-35" />
             <div className="relative flex items-center justify-between border-b border-white/10 pb-4">
               <div className="flex items-center gap-2">
@@ -187,12 +195,14 @@ export default function Hero() {
               </span>
             </div>
 
-            <div className="relative grid min-w-0 gap-4 py-5 md:grid-cols-[minmax(0,1fr)_0.82fr] md:items-center">
-              <div className="min-w-0 rounded-lg border border-white/10 bg-black/28 p-4 font-mono">
+            <div className="relative grid min-w-0 gap-4 py-4 sm:py-5 md:grid-cols-[minmax(0,1fr)_0.82fr] md:items-center">
+              <div className="min-w-0 rounded-lg border border-white/10 bg-black/28 p-3 font-mono sm:p-4">
                 {commandLines.map((line, index) => (
-                  <div key={line} className="flex items-center gap-3 border-b border-white/[0.07] py-3 last:border-b-0">
+                  <div key={line} className="flex items-start gap-3 border-b border-white/[0.07] py-3 last:border-b-0">
                     <span className="text-cyan-300/70">0{index + 1}</span>
-                    <span className="min-w-0 break-words text-white/[0.78]">$ {line}</span>
+                    <span className="min-w-0 break-words text-sm leading-6 text-white/[0.78] sm:text-base">
+                      $ {line}
+                    </span>
                   </div>
                 ))}
                 <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/10">
@@ -205,7 +215,9 @@ export default function Hero() {
                 </div>
               </div>
 
-              <TechCore />
+              <div className="hidden md:block">
+                <TechCore />
+              </div>
             </div>
 
             <div className="relative grid grid-cols-3 gap-2 border-t border-white/10 pt-4">
