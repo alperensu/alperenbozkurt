@@ -16,7 +16,7 @@ const tr = {
     h1_3: "",
     h1_4: "",
     subtitle:
-      "Yazılım dünyasına olan tutkumu, akademik bilgisayar programcılığı temellerim ve tam donanımlı bir full-stack geliştirici vizyonumla harmanlıyorum. Kod yazmanın ötesinde; grafik tasarım ve video kurgu gibi kreatif alanlarda projeler üretiyor, teknoloji dünyasındaki yenilikleri derinlemesine araştırıyorum. Disiplinimi ve enerjimi fitness ile koruyan, teknik mükemmeliyeti estetik bir bakış açısıyla birleştirerek her zaman daha yenilikçi ve optimize edilmiş çözümler üretmeyi hedefleyen çok yönlü bir geliştiriciyim.",
+      "AI entegrasyonu, veri odaklı ürünler ve modern full-stack mimarilerle hızlı, estetik ve ölçeklenebilir dijital sistemler geliştiriyorum.",
     btnProjects: "Projeleri Keşfet",
     btnContact: "İletişime Geç",
     scroll: "Kaydır",
@@ -62,8 +62,8 @@ const tr = {
   },
   projects: {
     badge: "PORTFOLIO",
-    heading1: "Featured",
-    heading2: "Projects",
+    heading1: "Öne Çıkan",
+    heading2: "Projeler",
     freelanceTitle: "Freelance Script & Çözüm Arşivi",
     freelanceDesc:
       "Geçmişte freelance platformlarında talebe özel geliştirdiğim, portföyümü ve sektörel yetkinliğimi genişleten niş endüstri yazılımları.",

@@ -120,9 +120,9 @@ export default function VisitorCounter() {
         <div className="flex flex-col items-center gap-0.5">
           <div className="relative">
             {loading ? (
-              <div className="w-16 h-6 bg-white/10 rounded animate-pulse" />
+              <div className="h-6 w-16 animate-pulse rounded-md bg-white/10" />
             ) : (
-              <span className="text-2xl font-bold tabular-nums bg-linear-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-200 via-white to-orange-300 bg-clip-text text-2xl font-black tabular-nums text-transparent">
                 {totalCount.toLocaleString()}
               </span>
             )}
@@ -138,9 +138,9 @@ export default function VisitorCounter() {
         <div className="flex flex-col items-center gap-0.5">
           <div className="relative">
             {loading ? (
-              <div className="w-10 h-6 bg-white/10 rounded animate-pulse" />
+              <div className="h-6 w-10 animate-pulse rounded-md bg-white/10" />
             ) : (
-              <span className="text-2xl font-bold tabular-nums text-white/80">
+              <span className="text-2xl font-black tabular-nums text-white/80">
                 {todayCount.toLocaleString()}
               </span>
             )}

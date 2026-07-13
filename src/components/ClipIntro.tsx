@@ -17,7 +17,7 @@ export default function ClipIntro() {
     <AnimatePresence>
       <motion.div
         key="clip-intro"
-        className="fixed inset-0 z-100 flex items-center justify-center bg-black"
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-black"
         initial={{ clipPath: "circle(100% at 50% 50%)", opacity: 1 }}
         animate={{ clipPath: "circle(0% at 50% 50%)", opacity: 0.6 }}
         transition={{
@@ -47,13 +47,13 @@ export default function ClipIntro() {
             transition={{ duration: 0.62, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-center gap-4"
           >
-            <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-vibrant-orange to-sunset-amber flex items-center justify-center text-2xl font-bold text-white">
+            <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-white/10 bg-white text-2xl font-black text-slate-950">
               AB
             </div>
             <h2 className="text-2xl md:text-3xl font-light tracking-[0.3em] text-white/80 uppercase">
               Alperen Bozkurt
             </h2>
-            <div className="h-px w-32 bg-linear-to-r from-transparent via-vibrant-orange to-transparent" />
+            <div className="h-px w-32 bg-linear-to-r from-transparent via-cyan-300 to-transparent" />
             <p className="text-sm tracking-[0.2em] text-white/40 uppercase">
               {t.clip.tagline}
             </p>

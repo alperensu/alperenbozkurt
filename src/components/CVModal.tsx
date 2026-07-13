@@ -15,6 +15,11 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
   const [previewScale, setPreviewScale] = useState(1);
 
   useEffect(() => {
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  useEffect(() => {
     if (!isOpen) return;
 
     const updateScale = () => {
@@ -31,7 +36,6 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
   }, [isOpen]);
 
   useEffect(() => {
-    setMounted(true);
     if (isOpen) {
       const scrollY = window.scrollY;
       document.body.style.position = "fixed";
@@ -160,14 +164,14 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
             <div className="no-print absolute right-4 top-4 z-[1000000] flex gap-3" onClick={(e) => e.stopPropagation()}>
               <button
                 onClick={handlePrint}
-                className="flex items-center gap-2 px-4 py-3 md:px-6 md:py-3 bg-orange-500 hover:bg-orange-400 text-white text-xs md:text-sm font-bold rounded-xl shadow-2xl transition-all active:scale-95"
+                className="flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-xs font-black text-slate-950 shadow-2xl transition-all hover:bg-cyan-100 active:scale-95 md:px-6 md:py-3 md:text-sm"
               >
                 <iconify-icon icon="mdi:printer" width="20" height="20" />
                 PRINT / SAVE AS PDF
               </button>
               <button
                 onClick={onClose}
-                className="w-11 h-11 flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all"
+                className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white transition-all hover:bg-white/20"
               >
                 <iconify-icon icon="mdi:close" width="26" height="26" />
               </button>

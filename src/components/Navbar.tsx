@@ -50,27 +50,25 @@ export default function Navbar() {
       initial={{ y: -42, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.72, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-0.5 md:gap-1 px-1.5 md:px-2 py-1.5 md:py-2 rounded-full transition-all duration-700 ease-in-out max-w-[95vw] whitespace-nowrap ${
+      className={`fixed left-1/2 top-4 z-50 flex max-w-[95vw] -translate-x-1/2 items-center gap-0.5 rounded-lg px-1.5 py-1.5 transition-all duration-700 ease-in-out md:gap-1 md:px-2 md:py-2 ${
         scrolled
-          ? "bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl shadow-black/60"
-          : "bg-white/5 backdrop-blur-xl border border-white/10"
+          ? "border border-white/[0.18] bg-[#090f20]/[0.78] shadow-2xl shadow-black/60 backdrop-blur-2xl"
+          : "border border-white/10 bg-[#090f20]/[0.54] backdrop-blur-xl"
       }`}
     >
-      {/* Logo */}
       <a
         href="#hero"
         onClick={(e) => {
           e.preventDefault();
           scrollTo("#hero");
         }}
-        className="flex items-center justify-center w-10 h-10 rounded-full bg-linear-to-br from-vibrant-orange/20 to-sunset-amber/20 border border-white/10 mr-2 hover:border-vibrant-orange/30 transition-all duration-500"
+        className="mr-2 flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/[0.06] transition-all duration-500 hover:border-cyan-300/30 hover:bg-white/10"
       >
-        <span className="text-sm font-bold bg-linear-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+        <span className="bg-linear-to-r from-cyan-200 via-white to-orange-300 bg-clip-text text-sm font-black text-transparent">
           AB
         </span>
       </a>
 
-      {/* Nav Links - Hidden on mobile, shown on md+ */}
       <div className="hidden md:flex items-center gap-0.5">
         {navLinks.map((link, index) => (
           <motion.button
@@ -83,7 +81,7 @@ export default function Navbar() {
               ease: [0.16, 1, 0.3, 1],
             }}
             onClick={() => scrollTo(link.href)}
-            className="px-4 py-2 text-sm font-medium text-white/60 hover:text-white rounded-full hover:bg-white/10 transition-all duration-500"
+            className="rounded-md px-4 py-2 text-sm font-semibold text-white/[0.55] transition-all duration-500 hover:bg-white/[0.08] hover:text-white"
           >
             {link.label}
           </motion.button>
@@ -97,31 +95,29 @@ export default function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
           onClick={() => scrollTo("#projects")}
-          className="px-3 py-2 text-xs font-medium text-white/60 hover:text-white rounded-full transition-all"
+          className="rounded-md px-3 py-2 text-xs font-semibold text-white/60 transition-all hover:text-white"
         >
           {t.nav.projects}
         </motion.button>
       </div>
 
-      {/* Language Toggle */}
       <motion.button
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
         onClick={toggleLocale}
-        className="px-3 py-1.5 text-xs font-bold rounded-full border border-white/10 text-white/50 hover:text-white hover:border-orange-500/40 hover:bg-orange-500/10 transition-all duration-500 ml-1"
+        className="ml-1 rounded-md border border-white/10 px-3 py-2 text-xs font-black text-white/50 transition-all duration-500 hover:border-cyan-300/[0.35] hover:bg-cyan-300/10 hover:text-white"
         aria-label="Toggle language"
       >
         {locale === "tr" ? "EN" : "TR"}
       </motion.button>
 
-      {/* CTA */}
       <motion.a
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 1.9, ease: [0.16, 1, 0.3, 1] }}
         href="mailto:alperenbozkurt.iletisim@gmail.com"
-        className="ml-1 md:ml-2 px-3 md:px-5 py-2 text-xs md:text-sm font-semibold rounded-full bg-linear-to-r from-orange-500 to-amber-500 text-white hover:from-orange-400 hover:to-amber-400 transition-all duration-500 hover:shadow-lg hover:shadow-orange-500/25 whitespace-nowrap"
+        className="ml-1 whitespace-nowrap rounded-md bg-white px-3 py-2 text-xs font-black text-slate-950 transition-all duration-500 hover:bg-cyan-100 hover:shadow-lg hover:shadow-cyan-500/[0.15] md:ml-2 md:px-5 md:text-sm"
       >
         {t.nav.cta}
       </motion.a>

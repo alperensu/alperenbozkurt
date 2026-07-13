@@ -35,18 +35,18 @@ export default function Marquee() {
   const duplicatedSectors = [...sectors, ...sectors];
 
   return (
-    <section id="sectors" className="relative py-32 px-6 md:px-16 lg:px-24">
-      <div className="max-w-7xl mx-auto">
+    <section id="sectors" className="section-shell">
+      <div className="section-inner">
         {/* Section Header */}
         <div className="text-center mb-16">
           <AnimatedElement direction="up">
-            <span className="inline-block px-5 py-2 rounded-full bg-white/10 border border-white/10 text-base text-orange-300 font-medium mb-6">
+            <span className="eyebrow mb-6">
               {t.marquee.badge}
             </span>
           </AnimatedElement>
 
           <ScrollTextReveal
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 block"
+            className="text-balance mb-6 block text-4xl font-black text-white md:text-5xl lg:text-6xl"
             delay={0.1}
             staggerDelay={0.05}
           >
@@ -54,7 +54,7 @@ export default function Marquee() {
           </ScrollTextReveal>
 
           <AnimatedElement direction="up" delay={0.3}>
-            <p className="text-lg md:text-xl text-white/40 max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-base leading-8 text-white/[0.55] md:text-lg">
               {t.marquee.subtitle}
             </p>
           </AnimatedElement>
@@ -67,14 +67,14 @@ export default function Marquee() {
               {duplicatedSectors.map((sector, index) => (
                 <div
                   key={`${sector.title}-${index}`}
-                  className="shrink-0 w-72 rounded-2xl p-6 transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1.5 group"
+                  className="group w-72 shrink-0 rounded-lg p-6 transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1.5"
                   style={{
-                    background: "rgba(255, 255, 255, 0.04)",
-                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                    background: "linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025))",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
                   }}
                 >
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-110"
+                    className="mb-4 flex h-12 w-12 items-center justify-center rounded-md transition-transform duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-110"
                     style={{
                       background: `${sector.color}15`,
                       border: `1px solid ${sector.color}25`,
@@ -87,10 +87,10 @@ export default function Marquee() {
                       style={{ color: sector.color }}
                     />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">
+                  <h3 className="mb-2 text-lg font-black text-white">
                     {sector.title}
                   </h3>
-                  <p className="text-sm text-white/40 leading-relaxed">
+                  <p className="text-sm leading-7 text-white/[0.52]">
                     {sector.description}
                   </p>
                 </div>

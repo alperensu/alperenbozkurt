@@ -16,7 +16,7 @@ const en = {
     h1_3: "",
     h1_4: "",
     subtitle:
-      "I blend my passion for software with academic foundations in computer programming and a vision of becoming a comprehensive full-stack developer. Beyond code, I produce projects in creative fields like graphic design and video editing, while deeply researching technological innovations. Maintaining my discipline and energy through fitness, I aim to create innovative and optimized solutions by merging technical excellence with an aesthetic perspective.",
+      "I design and build fast, polished, scalable digital systems with AI integration, data-driven products, and modern full-stack architecture.",
     btnProjects: "Explore Projects",
     btnContact: "Get in Touch",
     scroll: "Scroll",

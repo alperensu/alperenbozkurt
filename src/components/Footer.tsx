@@ -21,25 +21,25 @@ export default function Footer() {
   const isInView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
-    <footer className="relative py-16 px-6 md:px-16 lg:px-24 border-t border-white/10">
-      <div className="max-w-7xl mx-auto" ref={ref}>
+    <footer className="relative border-t border-white/10 px-6 py-16 md:px-16 lg:px-24">
+      <div className="section-inner" ref={ref}>
         <motion.div
           initial={{ y: 28, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
           className="motion-smooth"
         >
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="premium-panel flex flex-col items-center justify-between gap-8 rounded-lg p-6 md:flex-row md:p-8">
             {/* Brand */}
             <div className="flex flex-col items-center md:items-start gap-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-linear-to-br from-orange-500/20 to-amber-500/20 border border-white/10 flex items-center justify-center">
-                  <span className="text-sm font-bold bg-linear-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+                <div className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/[0.055]">
+                  <span className="bg-linear-to-r from-cyan-200 via-white to-orange-300 bg-clip-text text-sm font-black text-transparent">
                     AB
                   </span>
                 </div>
                 <div>
-                  <p className="text-base font-semibold text-white">
+                  <p className="text-base font-black text-white">
                     Alperen Bozkurt
                   </p>
                   <p className="text-sm text-white/40">
@@ -64,7 +64,7 @@ export default function Footer() {
                     delay: 0.2 + index * 0.1,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="w-11 h-11 rounded-xl flex items-center justify-center bg-white/10 border border-white/10 text-white/40 hover:text-white hover:bg-white/15 hover:border-orange-500/30 hover:-translate-y-1 transition-all duration-500"
+                  className="flex h-11 w-11 items-center justify-center rounded-md border border-white/10 bg-white/[0.055] text-white/40 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.1] hover:text-white"
                   aria-label={link.label}
                 >
                   <iconify-icon icon={link.icon} width="18" height="18" />

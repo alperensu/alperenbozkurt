@@ -42,20 +42,19 @@ function ParticleCloud({ count = 2500 }) {
       <Points ref={pointsRef} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#0ea5e9" // Cyan
-          size={0.015}
+          color="#58d7ff"
+          size={0.013}
           sizeAttenuation={true}
           depthWrite={false}
           blending={THREE.AdditiveBlending}
         />
       </Points>
-      {/* Secondary Magenta Cloud for Depth */}
       <Float speed={1.5} rotationIntensity={2} floatIntensity={2}>
         <Points positions={positions.slice(0, count * 1.5)} stride={3}>
           <PointMaterial
             transparent
-            color="#d946ef" // Magenta
-            size={0.012}
+            color="#ff6b2c"
+            size={0.01}
             sizeAttenuation={true}
             depthWrite={false}
             blending={THREE.AdditiveBlending}
@@ -116,7 +115,7 @@ function InterconnectedNodes({ nodeCount = 40 }) {
   return (
     <instancedMesh ref={meshRef} args={[undefined, undefined, nodeCount]}>
       <sphereGeometry args={[1, 16, 16]} />
-      <meshBasicMaterial color="#38bdf8" transparent opacity={0.6} />
+      <meshBasicMaterial color="#58d7ff" transparent opacity={0.45} />
     </instancedMesh>
   );
 }
@@ -132,20 +131,19 @@ export default function Scene3D() {
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-10 bg-[#020617] pointer-events-none">
-      {/* Background Gradient for depth and readability */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,6,23,0.8)_100%)] z-1" />
-      <div className="absolute inset-0 bg-linear-to-b from-[#020617] via-transparent to-[#020617] z-1" />
+    <div className="pointer-events-none fixed inset-0 -z-10 bg-[#060913]">
+      <div className="absolute inset-0 z-1 bg-[radial-gradient(circle_at_50%_34%,transparent_0%,rgba(6,9,19,0.86)_72%)]" />
+      <div className="absolute inset-0 z-1 bg-linear-to-b from-[#060913] via-transparent to-[#060913]" />
 
       <Canvas
         camera={{ position: [0, 0, 10], fov: 45 }}
         dpr={[1, 2]} // Performance optimization for high-DPI screens
         gl={{ alpha: true, antialias: false }} // Disable antialias for more performance if needed
       >
-        <color attach="background" args={["#020617"]} />
+        <color attach="background" args={["#060913"]} />
         <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#0ea5e9" />
-        <pointLight position={[-10, -10, -10]} intensity={1} color="#d946ef" />
+        <pointLight position={[10, 10, 10]} intensity={1} color="#58d7ff" />
+        <pointLight position={[-10, -10, -10]} intensity={0.8} color="#ff6b2c" />
 
         <React.Suspense fallback={null}>
           <ParticleCloud count={isMobile ? 1000 : 3000} />

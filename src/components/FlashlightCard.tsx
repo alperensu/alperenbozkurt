@@ -43,12 +43,12 @@ export default function FlashlightCard({
   return (
     <div
       ref={cardRef}
-      className={`flashlight-card relative overflow-hidden rounded-2xl ${className}`}
+      className={`flashlight-card relative overflow-hidden rounded-lg ${className}`}
       onMouseMove={handleMouseMove}
       style={style}
     >
-      <div className="flashlight-card__glow absolute inset-0 pointer-events-none rounded-2xl" />
-      <div className="flashlight-card__border absolute inset-0 pointer-events-none rounded-2xl" />
+      <div className="flashlight-card__glow absolute inset-0 pointer-events-none rounded-lg" />
+      <div className="flashlight-card__border absolute inset-0 pointer-events-none rounded-lg" />
       <div className="relative z-10">{children}</div>
     </div>
   );

@@ -179,16 +179,10 @@ function ProjectSection({
     <AnimatedElement direction="up" delay={index * 0.18}>
       <div className="relative">
         {/* ── Main card ── */}
-        <div
-          className="relative rounded-2xl overflow-hidden"
-          style={{
-            background: "rgba(255, 255, 255, 0.02)",
-            border: "1px solid rgba(255, 255, 255, 0.05)",
-          }}
-        >
+        <div className="premium-panel relative overflow-hidden rounded-lg">
           <div className="flex flex-col md:flex-row">
             {/* ── Left sidebar meta ── */}
-            <div className="w-full md:w-52 lg:w-64 shrink-0 p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/10">
+            <div className="w-full shrink-0 border-b border-white/10 bg-white/[0.025] p-6 md:w-52 md:border-b-0 md:border-r md:p-8 lg:w-64">
               <div className="flex flex-row md:flex-col gap-4 md:gap-6">
                 <div>
                   <p
@@ -197,7 +191,7 @@ function ProjectSection({
                   >
                     {text.category}
                   </p>
-                  <p className="text-xs text-white/25">{meta.dateRange}</p>
+                  <p className="text-xs text-white/[0.35]">{meta.dateRange}</p>
                 </div>
 
                 <div className="hidden md:block">
@@ -205,7 +199,7 @@ function ProjectSection({
                     {meta.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 rounded text-[10px] text-white/30 border border-white/10 bg-white/10"
+                        className="rounded-md border border-white/10 bg-white/[0.055] px-2 py-1 text-[10px] font-semibold text-white/[0.45]"
                       >
                         {tech}
                       </span>
@@ -232,15 +226,15 @@ function ProjectSection({
             </div>
 
             {/* ── Right main content ── */}
-            <div className="flex-1 p-6 md:p-8">
+            <div className="flex-1 p-6 md:p-8 lg:p-10">
               {/* Header row */}
               <div className="flex items-start justify-between mb-5">
                 <div className="flex items-center gap-3 flex-wrap">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">
+                  <h3 className="text-2xl md:text-4xl font-black text-white">
                     {text.title}
                   </h3>
                   <span
-                    className="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider whitespace-nowrap"
+                    className="whitespace-nowrap rounded-md px-2.5 py-1 text-[10px] font-black uppercase tracking-wider"
                     style={{
                       background: `${meta.statusColor}20`,
                       color: meta.statusColor,
@@ -253,7 +247,7 @@ function ProjectSection({
 
                 {/* Project icon */}
                 <div
-                  className="hidden md:flex w-10 h-10 rounded-lg items-center justify-center shrink-0"
+                  className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-md md:flex"
                   style={{
                     background: `${meta.accentColor}08`,
                     border: `1px solid ${meta.accentColor}15`,
@@ -269,7 +263,7 @@ function ProjectSection({
               </div>
 
               {/* Description */}
-              <p className="text-base text-white/40 leading-relaxed mb-8 max-w-3xl">
+              <p className="mb-8 max-w-3xl text-base leading-8 text-white/[0.56]">
                 {text.description}
               </p>
 
@@ -278,7 +272,7 @@ function ProjectSection({
                 {meta.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-0.5 rounded text-[10px] text-white/30 border border-white/10 bg-white/10"
+                    className="rounded-md border border-white/10 bg-white/[0.055] px-2 py-1 text-[10px] font-semibold text-white/[0.45]"
                   >
                     {tech}
                   </span>
@@ -286,24 +280,24 @@ function ProjectSection({
               </div>
 
               {/* ── 3-column detail grid ── */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-white/10">
+              <div className="grid grid-cols-1 gap-4 border-t border-white/10 pt-6 md:grid-cols-3">
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-2.5" style={{ color: `${meta.accentColor}90` }}>
                     {t.projects.labels.techStack}
                   </p>
-                  <p className="text-sm text-white/35 leading-relaxed">{text.techInfo}</p>
+                  <p className="text-sm leading-7 text-white/[0.45]">{text.techInfo}</p>
                 </div>
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-2.5" style={{ color: `${meta.accentColor}90` }}>
                     {t.projects.labels.role}
                   </p>
-                  <p className="text-sm text-white/35 leading-relaxed">{text.role}</p>
+                  <p className="text-sm leading-7 text-white/[0.45]">{text.role}</p>
                 </div>
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-2.5" style={{ color: `${meta.accentColor}90` }}>
                     {t.projects.labels.result}
                   </p>
-                  <p className="text-sm text-white/35 leading-relaxed">{text.result}</p>
+                  <p className="text-sm leading-7 text-white/[0.45]">{text.result}</p>
                 </div>
               </div>
 
@@ -324,7 +318,7 @@ function ProjectSection({
               {meta.images && (
                 <div className="mt-8 flex flex-col md:flex-row gap-4">
                   <div
-                    className={`relative ${isUmay ? "flex-1 aspect-video" : meta.id === 2 ? "flex-[2.3] aspect-[1920/980]" : "flex-[2.2] aspect-video"} rounded-xl overflow-hidden border border-white/10 bg-black/50 group cursor-pointer`}
+                    className={`group relative ${isUmay ? "flex-1 aspect-video" : meta.id === 2 ? "flex-[2.3] aspect-[1920/980]" : "flex-[2.2] aspect-video"} cursor-pointer overflow-hidden rounded-lg border border-white/10 bg-black/60 shadow-[0_24px_90px_rgba(0,0,0,0.28)]`}
                     onClick={() => meta.images?.main && onImageClick({ src: meta.images.main })}
                   >
                     <Image
@@ -337,7 +331,7 @@ function ProjectSection({
                     />
                   </div>
                   <div
-                    className={`relative ${isUmay ? "flex-1 aspect-video rounded-xl overflow-hidden border border-white/10 bg-black/50 group cursor-pointer" : hasPhoneMockup ? "w-full md:w-[260px] lg:w-[300px] shrink-0 self-center cursor-pointer flex items-center justify-center py-2" : "flex-1 hidden md:flex items-center justify-center cursor-pointer"}`}
+                    className={`relative ${isUmay ? "group flex-1 aspect-video cursor-pointer overflow-hidden rounded-lg border border-white/10 bg-black/60" : hasPhoneMockup ? "flex w-full shrink-0 cursor-pointer items-center justify-center self-center py-2 md:w-[260px] lg:w-[300px]" : "hidden flex-1 cursor-pointer items-center justify-center md:flex"}`}
                     onClick={() => meta.images?.side && onImageClick({ src: meta.images.side, isPhoneMockup: hasPhoneMockup })}
                   >
                     {isUmay ? (
@@ -402,7 +396,7 @@ function ProjectSection({
                         <div className="min-h-0 overflow-hidden">
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 pt-6 border-t border-white/5">
                             {text.expandedContent.map((item, idx) => (
-                              <div key={idx} className="p-4 rounded-xl bg-white/10 border border-white/10">
+                              <div key={idx} className="rounded-lg border border-white/10 bg-white/[0.055] p-4">
                                 <div className="flex items-center gap-2 mb-2">
                                   <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: meta.accentColor }} />
                                   <h4 className="text-sm font-bold text-white/90">{item.title}</h4>
@@ -462,25 +456,27 @@ export default function Projects() {
 
   return (
     <>
-      <section id="projects" className="relative py-32 px-6 md:px-16 lg:px-24">
-        <div className="max-w-7xl mx-auto">
+      <section id="projects" className="section-shell">
+        <div className="section-inner">
           {/* Section Header */}
-          <div className="mb-20">
-            <div className="flex items-start justify-between">
+          <div className="mb-16">
+            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
+                <AnimatedElement direction="up">
+                  <span className="eyebrow">{t.projects.badge}</span>
+                </AnimatedElement>
                 <ScrollTextReveal
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight block"
+                  className="text-balance mt-7 block text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl"
                   staggerDelay={0.06}
                 >
                   {`${t.projects.heading1} ${t.projects.heading2}`}
                 </ScrollTextReveal>
               </div>
               <AnimatedElement direction="right" delay={0.3}>
-                <div className="hidden md:flex items-center gap-2 mt-3">
-                  <div className="w-2 h-2 rounded-full bg-orange-400" />
-                  <span className="text-xs font-bold uppercase tracking-[0.15em] text-white/40">
-                    {t.projects.badge}
-                  </span>
+                <div className="premium-panel hidden rounded-lg px-5 py-4 md:block">
+                  <p className="font-mono text-xs font-black uppercase tracking-[0.16em] text-cyan-200/60">
+                    case studies / selected systems
+                  </p>
                 </div>
               </AnimatedElement>
             </div>
@@ -502,14 +498,14 @@ export default function Projects() {
           </div>
 
           {/* ── Freelance Scripts Archive Section ── */}
-          <div className="mt-32 pt-20 border-t border-white/10 relative">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-linear-to-r from-transparent via-orange-500/50 to-transparent" />
+          <div className="relative mt-28 border-t border-white/10 pt-20">
+            <div className="absolute left-1/2 top-0 h-px w-40 -translate-x-1/2 bg-linear-to-r from-transparent via-cyan-300/50 to-transparent" />
 
             <AnimatedElement direction="up" className="text-center mb-16">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              <h3 className="mb-4 text-2xl font-black text-white md:text-3xl">
                 {t.projects.freelanceTitle}
               </h3>
-              <p className="text-base text-white/40 max-w-2xl mx-auto leading-relaxed">
+              <p className="mx-auto max-w-2xl text-base leading-8 text-white/[0.52]">
                 {t.projects.freelanceDesc}
               </p>
             </AnimatedElement>
@@ -521,7 +517,7 @@ export default function Projects() {
                   direction="up"
                   delay={idx * 0.05}
                 >
-                  <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 border border-white/10 hover:bg-white/15 transition-all cursor-default group">
+                  <div className="group flex cursor-default items-center gap-2 rounded-lg border border-white/10 bg-white/[0.045] px-4 py-2.5 transition-all hover:-translate-y-0.5 hover:border-cyan-300/20 hover:bg-white/[0.08]">
                     <iconify-icon
                       icon={script.icon}
                       width="18"
@@ -547,7 +543,7 @@ export default function Projects() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-100 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 md:p-12 cursor-zoom-out"
+            className="fixed inset-0 z-[100] flex cursor-zoom-out items-center justify-center bg-black/85 p-4 backdrop-blur-md md:p-12"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
@@ -579,7 +575,7 @@ export default function Projects() {
               )}
 
               {selectedImage.src.includes("umay") && (
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-5 py-2.5 rounded-xl bg-black/80 backdrop-blur-md border border-orange-500/30 text-center max-w-[90vw] shadow-2xl">
+                <div className="absolute bottom-4 left-1/2 max-w-[90vw] -translate-x-1/2 rounded-lg border border-orange-500/30 bg-black/80 px-5 py-2.5 text-center shadow-2xl backdrop-blur-md">
                   <p className="text-xs md:text-sm text-orange-200/90">
                     <strong className="text-orange-400">{t.projects.confidentialTitle}:</strong>{" "}
                     {t.projects.confidentialModal}

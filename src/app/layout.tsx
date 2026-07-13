@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -27,7 +27,6 @@ export const metadata: Metadata = {
     "Yapay Zeka Stratejisti",
   ],
   authors: [{ name: "Alperen Bozkurt" }],
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   openGraph: {
     title: "Alperen Bozkurt | Full-Stack Developer & GEO Strategist",
@@ -42,6 +41,11 @@ export const metadata: Metadata = {
     title: "Alperen Bozkurt | Full-Stack Developer & GEO Strategist",
     description: "Expert in AI-powered modern software development and GEO.",
   }
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 const jsonLd = {

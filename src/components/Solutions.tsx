@@ -16,74 +16,78 @@ const solutionIcons = [
   "mdi:view-dashboard-outline",
 ];
 
+const accents = ["#58d7ff", "#ff6b2c", "#8b5cf6", "#f6c65b", "#22c55e", "#14b8a6"];
+
 export default function Solutions() {
   const { locale } = useLanguage();
   const t = locale === "tr" ? tr : en;
 
   return (
-    <section id="solutions" className="relative py-32 px-6 md:px-16 lg:px-24">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-20">
-          <AnimatedElement direction="up">
-            <span className="inline-block px-5 py-2 rounded-full bg-white/10 border border-white/10 text-base text-orange-300 font-medium mb-6">
-              {t.solutions.badge}
-            </span>
-          </AnimatedElement>
+    <section id="solutions" className="section-shell">
+      <div className="section-inner">
+        <div className="mb-14 grid gap-6 lg:grid-cols-[0.95fr_1fr] lg:items-end">
+          <div>
+            <AnimatedElement direction="up">
+              <span className="eyebrow">{t.solutions.badge}</span>
+            </AnimatedElement>
 
-          <ScrollTextReveal
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight block"
-            delay={0.1}
-            staggerDelay={0.05}
-          >
-            {`${t.solutions.heading1} ${t.solutions.heading2}`}
-          </ScrollTextReveal>
+            <ScrollTextReveal
+              className="text-balance mt-7 block text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl"
+              delay={0.1}
+              staggerDelay={0.05}
+            >
+              {`${t.solutions.heading1} ${t.solutions.heading2}`}
+            </ScrollTextReveal>
+          </div>
 
-          <AnimatedElement direction="up" delay={0.3}>
-            <p className="text-lg md:text-xl text-white/40 max-w-2xl mx-auto">
+          <AnimatedElement direction="up" delay={0.25}>
+            <p className="text-pretty max-w-2xl text-base leading-8 text-white/[0.55] md:text-lg lg:ml-auto">
               {t.solutions.subtitle}
             </p>
           </AnimatedElement>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {t.solutions.items.map((solution, index) => (
-            <AnimatedElement
-              key={solution.title}
-              delay={index * 0.15}
-              direction="up"
-              className=""
-            >
-              <FlashlightCard className="h-full">
-                <div className="p-7 md:p-8 flex flex-col gap-5 h-full">
-                  {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-linear-to-br from-orange-500/10 to-amber-500/10 border border-white/10 flex items-center justify-center transition-transform duration-500 hover:scale-110">
-                    <iconify-icon
-                      icon={solutionIcons[index]}
-                      width="28"
-                      height="28"
-                      style={{ color: "#f97316" }}
-                    />
-                  </div>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-6">
+          {t.solutions.items.map((solution, index) => {
+            const isFeature = index < 2;
+            return (
+              <AnimatedElement
+                key={solution.title}
+                delay={index * 0.1}
+                direction="up"
+                className={isFeature ? "md:col-span-3" : "md:col-span-2"}
+              >
+                <FlashlightCard className="h-full">
+                  <div className={`flex h-full flex-col p-6 ${isFeature ? "min-h-[280px] md:p-8" : "min-h-[230px]"}`}>
+                    <div className="flex items-start justify-between gap-4">
+                      <div
+                        className="flex h-12 w-12 items-center justify-center rounded-md border"
+                        style={{
+                          background: `${accents[index]}18`,
+                          borderColor: `${accents[index]}35`,
+                          color: accents[index],
+                        }}
+                      >
+                        <iconify-icon icon={solutionIcons[index]} width="25" height="25" />
+                      </div>
+                      <span className="font-mono text-xs font-black text-white/20">0{index + 1}</span>
+                    </div>
 
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
-                      {solution.title}
-                    </h3>
-                    <p className="text-base md:text-lg text-white/40 leading-relaxed">
-                      {solution.description}
-                    </p>
-                  </div>
+                    <div className="mt-auto pt-10">
+                      <h3 className={`${isFeature ? "text-2xl md:text-3xl" : "text-xl"} text-balance font-black text-white`}>
+                        {solution.title}
+                      </h3>
+                      <p className="mt-4 text-pretty text-sm leading-7 text-white/[0.52] md:text-base">
+                        {solution.description}
+                      </p>
+                    </div>
 
-                  {/* Decorative line */}
-                  <div className="mt-auto pt-4">
-                    <div className="h-px w-full bg-linear-to-r from-orange-500/20 via-amber-500/20 to-transparent" />
+                    <div className="mt-6 h-px w-full bg-linear-to-r from-white/0 via-white/[0.14] to-white/0" />
                   </div>
-                </div>
-              </FlashlightCard>
-            </AnimatedElement>
-          ))}
+                </FlashlightCard>
+              </AnimatedElement>
+            );
+          })}
         </div>
       </div>
     </section>
