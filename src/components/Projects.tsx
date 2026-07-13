@@ -86,6 +86,17 @@ const projectMeta = [
       hasPhoneMockup: true,
     },
   },
+  {
+    id: 6,
+    status: "LOCAL AI TOOL",
+    statusColor: "#58d7ff",
+    dateRange: "2026 - Present",
+    techStack: ["Python", "Faster Whisper", "Claude", "FFmpeg", "OpenCV"],
+    accentColor: "#58d7ff",
+    link: null,
+    icon: "mdi:movie-open-edit-outline",
+    images: null,
+  },
 ];
 
 const freelanceScripts = [

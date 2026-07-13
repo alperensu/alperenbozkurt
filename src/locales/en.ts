@@ -220,6 +220,35 @@ const en = {
           },
         ],
       },
+      {
+        title: "PersonaCut",
+        category: "AI VIDEO AUTOMATION",
+        description:
+          "A local video automation pipeline that turns long broadcasts and VOD files into persona-focused social media outputs. It watches MP4 files, generates word-level transcriptions, selects strong moments with a Claude-powered editorial engine, and renders separate formats for YouTube and Shorts/Reels/TikTok.",
+        techInfo:
+          "Python 3.11, Faster Whisper transcription, Anthropic Claude editorial decision engine, FFmpeg/NVENC render optimization, OpenCV-based video processing, pysubs2 captions, and watchdog file monitoring.",
+        role: "Product design and pipeline development - daemon watch flow, transcription cache, AI decision cache, horizontal/vertical render logic, and a testable modular pipeline architecture.",
+        result:
+          "Built a local AI media production tool that automatically analyzes long raw videos and turns them into 16:9 YouTube event outputs plus 9:16 captioned split-screen short-form videos.",
+        expandedContent: [
+          {
+            title: "Word-Level Transcription",
+            desc: "Uses Faster Whisper to transcribe video audio with word timestamps and speeds up reruns with a transcription cache.",
+          },
+          {
+            title: "AI Editorial Engine",
+            desc: "Uses a Claude-powered decision layer to select horizontal and vertical video candidates and automate hook/title workflows.",
+          },
+          {
+            title: "Multi-Format Rendering",
+            desc: "Produces 16:9 horizontal YouTube outputs and 9:16 captioned split-screen renders for Shorts, Reels, and TikTok.",
+          },
+          {
+            title: "Local Pipeline Architecture",
+            desc: "Combines a watchdog daemon, FFmpeg/OpenCV render steps, quality checks, and pytest coverage into an end-to-end local production flow.",
+          },
+        ],
+      },
     ],
     labels: {
       techStack: "TECH STACK",
