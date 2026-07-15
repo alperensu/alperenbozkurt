@@ -53,7 +53,7 @@ function ParticleCloud({ count = 2500 }) {
         <Points positions={positions.slice(0, count * 1.5)} stride={3}>
           <PointMaterial
             transparent
-            color="#ff6b2c"
+            color="#38bdf8"
             size={0.01}
             sizeAttenuation={true}
             depthWrite={false}
@@ -143,7 +143,7 @@ export default function Scene3D() {
         <color attach="background" args={["#060913"]} />
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} color="#58d7ff" />
-        <pointLight position={[-10, -10, -10]} intensity={0.8} color="#ff6b2c" />
+        <pointLight position={[-10, -10, -10]} intensity={0.8} color="#38bdf8" />
 
         <React.Suspense fallback={null}>
           <ParticleCloud count={isMobile ? 1000 : 3000} />

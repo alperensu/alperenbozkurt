@@ -17,14 +17,20 @@ export default function Profile() {
   const yB = useTransform(scrollYProgress, [0, 1], ["-4%", "8%"]);
 
   return (
-    <section id="profile" ref={ref} className="cinematic-section bg-[#f4f1e8] text-black">
+    <section id="profile" ref={ref} className="cinematic-section bg-slate-50 text-slate-950">
       <div className="section-inner">
         <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
-            <p className="kicker text-black/55">{t.profile.badge}</p>
-            <h2 className="mt-6 max-w-3xl text-[clamp(3rem,8vw,8.5rem)] font-black uppercase leading-[0.82]">
+            <p className="kicker text-sky-700">{t.profile.badge}</p>
+            <motion.h2
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
+              className="display-relaxed mt-6 max-w-3xl text-[clamp(2.75rem,7vw,7.25rem)] font-black"
+            >
               {t.profile.title}
-            </h2>
+            </motion.h2>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-black/68 md:text-xl md:leading-9">
               {t.profile.bio}
             </p>
@@ -32,7 +38,7 @@ export default function Profile() {
               {[t.profile.skills.languages, t.profile.skills.ai, t.profile.skills.multimedia].map((skill, index) => (
                 <span
                   key={index}
-                  className="max-w-full rounded-full border border-black/12 px-4 py-2 text-xs font-black uppercase text-black/58"
+                  className="max-w-full rounded-full border border-sky-900/12 bg-white px-4 py-2 text-xs font-black uppercase text-slate-700 shadow-sm"
                 >
                   {skill.split(",").slice(0, 3).join(" / ")}
                 </span>
@@ -40,7 +46,7 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className="relative min-h-[780px] overflow-hidden rounded-[2rem] bg-black p-3 md:min-h-[900px]">
+          <div className="blue-panel relative min-h-[780px] overflow-hidden rounded-[2rem] p-3 md:min-h-[900px]">
             <motion.div style={{ y: yA }} className="absolute left-3 top-3 h-[48%] w-[62%] overflow-hidden rounded-[1.5rem]">
               <Image
                 src={getAssetPath("/editorial/alperen-story-collage-v1.png")}
@@ -48,7 +54,7 @@ export default function Profile() {
                 fill
                 quality={100}
                 sizes="(max-width: 1024px) 70vw, 45vw"
-                className="object-cover"
+                className="object-cover saturate-[0.72] hue-rotate-[155deg]"
               />
             </motion.div>
 
@@ -59,16 +65,16 @@ export default function Profile() {
                 fill
                 quality={100}
                 sizes="(max-width: 1024px) 70vw, 42vw"
-                className="object-cover object-top"
+                className="object-cover object-top saturate-[0.82]"
               />
             </motion.div>
 
-            <div className="absolute bottom-3 left-3 w-[50%] rounded-[1.5rem] bg-[#e9ff00] p-5 text-black">
+            <div className="absolute bottom-3 left-3 w-[50%] rounded-[1.5rem] bg-sky-200 p-5 text-slate-950 shadow-[0_0_60px_rgba(56,189,248,0.25)]">
               <p className="text-sm font-black uppercase">Alperen Systems</p>
-              <p className="mt-8 text-4xl font-black leading-none md:text-6xl">AI / WEB / DATA</p>
+              <p className="display-relaxed mt-8 text-4xl font-black md:text-6xl">AI / WEB / DATA</p>
             </div>
 
-            <div className="absolute right-5 top-5 rounded-full bg-white px-4 py-2 text-xs font-black uppercase text-black">
+            <div className="animate-blue-pulse absolute right-5 top-5 rounded-full bg-white px-4 py-2 text-xs font-black uppercase text-slate-950">
               01
             </div>
           </div>

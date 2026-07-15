@@ -39,7 +39,7 @@ function CoreGeometry() {
       <mesh ref={meshRef}>
         <icosahedronGeometry args={[1, 15]} />
         <MeshWobbleMaterial
-          color="#ff6b2c"
+          color="#38bdf8"
           speed={2}
           factor={0.6}
           roughness={0}
@@ -51,7 +51,7 @@ function CoreGeometry() {
       {rings.map((ring, i) => (
         <mesh key={ring.radius} rotation={ring.rotation}>
           <torusGeometry args={[ring.radius, 0.01, 16, 100]} />
-          <meshBasicMaterial color={i === 1 ? "#f6c65b" : "#58d7ff"} transparent opacity={0.32} />
+          <meshBasicMaterial color={i === 1 ? "#93c5fd" : "#38bdf8"} transparent opacity={0.32} />
         </mesh>
       ))}
     </group>
@@ -73,21 +73,21 @@ export default function TechCore() {
 
   return (
     <div ref={containerRef} className="relative mx-auto aspect-square w-full max-w-[330px] opacity-0 group">
-      <div className="absolute inset-6 rounded-full bg-cyan-400/12 blur-[80px] transition-colors duration-1000 group-hover:bg-orange-400/16" />
+      <div className="absolute inset-6 rounded-full bg-sky-400/12 blur-[80px] transition-colors duration-1000 group-hover:bg-blue-400/16" />
       
       <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
         <ambientLight intensity={1} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
         <pointLight position={[-10, -10, -10]} intensity={2} color="#58d7ff" />
-        <pointLight position={[10, 10, 10]} intensity={2} color="#ff6b2c" />
+        <pointLight position={[10, 10, 10]} intensity={2} color="#38bdf8" />
         
         <Float speed={2} rotationIntensity={1.5} floatIntensity={2}>
           <CoreGeometry />
         </Float>
       </Canvas>
       
-      <div className="pointer-events-none absolute left-0 top-0 rounded-tl-lg border-l border-t border-orange-300/30 p-3">
-        <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-orange-200/[0.55]">AI_CORE_ACTIVE</p>
+      <div className="pointer-events-none absolute left-0 top-0 rounded-tl-lg border-l border-t border-sky-300/30 p-3">
+        <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-sky-200/[0.55]">AI_CORE_ACTIVE</p>
       </div>
       <div className="pointer-events-none absolute bottom-0 right-0 rounded-br-lg border-b border-r border-cyan-300/30 p-3">
         <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-cyan-200/[0.55]">LLM_ENGINE_SYNCED</p>

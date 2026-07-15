@@ -21,17 +21,31 @@ export default function Footer() {
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <footer className="bg-black px-4 py-8 text-white sm:px-6 md:px-10 lg:px-14">
-      <div ref={ref} className="rounded-[2rem] border border-white/10 bg-[#0b0b0b] p-5 md:p-8">
+    <footer className="bg-slate-950 px-4 py-8 text-white sm:px-6 md:px-10 lg:px-14">
+      <div ref={ref} className="blue-panel rounded-[2rem] border border-white/10 p-5 md:p-8">
         <motion.div
           initial={{ y: 36, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="kicker text-[#e9ff00]">{t.footer.tagline}</p>
-          <h2 className="mt-6 text-[clamp(4rem,15vw,15rem)] font-black uppercase leading-[0.74]">
-            Let&apos;s build
-            <span className="block text-[#e9ff00]">the system.</span>
+          <p className="kicker text-sky-200">{t.footer.tagline}</p>
+          <h2 className="display-safe mt-6 text-[clamp(3.6rem,12vw,12rem)] font-black">
+            <motion.span
+              className="block"
+              initial={{ opacity: 0, y: 32 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.72, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Let&apos;s build
+            </motion.span>
+            <motion.span
+              className="block text-sky-200"
+              initial={{ opacity: 0, y: 32 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.72, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+            >
+              the system.
+            </motion.span>
           </h2>
 
           <div className="mt-10 grid gap-8 border-t border-white/10 pt-6 md:grid-cols-[1fr_auto_1fr] md:items-end">
@@ -45,17 +59,20 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-2">
-              {socialLinks.map((link) => (
-                <a
+              {socialLinks.map((link, index) => (
+                <motion.a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="grid h-11 w-11 place-items-center rounded-full border border-white/12 text-white/52 transition-colors hover:border-[#e9ff00] hover:text-[#e9ff00]"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.25 + index * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                  className="grid h-11 w-11 place-items-center rounded-full border border-white/12 text-white/52 transition-colors hover:border-sky-300 hover:text-sky-200"
                   aria-label={link.label}
                 >
                   <iconify-icon icon={link.icon} width="18" height="18" />
-                </a>
+                </motion.a>
               ))}
             </div>
 

@@ -42,10 +42,10 @@ export default function Navbar() {
     >
       <button
         onClick={() => scrollTo("#hero")}
-        className="flex h-10 items-center gap-2 rounded-full bg-[#e9ff00] px-3 text-xs font-black uppercase text-black transition-transform hover:scale-[1.02] md:px-4"
+        className="flex h-10 items-center gap-2 rounded-full bg-sky-300 px-3 text-xs font-black uppercase text-slate-950 shadow-[0_0_32px_rgba(56,189,248,0.25)] transition-all hover:scale-[1.02] hover:bg-white md:px-4"
         aria-label="Alperen Bozkurt"
       >
-        <span className="grid h-6 w-6 place-items-center rounded-full bg-black text-[10px] text-[#e9ff00]">
+        <span className="grid h-6 w-6 place-items-center rounded-full bg-slate-950 text-[10px] text-sky-200">
           AB
         </span>
         <span className="hidden sm:inline">Alperen</span>
@@ -66,14 +66,14 @@ export default function Navbar() {
       <div className="flex items-center gap-1">
         <button
           onClick={toggleLocale}
-          className="grid h-10 w-10 place-items-center rounded-full border border-white/12 text-xs font-black text-white/70 transition-colors hover:border-[#e9ff00]/50 hover:text-[#e9ff00]"
+          className="grid h-10 w-10 place-items-center rounded-full border border-white/12 text-xs font-black text-white/70 transition-colors hover:border-sky-300/60 hover:text-sky-200"
           aria-label="Toggle language"
         >
           {locale === "tr" ? "EN" : "TR"}
         </button>
         <a
           href="mailto:alperenbozkurt.iletisim@gmail.com"
-          className="rounded-full bg-white px-4 py-3 text-xs font-black uppercase tracking-[0.08em] text-black transition-colors hover:bg-[#e9ff00]"
+          className="rounded-full bg-white px-4 py-3 text-xs font-black uppercase tracking-[0.08em] text-slate-950 transition-colors hover:bg-sky-200"
         >
           {t.nav.cta}
         </a>

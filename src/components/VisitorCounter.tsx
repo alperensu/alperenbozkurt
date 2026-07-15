@@ -1,12 +1,11 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import tr from "@/locales/tr";
 import en from "@/locales/en";
 
-// GoatCounter site code — sitenin kendi goatcounter.com hesabındaki code
 const GOATCOUNTER_SITE = "alperenbozkurt";
 
 interface CounterData {
@@ -25,15 +24,12 @@ function useCountUp(target: number, duration: number = 1800, active: boolean = t
     const tick = (now: number) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // easeOutExpo
       const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      const current = Math.round(eased * target);
-      setCount(current);
+      setCount(Math.round(eased * target));
       if (progress < 1) frameId = requestAnimationFrame(tick);
     };
 
     frameId = requestAnimationFrame(tick);
-
     return () => cancelAnimationFrame(frameId);
   }, [target, duration, active]);
 
@@ -55,7 +51,6 @@ export default function VisitorCounter() {
 
     async function fetchStats() {
       try {
-        // GoatCounter public totals endpoint
         const res = await fetch(
           `https://${GOATCOUNTER_SITE}.goatcounter.com/api/v0/stats/total`,
           { signal: controller.signal }
@@ -63,16 +58,13 @@ export default function VisitorCounter() {
 
         if (res.ok) {
           const json = await res.json();
-          // total pageviews ve bugünkü ziyaretleri al
           const total: number = json?.total ?? 0;
           const today: number = json?.today ?? 0;
           setData({ total, today });
         } else {
-          // API erişimi yoksa localStorage'daki simüle değeri kullan
           throw new Error("API unavailable");
         }
       } catch {
-        // Fallback: localStorage ile kümülatif local sayaç
         try {
           const stored = localStorage.getItem("vc_count");
           const current = stored ? parseInt(stored, 10) : 0;
@@ -101,40 +93,37 @@ export default function VisitorCounter() {
       ref={ref}
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
-      className="flex flex-col items-center md:items-end gap-2"
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+      className="flex flex-col items-center gap-2 md:items-end"
     >
-      <div className="flex items-center gap-2 mb-1">
-        {/* Canlı yeşil nokta */}
+      <div className="mb-1 flex items-center gap-2">
         <span className="relative flex h-2.5 w-2.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-300 opacity-75" />
+          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-sky-400" />
         </span>
-        <span className="text-xs font-medium text-white/40 tracking-widest uppercase">
+        <span className="text-xs font-medium uppercase tracking-widest text-white/40">
           {t.footer.visitorCounter.label}
         </span>
       </div>
 
       <div className="flex items-center gap-4">
-        {/* Toplam */}
         <div className="flex flex-col items-center gap-0.5">
           <div className="relative">
             {loading ? (
               <div className="h-6 w-16 animate-pulse rounded-md bg-white/10" />
             ) : (
-              <span className="bg-linear-to-r from-cyan-200 via-white to-orange-300 bg-clip-text text-2xl font-black tabular-nums text-transparent">
+              <span className="bg-linear-to-r from-sky-200 via-white to-blue-300 bg-clip-text text-2xl font-black tabular-nums text-transparent">
                 {totalCount.toLocaleString()}
               </span>
             )}
           </div>
-          <span className="text-[10px] text-white/30 uppercase tracking-wider">
+          <span className="text-[10px] uppercase tracking-wider text-white/30">
             {t.footer.visitorCounter.total}
           </span>
         </div>
 
-        <div className="w-px h-8 bg-white/10" />
+        <div className="h-8 w-px bg-white/10" />
 
-        {/* Bugün */}
         <div className="flex flex-col items-center gap-0.5">
           <div className="relative">
             {loading ? (
@@ -145,18 +134,17 @@ export default function VisitorCounter() {
               </span>
             )}
           </div>
-          <span className="text-[10px] text-white/30 uppercase tracking-wider">
+          <span className="text-[10px] uppercase tracking-wider text-white/30">
             {t.footer.visitorCounter.today}
           </span>
         </div>
       </div>
 
-      {/* GoatCounter link */}
       <a
         href={`https://${GOATCOUNTER_SITE}.goatcounter.com`}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[10px] text-white/20 hover:text-orange-400/60 transition-colors duration-300 mt-0.5"
+        className="mt-0.5 text-[10px] text-white/20 transition-colors duration-300 hover:text-sky-200/70"
       >
         goatcounter analytics ↗
       </a>

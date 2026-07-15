@@ -12,37 +12,37 @@ const projectVisuals = [
   {
     src: "/projects/borsa/borsa_main_new.png",
     side: "/projects/borsa/borsa_mobile.png",
-    accent: "#e9ff00",
+    accent: "#38bdf8",
     stack: ["LightGBM", "React", "BIST"],
   },
   {
     src: "/projects/vibekoc/vibekoc_desktop.png",
     side: "/projects/vibekoc/vibekoc_mobile.png",
-    accent: "#58d7ff",
+    accent: "#7dd3fc",
     stack: ["Node.js", "AI Coach", "Socket.io"],
   },
   {
     src: "/projects/umay/umay_main.png",
     side: "/projects/umay/umay_side_v2.png",
-    accent: "#ff6b2c",
+    accent: "#60a5fa",
     stack: ["YOLO", "OpenCV", "UAV"],
   },
   {
     src: "/editorial/alperen-story-collage-v1.png",
     side: null,
-    accent: "#e9ff00",
+    accent: "#38bdf8",
     stack: ["FastAPI", "AST", "CLI"],
   },
   {
     src: "/projects/flowy/flowy_desktop.png",
     side: "/projects/flowy/flowy_mobile.png",
-    accent: "#14b8a6",
+    accent: "#93c5fd",
     stack: ["Next.js", "Electron", "Music"],
   },
   {
     src: "/editorial/alperen-services-campaign-v1.png",
     side: null,
-    accent: "#f97316",
+    accent: "#0ea5e9",
     stack: ["Whisper", "FFmpeg", "Claude"],
   },
 ];
@@ -64,11 +64,17 @@ export default function Projects() {
       <section id="projects" className="cinematic-section bg-black text-white">
         <div className="section-inner">
           <div className="mb-12">
-            <p className="kicker text-[#e9ff00]">{t.projects.badge}</p>
-            <h2 className="mt-5 text-[clamp(4rem,13vw,12rem)] font-black uppercase leading-[0.76]">
+            <p className="kicker text-sky-200">{t.projects.badge}</p>
+            <motion.h2
+              initial={{ opacity: 0, y: 34 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.78, ease: [0.16, 1, 0.3, 1] }}
+              className="display-safe mt-5 text-[clamp(3.6rem,11vw,10rem)] font-black"
+            >
               {t.projects.heading1}
               <span className="block text-white/28">{t.projects.heading2}</span>
-            </h2>
+            </motion.h2>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2">
@@ -83,7 +89,7 @@ export default function Projects() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
-                  className={`group relative overflow-hidden rounded-[2rem] bg-[#111] ${index === 0 || index === 3 ? "md:col-span-2" : ""}`}
+                  className={`group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] shadow-[0_24px_80px_rgba(0,0,0,0.25)] transition-colors hover:border-sky-300/35 ${index === 0 || index === 3 ? "md:col-span-2" : ""}`}
                 >
                   <button
                     onClick={() => setSelected(mainSrc)}
@@ -95,7 +101,7 @@ export default function Projects() {
                       fill
                       quality={100}
                       sizes={index === 0 || index === 3 ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.035]"
+                      className="object-cover object-top saturate-[0.82] transition-transform duration-700 group-hover:scale-[1.05]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                     <span
@@ -109,16 +115,23 @@ export default function Projects() {
                   <div className="relative p-5 md:p-7">
                     <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
                       <div>
-                        <h3 className="text-3xl font-black uppercase md:text-5xl">{project.title}</h3>
+                        <h3 className="display-relaxed text-3xl font-black md:text-5xl">{project.title}</h3>
                         <p className="mt-4 max-w-3xl text-base leading-7 text-white/60">
                           {project.description}
                         </p>
                       </div>
                       <div className="flex shrink-0 flex-wrap gap-2 md:max-w-56 md:justify-end">
-                        {visual.stack.map((tech) => (
-                          <span key={tech} className="rounded-full border border-white/12 px-3 py-1.5 text-xs font-bold text-white/56">
+                        {visual.stack.map((tech, chipIndex) => (
+                          <motion.span
+                            key={tech}
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.42, delay: chipIndex * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                            className="rounded-full border border-sky-200/14 bg-sky-200/[0.035] px-3 py-1.5 text-xs font-bold text-sky-100/64"
+                          >
                             {tech}
-                          </span>
+                          </motion.span>
                         ))}
                       </div>
                     </div>
@@ -150,12 +163,12 @@ export default function Projects() {
           <motion.button
             type="button"
             onClick={() => setSelected(null)}
-            className="fixed inset-0 z-[120] grid cursor-zoom-out place-items-center bg-black/92 p-4"
+            className="fixed inset-0 z-[120] grid cursor-zoom-out place-items-center bg-slate-950/94 p-4 backdrop-blur-xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <span className="absolute right-5 top-5 rounded-full bg-white px-4 py-2 text-xs font-black uppercase text-black">
+            <span className="absolute right-5 top-5 rounded-full bg-white px-4 py-2 text-xs font-black uppercase text-slate-950">
               Close
             </span>
             <span className="relative h-[84vh] w-[92vw]">
