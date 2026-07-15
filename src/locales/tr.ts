@@ -3,255 +3,141 @@ const tr = {
     home: "Ana Sayfa",
     solutions: "Çözümler",
     projects: "Projeler",
-    sectors: "Sektörler",
-    cta: "Teklif Al",
+    sectors: "Servisler",
+    cta: "İletişim",
   },
   clip: {
     tagline: "Yazılım Geliştirici",
   },
   hero: {
-    badge: "Full-Stack Developer & GEO Stratejisti",
-    h1_1: "Alperen ",
+    badge: "FULL-STACK AI DEVELOPER",
+    h1_1: "Alperen",
     h1_2: "Bozkurt",
     h1_3: "",
     h1_4: "",
     subtitle:
-      "AI entegrasyonu, veri odaklı ürünler ve modern full-stack mimarilerle hızlı, estetik ve ölçeklenebilir dijital sistemler geliştiriyorum.",
-    btnProjects: "Projeleri Keşfet",
+      "AI çağında çalışan; hızlı, keskin ve ürün hissi güçlü web sistemleri tasarlayıp geliştiriyorum.",
+    btnProjects: "Projeleri Aç",
     btnContact: "İletişime Geç",
     scroll: "Kaydır",
   },
   solutions: {
-    badge: "Stratejik Çözümler",
-    heading1: "Dijital Büyümeniz İçin",
-    heading2: "Kapsamlı Çözümler",
+    badge: "ON SYSTEM",
+    heading1: "Ürün gibi çalışan",
+    heading2: "dijital çözümler",
     subtitle:
-      "End-to-end dijital dönüşüm hizmetleriyle işletmenizi bir üst seviyeye taşıyın.",
+      "Web, AI, otomasyon ve yaratıcı medya üretimini tek bir net ürün deneyiminde birleştiriyorum.",
     items: [
       {
-        title: "Kurumsal Web Çözümleri",
+        title: "Kurumsal Web",
         description:
-          "Modern, kurumsal ve tamamen SEO uyumlu web sitelerinin oluşturulması, güvenli sunucularda barındırılması ve teknik bakım süreçleri.",
+          "Next.js tabanlı, hızlı, SEO uyumlu ve bakımı kolay marka siteleri.",
       },
       {
-        title: "GEO & AI Stratejisi",
+        title: "AI & GEO Stratejisi",
         description:
-          "Yapay zeka çağında GEO (Generative Engine Optimization) uygulayarak şirketleri yeni nesil AI arama motorlarında öne çıkarıyorum.",
+          "LLM entegrasyonları, yapay zeka görünürlüğü ve akıllı ürün akışları.",
       },
       {
-        title: "Kurumsal Medya & Tasarım",
+        title: "Dashboard & Veri",
         description:
-          "Marka kimliğine uygun profesyonel düzeyde video kurgusu, sosyal medya yönetimi ve yüksek kaliteli grafik tasarımlar.",
+          "Karar almayı hızlandıran analitik paneller ve veri görselleştirme arayüzleri.",
       },
       {
-        title: "Next.js Kurumsal Kimlik",
+        title: "Otomasyon",
         description:
-          "Next.js mimarisiyle sıfırdan inşa edilen ultra hızlı, SEO dostu ve ölçeklenebilir modern kurumsal portfolyolar.",
+          "Şirket içi operasyonları hızlandıran özel web ve masaüstü araçları.",
       },
       {
-        title: "İşletme İçi Otomasyon",
+        title: "Medya Sistemleri",
         description:
-          "C# ve Python kullanarak şirket içi süreçleri hızlandıran özel masaüstü/web otomasyonları ve kapsamlı yönetim panelleri.",
+          "Video pipeline, sosyal medya üretimi ve kreatif içerik otomasyonları.",
       },
       {
-        title: "Veri Paneli & Raporlama",
+        title: "Ürün Arayüzleri",
         description:
-          "İşletme verilerini anlamlı metriklere dönüştüren, karar alma süreçlerini hızlandıran özel dashboard ve raporlama arayüzleri.",
+          "SaaS, eğitim, finans ve geliştirici araçları için premium UI akışları.",
       },
     ],
   },
   projects: {
-    badge: "PORTFOLIO",
-    heading1: "Öne Çıkan",
-    heading2: "Projeler",
-    freelanceTitle: "Freelance Script & Çözüm Arşivi",
+    badge: "PROJECT HALL",
+    heading1: "Seçilmiş",
+    heading2: "Sistemler",
+    freelanceTitle: "Servis ve Script Arşivi",
     freelanceDesc:
-      "Geçmişte freelance platformlarında talebe özel geliştirdiğim, portföyümü ve sektörel yetkinliğimi genişleten niş endüstri yazılımları.",
+      "Farklı sektörlere göre uyarlanabilen, sahada kullanılabilir dijital modüller ve niş yazılım çözümleri.",
     confidentialBanner:
-      "Gizlilik politikaları gereği gerçek mekanik ve arayüz fotoğrafları paylaşılamamaktadır. Görseller teorik yapay zeka konseptleridir.",
-    confidentialTitle: "Yarışma Gizliliği",
+      "Gerçek yarışma verileri yerine konsept ve temsilî görseller kullanılır.",
+    confidentialTitle: "Gizlilik",
     confidentialModal:
-      "Bu görsel yarışma kuralları gereği yapay zeka ile oluşturulmuş teorik bir konsepttir.",
-    showDetails: "Sistem Özelliklerini İncele",
+      "Bu görsel yarışma gizliliğine uygun temsilî bir konsepttir.",
+    showDetails: "Detayları Aç",
     hideDetails: "Detayları Gizle",
     items: [
       {
         title: "Borsa Analiz Botu",
-        category: "AI-POWERED FİNANS",
+        category: "AI FINANCE",
         description:
-          "Borsa İstanbul (BIST) verilerini kullanarak hisse senedi trendlerini tahmin eden, gelişmiş makine öğrenimi modellerine dayalı bir finansal analiz platformu. LightGBM algoritmaları, Triple-Barrier etiketleme ve Purged K-Fold Cross-Validation gibi ileri düzey finansal veri bilimi teknikleriyle piyasa sinyalleri üretir.",
-        techInfo:
-          "Python (LightGBM, Pandas, Scikit-learn) ML Pipeline, 150+ teknik indikatör entegrasyonu, TA-Lib, Kysely query builder ve React tabanlı gerçek zamanlı veri dashboard'u.",
-        role: "Tam yığın geliştirme yaptım — backend API, ML pipeline, frontend dashboard ve gerçek zamanlı veri akışını yönettim.",
-        result:
-          "417+ BIST hissesi için anlık teknik analiz, AI sinyal üretimi ve otomatik formasyon tanıma sistemlerini hayata geçirdim.",
-        expandedContent: [
-          {
-            title: "Otomatik Formasyon Tespiti",
-            desc: "Grafik üzerindeki 13 farklı teknik formasyonu (İkili Tepe, OBO vb.) eş zamanlı tarar ve güven skorlarıyla işaretler.",
-          },
-          {
-            title: "Makine Öğrenmesi & Tahmin",
-            desc: "Özel etiketleme teknikleri (Triple-Barrier) ve Ensemble modeller kullanarak yön tahminleri (AL/SAT/TUT) üretir.",
-          },
-          {
-            title: "Doğal Dil İşleme (NLP)",
-            desc: "Piyasa haberlerini eş zamanlı çekerek duygu analizi (sentiment) yapar ve teknik verilerle harmanlar.",
-          },
-          {
-            title: "Dinamik Risk Yönetimi",
-            desc: "Piyasa volatilitesine göre model karar eşiklerini (threshold) otonom şekilde ayarlar ve risk/ödül oranını korur.",
-          },
-        ],
+          "BIST verileriyle teknik analiz, formasyon tespiti ve makine öğrenimi sinyalleri üreten finans platformu.",
+        techInfo: "Python, LightGBM, React, teknik indikatörler, gerçek zamanlı dashboard.",
+        role: "Backend, ML pipeline ve frontend arayüzünü uçtan uca geliştirdim.",
+        result: "417+ hisse için sinyal, analiz ve formasyon okuma akışı.",
+        expandedContent: [],
       },
       {
         title: "VibeKoc",
-        category: "AI EĞİTİM PLATFORMU",
+        category: "AI EDUCATION",
         description:
-          "Öğrencilerin sınav hazırlık süreçlerini oyunlaştıran ve kişiselleştiren, her kullanıcıya özel bir AI Eğitim Koçu sunan SaaS EdTech platformu. Davranışsal analiz algoritmalarıyla çalışma verimliliğini ölçer, eksik konuları tespit eder ve Llama 3/Gemini tabanlı hibrit AI motoruyla anlık rehberlik sağlar.",
-        techInfo:
-          "React 19 + Vite, Node.js & TypeScript, MySQL + Kysely, Redis caching, Socket.io real-time düello motoru, Google Gemini (2.0 Flash) ve OpenAI GPT-4o hibrit entegrasyonu.",
-        role: "Tam yığın geliştirme süreçlerini yönettim — AI koçluk motoru, Vibe Analytics davranışsal analiz algoritmaları, sınav simülatörü ve gamification sistemlerini inşa ettim.",
-        result:
-          "Başarı projeksiyonu (Linear Regression), tükenmişlik (burnout) detektörü, ÖSYM tarzı soru üretimi ve %99.9 AI servis devamlılığı sağladım.",
-        expandedContent: [
-          {
-            title: "Advanced Analytics",
-            desc: "Linear Regression ile 30 günlük başarı projeksiyonu, çözme hızı-doğruluk korelasyonuyla burnout tespiti ve zaman verimlilik indeksi.",
-          },
-          {
-            title: "Akıllı Sınav Simülasyonu",
-            desc: "AI ile ÖSYM/MEB soru tarzlarını birebir taklit eden soru üretimi ve Normal Dağılım bazlı dinamik zorluk dağıtımı.",
-          },
-          {
-            title: "Gamification & Düellolar",
-            desc: "Bronzdan Şampiyonlar Ligi'ne haftalık lig döngüleri, Socket.io ile 1v1 real-time düellolar ve streak mekaniği.",
-          },
-          {
-            title: "Kurumsal (B2B) Analiz Paneli",
-            desc: "Dershaneler ve okullar için riskli öğrenci tespiti, sınıf bazında konu ısı haritaları ve yönetici dashboard'u.",
-          },
-        ],
+          "Öğrenciler için kişiselleştirilmiş AI koç, gamification ve davranışsal analiz içeren EdTech platformu.",
+        techInfo: "React, Node.js, MySQL, Redis, Socket.io, Gemini AI.",
+        role: "AI koçluk motoru, sınav simülasyonu ve ürün arayüzlerini geliştirdim.",
+        result: "Kişisel çalışma akışı, düello sistemi ve kurum paneli temelleri.",
+        expandedContent: [],
       },
       {
-        title: "UMAY Arama-Kurtarma İHA'sı",
-        category: "OTONOM IHA SİSTEMİ",
+        title: "UMAY Arama-Kurtarma İHA",
+        category: "AUTONOMOUS UAV",
         description:
-          "AFAD ve JAK gibi arama-kurtarma ekiplerine havadan stratejik destek sağlayan, çift sensörlü (Termal + RGB) ve yapay zeka destekli otonom hexacopter sistemi (Ekip Projesi).",
-        techInfo:
-          "YOLO ile görüntü işleme üzerinden canlı/hedef tespiti, Termal ve RGB kamera füzyonu, otonom rota planlama.",
-        role: "Sistem Mühendisliği & Görüntü İşleme süreçlerini üstlendim (Ekip Projesi) — otonom uçuş algoritmaları, sensör entegrasyonu ve hedef tespiti üzerine çalıştım.",
-        result:
-          "Otonom intikal, hedefe hassas faydalı yük bırakma ve gece karanlığında bile canlı tespiti yapabilen prototipi geliştirdim.",
-        expandedContent: [
-          {
-            title: "Otonom İntikal ve Keşif",
-            desc: "Pilot müdahalesine gerek kalmadan GPS ile afet bölgesine uçuş ve algoritmik arama-tarama rotası oluşturma.",
-          },
-          {
-            title: "Sensör Füzyonu",
-            desc: "Termal ve RGB hibrit kamera ile gece karanlığında, yoğun sis veya duman altında yüksek doğrulukla canlı tespiti.",
-          },
-          {
-            title: "Hassas Otonom Müdahale",
-            desc: "Yapay zeka ile yardım kutularının tespiti sonrası otonom ve milimetrik hassasiyetle faydalı yük bırakma.",
-          },
-          {
-            title: "Psikolojik İlk Yardım",
-            desc: "Drone üzerinde bulunan anons ve ses iletim sistemiyle kazazedelere havadan psikolojik ilk yardım sağlama.",
-          },
-        ],
+          "Termal/RGB algılama ve otonom rota mantığıyla arama-kurtarma senaryoları için geliştirilen ekip projesi.",
+        techInfo: "Python, OpenCV, YOLO, ArduPilot, ROS.",
+        role: "Görüntü işleme, sistem mühendisliği ve otonom uçuş tarafında çalıştım.",
+        result: "Gece/gündüz hedef tespiti ve otonom müdahale prototipi.",
+        expandedContent: [],
       },
       {
         title: "VibeFlow",
-        category: "AI KODLAMA OPTIMIZASYONU",
+        category: "AI CODING",
         description:
-          "AI kodlama akislari icin gelistirilmis, yerel calisan ve editorden bagimsiz bir context optimization sidecar. Projeyi izleyerek AST farkindalikli kompakt bir hafiza olusturur, gereksiz dosyalari ayiklar ve modele yalnizca ilgili baglami gondererek token kullanimini optimize eder.",
-        techInfo:
-          "FastAPI tabanli lokal API, watchdog ile anlik dosya izleme, tree-sitter ile AST tabanli ayristirma, ChromaDB vektor cache ve CLI odakli terminal yonetimi.",
-        role: "Ürün tasarımı ve geliştirmesini yaptım - context builder, dosya izleyici, CLI komutları, optimizasyon profilleri ve agent entegrasyon akışını kurguladım.",
-        result:
-          "Kodlama ajanlarının tüm repoyu okumadan, seçilmiş ve özetlenmiş bağlamla çalışmasını sağlayan yerel geliştirici aracını ürettim.",
-        expandedContent: [
-          {
-            title: "Token Tasarrufu",
-            desc: "Semantik budama, skeletonization ve butce limitleriyle model baglamini kompakt hale getirir.",
-          },
-          {
-            title: "Yerel Sidecar API",
-            desc: "FastAPI uzerinden /context, /index ve /settings uclariyla editorden bagimsiz kullanim sunar.",
-          },
-          {
-            title: "Canli Proje Izleme",
-            desc: "watchdog ile dosya degisikliklerini yakalar ve index'i gelistirme sureci boyunca sicak tutar.",
-          },
-          {
-            title: "Agent Dostu Cikti",
-            desc: "Kodlama ajanlari icin model-ready context ve diff odakli cikti kontrati uretir.",
-          },
-        ],
+          "Kodlama ajanları için yerel çalışan, AST farkındalıklı context optimizasyon sidecar'ı.",
+        techInfo: "FastAPI, watchdog, tree-sitter, ChromaDB, CLI.",
+        role: "Ürün fikri, context builder, izleyici ve agent entegrasyon akışını tasarladım.",
+        result: "Model bağlamını küçülten ve ilgisiz dosyaları ayıklayan geliştirici aracı.",
+        expandedContent: [],
       },
       {
         title: "Flowy",
-        category: "MUSIC STREAMING APP",
+        category: "MUSIC APP",
         description:
-          "YouTube tabanli, modern bir muzik dinleme deneyimi sunan web ve masaustu odakli streaming uygulamasi. Spotify benzeri premium bir arayuzu Electron destegiyle birlestirerek tarayici ve desktop deneyimini tek kod tabaninda sunar.",
-        techInfo:
-          "Next.js, Electron, React 19, Tailwind CSS, Framer Motion, YouTube Data API v3 ve istemci tarafli oynatici kontrol sistemi.",
-        role: "Ürün tasarımı ve geliştirmesini üstlendim - oynatıcı deneyimi, arayüz mimarisi, desktop wrapper entegrasyonu ve müzik keşif akışlarını oluşturdum.",
-        result:
-          "Tek kod tabanından hem web hem de masaüstü deneyimi veren, karanlık temalı ve performans odaklı müzik uygulamasını yayınladım.",
-        expandedContent: [
-          {
-            title: "Cross-Platform Deneyim",
-            desc: "Next.js arayuzu Electron ile birlestirerek web ve native desktop kullanimini ayni urun deneyiminde toplar.",
-          },
-          {
-            title: "Modern Player UI",
-            desc: "Tam ekran oynatici, alt player cubugu, kutuphane yapisi ve premium muzik uygulamasi hissi veren akici arayuzler sunar.",
-          },
-          {
-            title: "YouTube Tabanli Icerik Akisi",
-            desc: "Genis sarki havuzuna erisim icin YouTube arama ve oynatma mantigini uygulama akislarina entegre eder.",
-          },
-          {
-            title: "Kesif ve Karisimlar",
-            desc: "Gunun karisimlari, oneriler ve kutuphane odakli gezinme yapisiyla kullaniciyi uzun sure uygulama icinde tutacak akislar kurar.",
-          },
-        ],
+          "YouTube tabanlı web ve masaüstü müzik deneyimi sunan modern streaming arayüzü.",
+        techInfo: "Next.js, Electron, YouTube API, Framer Motion.",
+        role: "Player deneyimi, arayüz mimarisi ve masaüstü wrapper entegrasyonunu geliştirdim.",
+        result: "Tek kod tabanından web ve desktop müzik uygulaması.",
+        expandedContent: [],
       },
       {
         title: "PersonaCut",
-        category: "AI VIDEO AUTOMATION",
+        category: "AI VIDEO",
         description:
-          "Uzun yayın ve VOD dosyalarından kişiye özel sosyal medya çıktıları üreten yerel bir video otomasyon pipeline'ı. MP4 dosyalarını izler, kelime zamanlı transkripsiyon çıkarır, Claude tabanlı editorial motorla güçlü anları seçer ve YouTube ile Shorts/Reels/TikTok için farklı formatlarda render alır.",
-        techInfo:
-          "Python 3.11, Faster Whisper transkripsiyon, Anthropic Claude editorial karar motoru, FFmpeg/NVENC render optimizasyonu, OpenCV tabanlı video işleme, pysubs2 altyazı üretimi ve watchdog dosya izleme.",
-        role: "Ürün tasarımı ve pipeline geliştirmesini yaptım - daemon izleme akışı, transkripsiyon cache'i, AI karar cache'i, yatay/dikey render mantığı ve test edilebilir modüler pipeline mimarisini kurdum.",
-        result:
-          "Uzun ham videoları otomatik analiz edip 16:9 YouTube event çıktıları ve 9:16 altyazılı split-screen kısa videolara dönüştüren yerel AI medya üretim aracını geliştirdim.",
-        expandedContent: [
-          {
-            title: "Kelime Zamanlı Transkripsiyon",
-            desc: "Faster Whisper ile video sesini kelime zaman damgalarıyla çözümler ve tekrar çalıştırmaları hızlandırmak için transkripsiyon cache'i kullanır.",
-          },
-          {
-            title: "AI Editorial Motor",
-            desc: "Claude tabanlı karar katmanı ile yatay ve dikey video adaylarını seçer, hook ve başlık üretim akışlarını otomasyona bağlar.",
-          },
-          {
-            title: "Çok Formatlı Render",
-            desc: "YouTube için 16:9 yatay çıktılar, Shorts/Reels/TikTok için 9:16 altyazılı split-screen renderlar üretir.",
-          },
-          {
-            title: "Yerel Pipeline Mimarisi",
-            desc: "watchdog daemon, FFmpeg/OpenCV render adımları, kalite kontrolleri ve pytest kapsamıyla uçtan uca yerel üretim akışı sunar.",
-          },
-        ],
+          "Uzun videolardan YouTube ve Shorts/Reels/TikTok formatları üreten yerel AI medya pipeline'ı.",
+        techInfo: "Python, Faster Whisper, Claude, FFmpeg, OpenCV.",
+        role: "Transkripsiyon, editorial karar motoru ve çok formatlı render akışını kurdum.",
+        result: "Ham yayınları otomatik sosyal medya çıktısına dönüştüren üretim sistemi.",
+        expandedContent: [],
       },
     ],
     labels: {
-      techStack: "TECH STACK",
+      techStack: "STACK",
       role: "ROL",
       result: "SONUÇ",
       demo: "DEMO",
@@ -259,24 +145,24 @@ const tr = {
     },
   },
   marquee: {
-    badge: "Sektörel Çözümler",
-    heading1: "Her Sektöre Özel",
-    heading2: "Dijital Modüller",
+    badge: "SERVICE GRID",
+    heading1: "Sektörlere",
+    heading2: "hazır modüller",
     subtitle:
-      "İşletmenizin sektörüne uygun, hazır ve özelleştirilebilir dijital çözümler.",
+      "Kopyala-yapıştır olmayan; markaya, operasyona ve müşteri akışına göre uyarlanan yazılım paketleri.",
     items: [
-      { title: "E-Ticaret", description: "Online satış platformları ve ödeme entegrasyonları" },
-      { title: "QR Menü", description: "Restoran ve kafe dijital menü çözümleri" },
-      { title: "Randevu Sistemi", description: "Online randevu ve takvim yönetimi" },
-      { title: "CRM", description: "Müşteri ilişkileri yönetim sistemleri" },
-      { title: "Eğitim Platformu", description: "Online eğitim ve öğrenme yönetim sistemleri" },
-      { title: "Lojistik", description: "Kargo takip ve filo yönetim sistemleri" },
-      { title: "Sağlık", description: "Hasta takip ve sağlık hizmetleri yönetimi" },
-      { title: "Finans", description: "Finansal analiz ve ödeme altyapıları" },
+      { title: "E-Ticaret", description: "Satış ve ödeme akışları" },
+      { title: "QR Menü", description: "Restoran dijital menü sistemi" },
+      { title: "Randevu", description: "Takvim ve rezervasyon" },
+      { title: "CRM", description: "Müşteri yönetimi" },
+      { title: "Eğitim", description: "Kurs ve koçluk platformları" },
+      { title: "Lojistik", description: "Takip ve operasyon paneli" },
+      { title: "Sağlık", description: "Klinik ve hasta akışları" },
+      { title: "Finans", description: "Analiz ve raporlama" },
     ],
   },
   footer: {
-    tagline: "Yazılım Geliştirici",
+    tagline: "Full-Stack AI Developer",
     copyright: "Tüm hakları saklıdır.",
     visitorCounter: {
       label: "Canlı Analitik",
@@ -285,16 +171,16 @@ const tr = {
     },
   },
   profile: {
-    badge: "Geliştirici Profili",
-    title: "Yazılım Geliştirme Yaklaşımı",
-    bio: "Yazılım dünyasına olan tutkumu, bilgisayar programcılığı eğitimim ve tam donanımlı bir full-stack geliştirici olma vizyonumla birleştiriyorum. Özellikle AI entegrasyonu, finansal veri analitiği ve yüksek performanslı web uygulamaları geliştirme konusunda uzmanlaşıyorum. Kreatif tarafta Premiere Pro ve After Effects ile görsel hikaye anlatıcılığı yaparken, teknik tarafta modern JavaScript ekosistemi ve makine öğrenimi modelleriyle katma değer üretiyorum. Her zaman daha yenilikçi, optimize edilmiş ve estetik çözümler üretmeyi hedefliyorum.",
-    experienceTitle: "İş Deneyimi",
+    badge: "THE DRIVER",
+    title: "Kod, ürün ve görsel ritmi aynı çizgide buluşturuyorum.",
+    bio: "Bilgisayar programcılığı eğitimimi; AI entegrasyonu, veri odaklı ürünler ve hızlı arayüz geliştirme pratiğiyle birleştiriyorum. Amacım yalnızca çalışan ekranlar değil, ilk bakışta güven veren ve kullanıldıkça değer üreten sistemler kurmak.",
+    experienceTitle: "Deneyim",
     educationTitle: "Eğitim",
-    skillsTitle: "Teknik Yetkinlikler",
+    skillsTitle: "Yetenekler",
     techStudio: {
-      role: "Stajyer (Gömülü Sistemler)",
+      role: "Stajyer - Gömülü Sistemler",
       duration: "Eyl 2023 - May 2024",
-      desc: "MicroPython ile gömülü sistemler üzerine projeler geliştirdim. Kurumun web sitesinin iyileştirme süreçlerinde yer aldım ve LinkedIn sosyal medya yönetimini üstlendim.",
+      desc: "MicroPython ile gömülü sistemler üzerinde çalıştım, kurumsal web ve sosyal medya süreçlerine katkı verdim.",
     },
     pamukkale: {
       school: "Pamukkale Üniversitesi",
@@ -303,14 +189,14 @@ const tr = {
     },
     orhan: {
       school: "Orhan Abalıoğlu MTAL",
-      major: "Yazılım Geliştirme Bölümü",
+      major: "Yazılım Geliştirme",
       status: "Mezun",
     },
     skills: {
-      languages: "TypeScript, JavaScript, Python, Node.js, React 19, Next.js 15, MySQL, PostgreSQL, Redis, Tailwind CSS v4",
-      ai: "Generative Engine Optimization (GEO), LLM Integration (OpenAI, Gemini), Machine Learning (Scikit-learn, LightGBM), Prompt Engineering",
-      multimedia: "Adobe Premiere Pro, After Effects, Photoshop, Illustrator, Visual Storytelling, Video Editing & Motion Graphics",
-    }
+      languages: "TypeScript, JavaScript, Python, Node.js, React, Next.js, MySQL, PostgreSQL, Redis, Tailwind CSS",
+      ai: "GEO, LLM entegrasyonu, OpenAI, Gemini, LightGBM, prompt engineering",
+      multimedia: "Premiere Pro, After Effects, Photoshop, Illustrator, video editing, motion graphics",
+    },
   },
 };
 

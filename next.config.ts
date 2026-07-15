@@ -4,6 +4,9 @@ const basePath = '/alperenbozkurt';
 
 const nextConfig: NextConfig = {
   output: 'export',
+  turbopack: {
+    root: process.cwd(),
+  },
   images: {
     unoptimized: true,
   },

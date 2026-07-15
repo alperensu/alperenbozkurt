@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import tr from "@/locales/tr";
 import en from "@/locales/en";
@@ -17,60 +17,34 @@ export default function ClipIntro() {
     <AnimatePresence>
       <motion.div
         key="clip-intro"
-        className="fixed inset-0 z-[100] flex items-center justify-center bg-black"
-        initial={{ clipPath: "circle(100% at 50% 50%)", opacity: 1 }}
-        animate={{ clipPath: "circle(0% at 50% 50%)", opacity: 0.6 }}
-        transition={{
-          clipPath: {
-            duration: 1.2,
-            delay: 0.6,
-            ease: [0.4, 0, 0.2, 1],
-          },
-          opacity: {
-            duration: 0.8,
-            delay: 1.0,
-            ease: [0.4, 0, 0.2, 1],
-          },
-        }}
+        className="fixed inset-0 z-[150] flex flex-col justify-between bg-[#e9ff00] p-5 text-black md:p-8"
+        initial={{ y: 0 }}
+        animate={{ y: "-100%" }}
+        transition={{ duration: 0.95, delay: 1.25, ease: [0.76, 0, 0.24, 1] }}
         onAnimationComplete={() => setDone(true)}
       >
-        {/* Intro content */}
-        <motion.div
-          className="text-center"
-          initial={{ scale: 1, opacity: 1 }}
-          animate={{ scale: 0.94, opacity: 0 }}
-          transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <motion.div
-            initial={{ y: 24, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.62, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-center gap-4"
-          >
-            <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-white/10 bg-white text-2xl font-black text-slate-950">
-              AB
-            </div>
-            <h2 className="text-2xl md:text-3xl font-light tracking-[0.3em] text-white/80 uppercase">
-              Alperen Bozkurt
-            </h2>
-            <div className="h-px w-32 bg-linear-to-r from-transparent via-cyan-300 to-transparent" />
-            <p className="text-sm tracking-[0.2em] text-white/40 uppercase">
-              {t.clip.tagline}
-            </p>
-          </motion.div>
-        </motion.div>
+        <div className="flex items-center justify-between text-xs font-black uppercase">
+          <span>Load Alperen</span>
+          <span>Portfolio / 2026</span>
+        </div>
 
-        {/* Animated ring */}
-        <motion.div
-          className="absolute w-64 h-64 rounded-full border border-white/10"
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 2.5, opacity: 0 }}
-          transition={{
-            duration: 1.5,
-            delay: 0.2,
-            ease: [0.4, 0, 0.2, 1],
-          }}
-        />
+        <div>
+          <motion.div
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-5 h-2 rounded-full bg-black"
+          />
+          <motion.h2
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            className="text-[clamp(4rem,18vw,18rem)] font-black uppercase leading-[0.75]"
+          >
+            AB
+          </motion.h2>
+          <p className="mt-3 text-sm font-black uppercase text-black/58">{t.clip.tagline}</p>
+        </div>
       </motion.div>
     </AnimatePresence>
   );

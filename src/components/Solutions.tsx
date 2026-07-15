@@ -1,93 +1,87 @@
 "use client";
 
-import AnimatedElement from "./AnimatedElement";
-import ScrollTextReveal from "./ScrollTextReveal";
-import FlashlightCard from "./FlashlightCard";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import tr from "@/locales/tr";
 import en from "@/locales/en";
-
-const solutionIcons = [
-  "mdi:web",
-  "mdi:robot-outline",
-  "mdi:video-vintage",
-  "simple-icons:nextdotjs",
-  "mdi:cog-transfer-outline",
-  "mdi:view-dashboard-outline",
-];
-
-const accents = ["#58d7ff", "#ff6b2c", "#8b5cf6", "#f6c65b", "#22c55e", "#14b8a6"];
+import { getAssetPath } from "@/utils/paths";
 
 export default function Solutions() {
   const { locale } = useLanguage();
   const t = locale === "tr" ? tr : en;
 
+  const scrollTo = (id: string) => {
+    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section id="solutions" className="section-shell">
+    <section id="solutions" className="cinematic-section bg-black text-white">
       <div className="section-inner">
-        <div className="mb-14 grid gap-6 lg:grid-cols-[0.95fr_1fr] lg:items-end">
+        <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
-            <AnimatedElement direction="up">
-              <span className="eyebrow">{t.solutions.badge}</span>
-            </AnimatedElement>
-
-            <ScrollTextReveal
-              className="text-balance mt-7 block text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl"
-              delay={0.1}
-              staggerDelay={0.05}
-            >
-              {`${t.solutions.heading1} ${t.solutions.heading2}`}
-            </ScrollTextReveal>
+            <p className="kicker text-[#e9ff00]">{t.solutions.badge}</p>
+            <h2 className="mt-5 max-w-5xl text-[clamp(3rem,9vw,8rem)] font-black uppercase leading-[0.82]">
+              {t.solutions.heading1} <span className="text-[#e9ff00]">{t.solutions.heading2}</span>
+            </h2>
           </div>
-
-          <AnimatedElement direction="up" delay={0.25}>
-            <p className="text-pretty max-w-2xl text-base leading-8 text-white/[0.55] md:text-lg lg:ml-auto">
-              {t.solutions.subtitle}
-            </p>
-          </AnimatedElement>
+          <p className="max-w-xl text-lg leading-8 text-white/62">{t.solutions.subtitle}</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-6">
-          {t.solutions.items.map((solution, index) => {
-            const isFeature = index < 2;
-            return (
-              <AnimatedElement
-                key={solution.title}
-                delay={index * 0.1}
-                direction="up"
-                className={isFeature ? "md:col-span-3" : "md:col-span-2"}
-              >
-                <FlashlightCard className="h-full">
-                  <div className={`flex h-full flex-col p-6 ${isFeature ? "min-h-[280px] md:p-8" : "min-h-[230px]"}`}>
-                    <div className="flex items-start justify-between gap-4">
-                      <div
-                        className="flex h-12 w-12 items-center justify-center rounded-md border"
-                        style={{
-                          background: `${accents[index]}18`,
-                          borderColor: `${accents[index]}35`,
-                          color: accents[index],
-                        }}
-                      >
-                        <iconify-icon icon={solutionIcons[index]} width="25" height="25" />
-                      </div>
-                      <span className="font-mono text-xs font-black text-white/20">0{index + 1}</span>
-                    </div>
+        <div className="grid gap-3 lg:grid-cols-2">
+          <motion.button
+            whileHover={{ scale: 0.992 }}
+            onClick={() => scrollTo("#projects")}
+            className="group relative min-h-[560px] overflow-hidden rounded-[2rem] bg-[#e9ff00] p-6 text-left text-black md:p-8"
+          >
+            <div className="absolute inset-0 opacity-20 transition-transform duration-700 group-hover:scale-105">
+              <Image
+                src={getAssetPath("/editorial/alperen-services-campaign-v1.png")}
+                alt="Digital service campaign visual"
+                fill
+                quality={100}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative flex h-full flex-col justify-between">
+              <span className="rounded-full bg-black px-4 py-2 text-xs font-black uppercase text-[#e9ff00]">
+                {t.projects.badge}
+              </span>
+              <div>
+                <h3 className="text-[clamp(3.5rem,9vw,8rem)] font-black uppercase leading-[0.78]">
+                  Projects
+                </h3>
+                <p className="mt-5 max-w-md text-lg font-bold text-black/66">
+                  {t.projects.heading1} {t.projects.heading2}
+                </p>
+              </div>
+            </div>
+          </motion.button>
 
-                    <div className="mt-auto pt-10">
-                      <h3 className={`${isFeature ? "text-2xl md:text-3xl" : "text-xl"} text-balance font-black text-white`}>
-                        {solution.title}
-                      </h3>
-                      <p className="mt-4 text-pretty text-sm leading-7 text-white/[0.52] md:text-base">
-                        {solution.description}
-                      </p>
+          <motion.div
+            whileHover={{ scale: 0.992 }}
+            className="relative min-h-[560px] overflow-hidden rounded-[2rem] bg-[#f4f1e8] p-6 text-black md:p-8"
+          >
+            <div className="relative z-10 flex h-full flex-col justify-between">
+              <span className="w-fit rounded-full bg-black px-4 py-2 text-xs font-black uppercase text-white">
+                Services
+              </span>
+              <div className="grid gap-3">
+                {t.solutions.items.slice(0, 4).map((item, index) => (
+                  <div key={item.title} className="border-t border-black/12 pt-4">
+                    <div className="flex items-start justify-between gap-5">
+                      <h3 className="text-2xl font-black uppercase md:text-4xl">{item.title}</h3>
+                      <span className="text-sm font-black text-black/40">0{index + 1}</span>
                     </div>
-
-                    <div className="mt-6 h-px w-full bg-linear-to-r from-white/0 via-white/[0.14] to-white/0" />
+                    <p className="mt-2 max-w-xl text-sm leading-6 text-black/58 md:text-base">
+                      {item.description}
+                    </p>
                   </div>
-                </FlashlightCard>
-              </AnimatedElement>
-            );
-          })}
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

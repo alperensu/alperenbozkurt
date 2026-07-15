@@ -18,64 +18,50 @@ export default function Footer() {
   const { locale } = useLanguage();
   const t = locale === "tr" ? tr : en;
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-40px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <footer className="relative border-t border-white/10 px-6 py-16 md:px-16 lg:px-24">
-      <div className="section-inner" ref={ref}>
+    <footer className="bg-black px-4 py-8 text-white sm:px-6 md:px-10 lg:px-14">
+      <div ref={ref} className="rounded-[2rem] border border-white/10 bg-[#0b0b0b] p-5 md:p-8">
         <motion.div
-          initial={{ y: 28, opacity: 0 }}
+          initial={{ y: 36, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
-          className="motion-smooth"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="premium-panel flex flex-col items-center justify-between gap-8 rounded-lg p-6 md:flex-row md:p-8">
-            {/* Brand */}
-            <div className="flex flex-col items-center md:items-start gap-3">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/[0.055]">
-                  <span className="bg-linear-to-r from-cyan-200 via-white to-orange-300 bg-clip-text text-sm font-black text-transparent">
-                    AB
-                  </span>
-                </div>
-                <div>
-                  <p className="text-base font-black text-white">
-                    Alperen Bozkurt
-                  </p>
-                  <p className="text-sm text-white/40">
-                    {t.footer.tagline}
-                  </p>
-                </div>
-              </div>
+          <p className="kicker text-[#e9ff00]">{t.footer.tagline}</p>
+          <h2 className="mt-6 text-[clamp(4rem,15vw,15rem)] font-black uppercase leading-[0.74]">
+            Let&apos;s build
+            <span className="block text-[#e9ff00]">the system.</span>
+          </h2>
+
+          <div className="mt-10 grid gap-8 border-t border-white/10 pt-6 md:grid-cols-[1fr_auto_1fr] md:items-end">
+            <div>
+              <p className="text-lg font-black">Alperen Bozkurt</p>
+              <p className="mt-2 max-w-sm text-sm leading-6 text-white/45">
+                {locale === "tr"
+                  ? "AI, web ve ürün arayüzleri için hızlı, net ve yüksek etkili sistemler."
+                  : "Fast, focused, high-impact systems for AI, web, and product interfaces."}
+              </p>
             </div>
 
-            {/* Social Links — staggered */}
-            <div className="flex items-center gap-3">
-              {socialLinks.map((link, index) => (
-                <motion.a
+            <div className="flex items-center gap-2">
+              {socialLinks.map((link) => (
+                <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.2 + index * 0.1,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="flex h-11 w-11 items-center justify-center rounded-md border border-white/10 bg-white/[0.055] text-white/40 transition-all duration-500 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.1] hover:text-white"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-white/12 text-white/52 transition-colors hover:border-[#e9ff00] hover:text-[#e9ff00]"
                   aria-label={link.label}
                 >
                   <iconify-icon icon={link.icon} width="18" height="18" />
-                </motion.a>
+                </a>
               ))}
             </div>
 
-            {/* Copyright + Visitor Counter */}
-            <div className="flex flex-col items-center md:items-end gap-3">
+            <div className="md:text-right">
               <VisitorCounter />
-              <p className="text-sm text-white/30">
+              <p className="mt-3 text-sm text-white/32">
                 © {new Date().getFullYear()} Alperen Bozkurt. {t.footer.copyright}
               </p>
             </div>
